@@ -45,18 +45,22 @@ body{
     flex-direction: column;
 }
 
-.bod-area__second-top{
+.bod-area__top{
     background-color: #1E1C62;
     height: 300px;
+    margin: 20px 150px 20px 150px;
 }
-.bod-area__second-middle{
+.bod-area__middle{
     background-color: #2BEBFF;
     height: 300px;
+    margin: 20px 150px 20px 150px;
 }
-.bod-area__second-botton{
+.bod-area__botton{
     background-color: darkkhaki;
     height: 300px;
+    margin: 20px 150px 20px 150px;
 }
+
 
 .footer{
     display: flex;
