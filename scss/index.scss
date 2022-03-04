@@ -13,57 +13,60 @@ body{
     height: 120px;
     justify-content: space-between;
     align-items: center;
+    &__logo{
+        background-color: crimson;
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    &__title{
+        background-color: chocolate;
+    }
+    &__menu{
+        background-color: cadetblue;
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+    }
 }
 
-.header__logo{
-    background-color: crimson;
-    margin-left: 40px;
-    width: 60px;
-    height: 60px;
-}
-.header__title{
-    background-color: chocolate;
-}
-.header__menu{
-    background-color: cadetblue;
-    margin-right: 40px;
-    width: 100px;
-    font-size: 16PX;
-}
 
 .body-area{
     display: flex;
     background-color: #2BEBFF;
     flex-direction: column;
-}
 
-.body-area__first{
-    background-color: chartreuse;
-    height: 450px;
+    &__first{
+        background-color: chartreuse;
+        height: 450px;
+    }
+    &__second{
+        background-color:deeppink;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &__top{
+        background-color: #f0720b;
+        width: 250px;
+        height: 250px;
+        margin: 20px 60px 20px 60px;
+    }
+    &__middle{
+        background-color: #2b39ff;
+        width: 250px;
+        height: 250px;
+        margin: 20px 60px 20px 60px;
+    }
+    &__botton{
+        background-color: darkkhaki;
+        width: 250px;
+        height: 250px;
+        margin: 20px 60px 20px 60px;
+    }
 }
-
-.body-area__second{
-    background-color:deeppink;
-    display: flex;
-    flex-direction: column;
-}
-
-.bod-area__top{
-    background-color: #f0720b;
-    height: 300px;
-    margin: 20px 150px 20px 150px;
-}
-.bod-area__middle{
-    background-color: #2BEBFF;
-    height: 300px;
-    margin: 20px 150px 20px 150px;
-}
-.bod-area__botton{
-    background-color: darkkhaki;
-    height: 300px;
-    margin: 20px 150px 20px 150px;
-}
-
 
 .footer{
     display: flex;
@@ -76,4 +79,71 @@ body{
 .footer__title{
     background-color: rgb(236, 11, 3);
 
+}
+
+@media (min-width: 576px){
+    .header{
+        &__logo{
+            margin-left: 20px;
+            width: 70px;
+            height: 70px;
+            padding-right: 80px;
+        }
+        &__menu{        
+            margin-right: 20px;
+            width: 150px;
+            height: 70px;
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .body-area{
+        display: flex;
+        flex-direction: column;
+    
+        &__first{
+            background-color: chartreuse;
+            height: 450px;
+        }
+
+        &__second{
+            background-color:deeppink;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .body-area{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+    
+        &__first{
+            width: 50%;
+            height: auto;
+        }
+
+        &__second{
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        &__top{
+            margin: 5px 5px 5px 5px;
+        }
+        &__middle{
+            margin: 5px 5px 5px 5px;
+        }
+        &__botton{
+            margin: 5px 5px 5px 5px;
+        }
+    }
 }
