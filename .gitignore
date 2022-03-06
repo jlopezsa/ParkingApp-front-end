@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # Sass file .map
-scss/*.map
+scss/index.css.map

@@ -2,8 +2,11 @@ $blue-color: #1E1C62;
 $yellow-color: #FFE254;
 $font-parking: Verdana, Geneva, Tahoma, sans-serif;
 
+
+
 body{
     font-family: $font-parking;
+    margin: 0px;
 }
 
 .header{
@@ -11,23 +14,34 @@ body{
     background-color: $blue-color;
     color: $yellow-color;
     height: 120px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     &__logo{
-        background-color: crimson;
         margin-left: 10px;
         width: 50px;
         height: 50px;
+
+        background-image: url(../figures/logo_60x60px.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
     }
-    
+
     &__title{
-        background-color: chocolate;
+        //background-color: chocolate;
     }
     &__menu{
-        background-color: cadetblue;
-        margin-right: 10px;
+        margin-right: 40px;
         width: 50px;
         height: 50px;
+
+        background-image: url(../figures/icono_menu_80x80px.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    &__menu p{
+      display: none;
     }
 }
 
@@ -40,6 +54,11 @@ body{
     &__first{
         background-color: chartreuse;
         height: 450px;
+
+        background-image: url(../figures/main_background.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
     }
     &__second{
         background-color:deeppink;
@@ -47,7 +66,6 @@ body{
         flex-direction: column;
         align-items: center;
     }
-    
     &__top{
         background-color: #f0720b;
         width: 250px;
@@ -87,12 +105,31 @@ body{
             margin-left: 20px;
             width: 70px;
             height: 70px;
-            padding-right: 80px;
+
+            background-image: url(../figures/logo_80x80px.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
-        &__menu{        
-            margin-right: 20px;
-            width: 150px;
+        &__menu{
+            margin-right: 0px;
+            width: 225px;
             height: 70px;
+            background-image:none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p{
+              width: 100px;
+              height: 30px;
+              display: block;
+              text-align: center;
+              align-items: center;
+              background-color: $yellow-color;
+              border-radius: 10px;
+              font-family: $font-buttons;
+            }
         }
     }
 }
@@ -101,7 +138,7 @@ body{
     .body-area{
         display: flex;
         flex-direction: column;
-    
+
         &__first{
             background-color: chartreuse;
             height: 450px;
@@ -123,7 +160,7 @@ body{
         flex-direction: row;
         justify-content: space-evenly;
 
-    
+
         &__first{
             width: 50%;
             height: auto;
