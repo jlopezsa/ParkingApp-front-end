@@ -69,21 +69,57 @@ body{
     &__top{
         background-color: #f0720b;
         width: 250px;
-        height: 250px;
+        height: 350px;
         margin: 20px 60px 20px 60px;
+        display: flex;
+        flex-direction: column;
     }
     &__middle{
         background-color: #2b39ff;
         width: 250px;
-        height: 250px;
+        height: 350px;
         margin: 20px 60px 20px 60px;
+        display: flex;
+        flex-direction: column;
     }
     &__botton{
         background-color: darkkhaki;
         width: 250px;
-        height: 250px;
+        height: 350px;
         margin: 20px 60px 20px 60px;
+        display: flex;
+        flex-direction: column;
     }
+    .top__map{
+      width: 250px;
+      height: 250px;
+      border-radius: 360px;
+      background-image: url(../figures/mapa_800x600px.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size:cover;
+    }
+    .top__information{}
+    .middle__map{
+      width: 250px;
+      height: 250px;
+      border-radius: 360px;
+      background-image: url(../figures/mapa_800x600px.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size:cover;
+    }
+    .middle__information{}
+    .botton__map{
+      width: 250px;
+      height: 250px;
+      border-radius: 360px;
+      background-image: url(../figures/mapa_800x600px.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size:cover;
+    }
+    .botton__information{}
 }
 
 .footer{
@@ -127,9 +163,7 @@ body{
               text-align: center;
               align-items: center;
               background-color: $yellow-color;
-              border-radius: 10px;
-              font-family: $font-buttons;
-            }
+              border-radius: 10px;            }
         }
     }
 }
@@ -169,18 +203,72 @@ body{
         &__second{
             width: 50%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
         }
 
         &__top{
-            margin: 5px 5px 5px 5px;
+          height: 350px;
+          width: 600px;
+          margin: 5px 5px 5px 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
         }
         &__middle{
-            margin: 5px 5px 5px 5px;
+          height: 350px;
+          width: 600px;
+          margin: 5px 5px 5px 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
         }
         &__botton{
-            margin: 5px 5px 5px 5px;
+          height: 350px;
+          width: 600px;
+          margin: 5px 5px 5px 5px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+        .top__map{
+          width: 350px;
+          height: 350px;
+          border-radius: 360px;
+          background-image: url(../figures/mapa_800x600px.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size:cover;
+        }
+        .top__information{
+          width: auto;
+        }
+        .middle__map{
+          width: 350px;
+          height: 350px;
+          border-radius: 360px;
+          background-image: url(../figures/mapa_800x600px.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size:cover;
+        }
+        .middle__information{
+          width: auto;
+        }
+        .botton__map{
+          width: 350px;
+          height: 350px;
+          border-radius: 360px;
+          background-image: url(../figures/mapa_800x600px.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size:cover;
+        }
+        .botton__information{
+          width: auto;
         }
     }
 }
