@@ -90,36 +90,12 @@ body{
         display: flex;
         flex-direction: column;
     }
-    .top__map{
+    &__map{
       width: 250px;
       height: 250px;
-      border-radius: 360px;
-      background-image: url(../figures/mapa_800x600px.png);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size:cover;
+      border-radius: 50%;
     }
-    .top__information{}
-    .middle__map{
-      width: 250px;
-      height: 250px;
-      border-radius: 360px;
-      background-image: url(../figures/mapa_800x600px.png);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size:cover;
-    }
-    .middle__information{}
-    .botton__map{
-      width: 250px;
-      height: 250px;
-      border-radius: 360px;
-      background-image: url(../figures/mapa_800x600px.png);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size:cover;
-    }
-    .botton__information{}
+    &__information{}
 }
 
 .footer{
@@ -234,40 +210,12 @@ body{
           align-items: center;
           justify-content: space-evenly;
         }
-        .top__map{
+        &__map{
           width: 350px;
           height: 350px;
-          border-radius: 360px;
-          background-image: url(../figures/mapa_800x600px.png);
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size:cover;
+          border-radius: 50%;
         }
-        .top__information{
-          width: auto;
-        }
-        .middle__map{
-          width: 350px;
-          height: 350px;
-          border-radius: 360px;
-          background-image: url(../figures/mapa_800x600px.png);
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size:cover;
-        }
-        .middle__information{
-          width: auto;
-        }
-        .botton__map{
-          width: 350px;
-          height: 350px;
-          border-radius: 360px;
-          background-image: url(../figures/mapa_800x600px.png);
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size:cover;
-        }
-        .botton__information{
+        &__information{
           width: auto;
         }
     }
