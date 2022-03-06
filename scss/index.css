@@ -1,6 +1,10 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin: 0px;
+  margin: 0;
+}
+
+.main-container {
+  margin: 0;
 }
 
 .header {
@@ -78,7 +82,7 @@ body {
 .body-area__top {
   background-color: #f0720b;
   width: 250px;
-  height: 350px;
+  height: auto;
   margin: 20px 60px 20px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,7 +96,7 @@ body {
 .body-area__middle {
   background-color: #2b39ff;
   width: 250px;
-  height: 350px;
+  height: auto;
   margin: 20px 60px 20px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,7 +110,7 @@ body {
 .body-area__botton {
   background-color: darkkhaki;
   width: 250px;
-  height: 350px;
+  height: auto;
   margin: 20px 60px 20px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,8 +299,8 @@ body {
             justify-content: space-evenly;
   }
   .body-area__map {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
   }
   .body-area__information {
