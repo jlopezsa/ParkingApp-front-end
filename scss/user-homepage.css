@@ -42,8 +42,17 @@ body {
   background-color: #1E1C62;
 }
 
-.map img {
+.map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: greenyellow;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.map img {
   width: auto;
   height: 350px;
 }

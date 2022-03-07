@@ -57,7 +57,7 @@ body {
 }
 
 .body-area__first {
-  background-color: chartreuse;
+  background-color: white;
   height: 450px;
   background-image: url(../figures/main_background.jpg);
   background-repeat: no-repeat;
@@ -66,7 +66,7 @@ body {
 }
 
 .body-area__second {
-  background-color: deeppink;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,7 +80,7 @@ body {
 }
 
 .body-area__top {
-  background-color: #f0720b;
+  background-color: #1E1C62;
   width: 250px;
   height: auto;
   margin: 20px 60px 20px 60px;
@@ -91,10 +91,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-radius: 20px;
 }
 
 .body-area__middle {
-  background-color: #2b39ff;
+  background-color: #2BEBFF;
   width: 250px;
   height: auto;
   margin: 20px 60px 20px 60px;
@@ -108,7 +109,7 @@ body {
 }
 
 .body-area__botton {
-  background-color: darkkhaki;
+  background-color: #2BEBFF;
   width: 250px;
   height: auto;
   margin: 20px 60px 20px 60px;
@@ -127,6 +128,10 @@ body {
   border-radius: 50%;
 }
 
+.body-area__information {
+  color: #FFE254;
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -142,7 +147,7 @@ body {
 }
 
 .footer__title {
-  background-color: #ec0b03;
+  background-color: #1E1C62;
 }
 
 @media (min-width: 576px) {
@@ -194,11 +199,11 @@ body {
             flex-direction: column;
   }
   .body-area__first {
-    background-color: chartreuse;
+    background-color: white;
     height: 450px;
   }
   .body-area__second {
-    background-color: deeppink;
+    background-color: #E5E5E5;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
