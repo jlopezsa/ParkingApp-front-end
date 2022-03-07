@@ -1,0 +1,96 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+}
+
+.main-container {
+  margin: 0;
+  color: #FFE254;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: [first] 120px [line2] 180px [line3] 350px [line4] 150px [line5] auto [line6] 120px [end];
+      grid-template-rows: [first] 120px [line2] 180px [line3] 350px [line4] 150px [line5] auto [line6] 120px [end];
+}
+
+.header {
+  background-color: #1E1C62;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: [first] 120px [line2] auto [line3] 120px [end];
+      grid-template-columns: [first] 120px [line2] auto [line3] 120px [end];
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  width: 60px;
+  height: 60px;
+  background-image: url(../figures/logo_60x60px.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.header__foto {
+  width: 80px;
+  height: 80px;
+}
+
+.search {
+  background-color: #1E1C62;
+}
+
+.map img {
+  background-color: greenyellow;
+  width: auto;
+  height: 350px;
+}
+
+.filter {
+  background-color: palevioletred;
+}
+
+.list {
+  background-color: purple;
+}
+
+.footer {
+  background-color: #1E1C62;
+}
+
+/*
+.header{
+    display: flex;
+    background-color: $blue-color;
+    color: $yellow-color;
+    height: 120px;
+    justify-content: space-around;
+    align-items: center;
+    &__logo{
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+
+        background-image: url(../figures/logo_60x60px.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    &__user{
+        margin-right: 40px;
+        width: 50px;
+        height: 50px;
+
+        background-image: url(../figures/icono_menu_80x80px.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    &__menu p{
+      display: none;
+    }
+}
+*/
+/*# sourceMappingURL=user-homepage.css.map */
