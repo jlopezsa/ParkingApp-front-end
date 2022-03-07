@@ -37,8 +37,12 @@ body{
 .search{
   background-color: $blue-color;
 }
-.map img{
+.map{
+  display: flex;
   background-color: greenyellow;
+  justify-content: center;
+}
+.map img{
   width: auto;
   height: 350px;
 }
