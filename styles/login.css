@@ -19,25 +19,25 @@ body{
   position: relative;
   height: 83px;
   background-color: rgba(30, 28, 98, 1);
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 .head__img{
   height: 50px;
   width: 70px;
 }
-
 .head__text{
-  display: none;
+  font-family: yantramanav-bold, cursive;
+  color: rgb(255,226, 84);
+  font-size: 48px;
 }
-
 .login{
   background-color: #C4C4C4;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 821px;
+  height: 700px;
 }
 
 .login__title{
@@ -54,9 +54,22 @@ body{
 }
 .login__email{
   position: absolute;
-  top: 300px;
+  top: 350px;
+}
+.login__botton{
+  background-color: #696969;
+  position: absolute;
+  top: 500px;
 }
 
+.confirmacion{
+  display: flex;
+  height: 83px;
+  background-color: rgba(30, 28, 98, 1);
+  color: rgb(255,226, 84);
+  font-size: 20px;
+  justify-content: center;
+}
 /*
 body{
   margin: 0;
