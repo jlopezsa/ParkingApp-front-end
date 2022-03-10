@@ -1,0 +1,24 @@
+// Fonts declaration
+@font-face {
+  font-family: Oxygen-Bold;
+  src: url(./fonts/Oxygen-Bold.ttf);
+}
+@font-face {
+  font-family: Oxygen-Regular;
+  src: url(./fonts/Oxygen-Regular.ttf);
+}
+
+
+// Global variables declarations
+
+$header-color: #03045E;
+$footer-color: #03045E;
+$header-font-color: #00B4D8;
+
+
+.App {
+  text-align: center;
+  background-color: $header-color;
+  color: $header-font-color;
+  font-family: Oxygen-Regular;
+}
