@@ -8,17 +8,17 @@
   src: url(./fonts/Oxygen-Regular.ttf);
 }
 
-
-// Global variables declarations
-
+// Global variables declaration
 $header-color: #03045E;
 $footer-color: #03045E;
 $header-font-color: #00B4D8;
 
-
 .App {
+  /*
+  // Examplo to use Sass variables
   text-align: center;
   background-color: $header-color;
   color: $header-font-color;
   font-family: Oxygen-Regular;
+  */
 }
