@@ -1,0 +1,21 @@
+@import '../../App.scss'; // Import global variables
+
+.container{
+  background-color: $strongBlue-color;
+  height: 200px;
+  display: flex;
+  justify-content:space-around;
+  min-width: 440px;
+
+  label{
+    color: $white-color;
+  }
+  a{
+    color: $blue-color;
+  }
+}
+
+.imagen{
+  width: 100px;
+  height: 100px;
+}

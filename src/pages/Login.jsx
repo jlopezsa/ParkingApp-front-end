@@ -5,9 +5,6 @@ const Login = (props) =>{
 
   return(
     <div className="">
-      {/* Header */}
-      {/* Register */}
-      {/* Footer */}
     </div>
   )
 }
