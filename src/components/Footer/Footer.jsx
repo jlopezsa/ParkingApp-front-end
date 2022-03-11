@@ -5,7 +5,7 @@ const Footer = (props) => {
   const {cities} = props
   return (
     <div className="container">
-      <div className="container__ciudades">
+      <div className="container__cities">
         <label>Ciudades</label><br />
         {
           cities.map((item,idx) => {
@@ -23,8 +23,9 @@ const Footer = (props) => {
         <a href="">Contactenos</a><br />
         <a href="">Preguntas?</a><br />
       </div>
-      <div className="container_redes">
-        <label>Nuestras Redes</label>
+      <div className="container__networks">
+        <label>Nuestras Redes</label><br />
+        <img src="../../figures/facebook_icon.png" alt="" className="imagen" />
       </div>
     </div>
   )
