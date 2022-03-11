@@ -1,11 +1,10 @@
 import './App.scss';
-import HomePage from './pages/HomePage';
-import Search from './pages/Search'
+import HomePage from './pages/HomePage'
 
 function App() {
   return (
     <div className="App">
-      <Search />
+      <HomePage />
     </div>
   );
 }

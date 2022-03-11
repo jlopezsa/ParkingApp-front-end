@@ -15,10 +15,6 @@ const Search = (props) =>{
 
   return(
     <div className="">
-      <h1 className="">Hello ParkingApp from React</h1>
-      {/* Header */}
-      {/* Searching */}
-      {/* Body */}
       <Footer cities={cities} />
     </div>
   )

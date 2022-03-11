@@ -1,35 +1,17 @@
-// Fonts declaration
-@font-face {
-  font-family: Oxygen-Bold;
-  src: url(../../fonts/Oxygen-Bold.ttf);
-}
-@font-face {
-  font-family: Oxygen-Regular;
-  src: url(../../fonts/Oxygen-Regular.ttf);
-}
-
-// Global variables declaration
-$header-color: #03045E;
-$footer-color: #03045E;
-$header-font-color: #00B4D8;
-$footer-label-font-color:#FFFFFF;
-$footer-a-font-color:$header-font-color;
+@import '../../App.scss'; // Import global variables
 
 .container{
-  background-color: $footer-color;
+  background-color: $strongBlue-color;
   height: 200px;
   display: flex;
   justify-content:space-around;
   min-width: 440px;
 
   label{
-    color: $footer-label-font-color;
+    color: $white-color;
   }
   a{
-    color: $footer-a-font-color;
-  }
-
-  &__networks{
+    color: $blue-color;
   }
 }
 
