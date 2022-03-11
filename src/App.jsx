@@ -5,7 +5,6 @@ import Search from './pages/Search'
 function App() {
   return (
     <div className="App">
-      {/*<HomePage />*/}
       <Search />
     </div>
   );
