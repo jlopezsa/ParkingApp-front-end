@@ -1,5 +1,9 @@
 import React from "react";
 import './Footer.scss'
+import IconFacebook from '../../figures/facebook_icon.svg';
+import IconYoutube from '../../figures/youtube_icon.svg';
+import IconInstagram from '../../figures/instagram_icon.svg';
+import IconTwitter from '../../figures/twitter_icon.svg';
 
 const Footer = (props) => {
   const {cities} = props
@@ -25,7 +29,12 @@ const Footer = (props) => {
       </div>
       <div className="container__networks">
         <label>Nuestras Redes</label><br />
-        <img src="../../figures/facebook_icon.png" alt="" className="imagen" />
+        <div className="container__icons">
+          <img src={IconFacebook} alt="facebook icon" className="imagen" />
+          <img src={IconYoutube} alt="youtube icon" className="imagen" />
+          <img src={IconInstagram} alt="instagram icon" className="imagen" />
+          <img src={IconTwitter} alt="twitter icon" className="imagen" />
+        </div>
       </div>
     </div>
   )

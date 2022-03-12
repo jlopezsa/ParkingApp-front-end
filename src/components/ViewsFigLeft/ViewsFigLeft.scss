@@ -1,0 +1,57 @@
+@import '../../App.scss'; // Import global variables
+
+.container-view{
+  color: $black-color;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__title{
+    font-family: Oxygen-Bold;
+    font-size: $headline2;
+    color: $blue-color;
+    text-align: center;
+  }
+  &__text{
+    text-align: center;
+    font-size: $body1;
+  }
+  &__figure{
+      width: 400px;
+    }
+ // .left-figure{
+ //   width: 302px;
+  //}
+}
+
+@media (min-width: 1440px) {
+  .container-view{
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    &__text{
+      text-align: left;
+      width: 500px;
+      font-size: $headline5;
+    }
+    &__title{
+      width: 1440px;
+      text-align: center;
+    }
+    &__figure{
+      width: 500px;
+    }
+  }
+  .container-view :nth-child(1) { order: 1; }
+  .container-view :nth-child(2) { order: 2; }
+  .container-view :nth-child(3) { order: 3; }
+
+  .container-view__title--top {
+    order: -1;
+    flex: 1 0 100%;
+  }
+
+}

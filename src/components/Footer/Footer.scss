@@ -13,9 +13,13 @@
   a{
     color: $blue-color;
   }
+  &__icons{
+    display: flex;
+    justify-content:space-between;
+  }
+  .imagen{
+    width: 20px;
+    height: 20px;
+  }
 }
 
-.imagen{
-  width: 100px;
-  height: 100px;
-}
