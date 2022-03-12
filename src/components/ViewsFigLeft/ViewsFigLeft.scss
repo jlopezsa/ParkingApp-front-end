@@ -5,9 +5,8 @@
   max-width: 440px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: auto auto auto;
 
   &__title{
     font-family: Oxygen-Bold;
@@ -20,6 +19,7 @@
       margin-bottom: 20px;
     }
   }
+
   &__text{
     text-align: center;
     font-size: $body1;
@@ -28,26 +28,25 @@
       margin-bottom: 20px;
     }
   }
-  &__figure{
-      width: 400px;
-    }
- // .left-figure{
- //   width: 302px;
-  //}
 }
 
 @media (min-width: 1440px) {
   .container-view{
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
     max-width: 1440px;
+    grid-template-columns: 720px 720px;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    grid-template-areas:
+      "figCell titleCell"
+      "figCell textCell";
     &__text{
+      grid-area: textCell;
       text-align: left;
-      width: 500px;
       font-size: $headline5;
     }
     &__title{
-      width: 1440px;
+      grid-area: titleCell;
       text-align: center;
       margin-top: 20px;
       margin-bottom: 20px;
@@ -56,16 +55,11 @@
       }
     }
     &__figure{
+      grid-area: figCell;
       width: 500px;
     }
+    &__empty{
+      grid-area: emptyCell;
+    }
   }
-  .container-view :nth-child(1) { order: 1; }
-  .container-view :nth-child(2) { order: 2; }
-  .container-view :nth-child(3) { order: 3; }
-
-  .container-view__title--top {
-    order: -1;
-    flex: 1 0 100%;
-  }
-
 }
