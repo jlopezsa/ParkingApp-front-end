@@ -1,6 +1,6 @@
 @import '../../App.scss'; // Import global variables
 
-.container-view{
+.container-view-r{
   color: $black-color;
   max-width: 440px;
   margin-left: auto;
@@ -31,13 +31,10 @@
   &__figure{
       width: 400px;
     }
- // .left-figure{
- //   width: 302px;
-  //}
 }
 
 @media (min-width: 1440px) {
-  .container-view{
+  .container-view-r{
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 1440px;
@@ -59,11 +56,11 @@
       width: 500px;
     }
   }
-  .container-view :nth-child(1) { order: 1; }
-  .container-view :nth-child(2) { order: 2; }
-  .container-view :nth-child(3) { order: 3; }
+  .container-view-r :nth-child(1) { order: 1; }
+  .container-view-r :nth-child(2) { order: 3; }
+  .container-view-r :nth-child(3) { order: 2; }
 
-  .container-view__title--top {
+  .container-view-r__title--top {
     order: -1;
     flex: 1 0 100%;
   }
