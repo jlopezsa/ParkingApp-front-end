@@ -1,4 +1,4 @@
-import './HomePage.scss';
+
 import React from 'react'
 import Signup from './Signup';
 
