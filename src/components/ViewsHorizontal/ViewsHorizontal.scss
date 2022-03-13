@@ -1,0 +1,15 @@
+@import '../../App.scss';
+
+.container-horizontal{
+  color: $black-color;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1440px) {
+  .container-horizontal{
+    max-width: 1440px;
+    display: flex;
+  }
+}
