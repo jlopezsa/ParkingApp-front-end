@@ -35,15 +35,17 @@
     display: grid;
     max-width: 1440px;
     grid-template-columns: 720px 720px;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     justify-items: center;
     grid-template-areas:
-      "figCell titleCell"
+      ". titleCell"
+      "figCell textCell"
       "figCell textCell";
     &__text{
       grid-area: textCell;
       text-align: left;
       font-size: $headline5;
+      align-self: center;
     }
     &__title{
       grid-area: titleCell;
@@ -56,6 +58,7 @@
     }
     &__figure{
       grid-area: figCell;
+      justify-self: flex-end;
       width: 500px;
     }
   }
