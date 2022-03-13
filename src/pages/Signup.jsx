@@ -11,6 +11,7 @@ function Signup() {
           <input className="main-container__form--input" type="password" name="confirm-password" placeholder="Confirmar contraseña" />
 
           <input className="main-container__form--submit" type="submit" name="submit" value="Registrar" />
+          <Link to="/login">Ya tienes una cuenta? Ingresa ahora</Link>
         </form>
       </div>
     </>
