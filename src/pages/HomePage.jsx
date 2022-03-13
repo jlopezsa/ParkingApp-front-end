@@ -34,7 +34,6 @@ const HomePage = (props) =>{
 
       <ViewsHorizontal />
 
-
       <Footer cities={cities} />
     </div>
   )
