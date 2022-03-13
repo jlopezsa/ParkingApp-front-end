@@ -1,6 +1,6 @@
-@import '../../App.scss'; // Import global variables
+@import '../../../App.scss'; // Import global variables
 
-.container-view{
+.container-view-r{
   color: $black-color;
   max-width: 440px;
   margin-left: auto;
@@ -31,16 +31,16 @@
 }
 
 @media (min-width: 1440px) {
-  .container-view{
+  .container-view-r{
     display: grid;
     max-width: 1440px;
     grid-template-columns: 720px 720px;
     grid-template-rows: auto auto auto;
     justify-items: center;
     grid-template-areas:
-      ".       titleCell"
-      "figCell textCell"
-      "figCell textCell";
+      "titleCell ."
+      "textCell  figCell"
+      "textCell  figCell";
     &__text{
       grid-area: textCell;
       text-align: left;
@@ -59,7 +59,7 @@
     }
     &__figure{
       grid-area: figCell;
-      justify-self: flex-end;
+      justify-self: flex-start;
       width: 500px;
     }
   }

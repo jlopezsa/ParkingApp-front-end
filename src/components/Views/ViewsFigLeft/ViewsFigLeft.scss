@@ -1,21 +1,14 @@
-@import '../../App.scss';
+@import '../../../App.scss'; // Import global variables
 
-.container-top-right{
+.container-view{
   color: $black-color;
   max-width: 440px;
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 220px 220px;
   grid-template-rows: auto auto auto;
-  justify-items: center;
-  grid-template-areas:
-    "titleCell titleCell"
-    "textCell figCell"
-    "textCell figCell";
 
   &__title{
-    grid-area: titleCell;
     font-family: Oxygen-Bold;
     font-size: $headline4;
     color: $blue-color;
@@ -28,41 +21,34 @@
   }
 
   &__text{
-    grid-area: textCell;
-    text-align: left;
+    text-align: center;
     font-size: $body1;
     p{
       margin-top: 0px;
       margin-bottom: 20px;
     }
   }
-  &__figure{
-    grid-area: figCell;
-    width: auto;
-    .top-right-figure{
-      width: 220px;
-    }
-  }
 }
 
 @media (min-width: 1440px) {
-  .container-top-right{
+  .container-view{
     display: grid;
     max-width: 1440px;
-    grid-template-columns:none;
+    grid-template-columns: 720px 720px;
     grid-template-rows: auto auto auto;
     justify-items: center;
     grid-template-areas:
-    "titleCell"
-    "figCell"
-    "textCell";
+      ".       titleCell"
+      "figCell textCell"
+      "figCell textCell";
     &__text{
-      text-align: center;
+      grid-area: textCell;
+      text-align: left;
       font-size: $headline5;
       align-self: center;
-      width: 60%;
     }
     &__title{
+      grid-area: titleCell;
       font-size: $headline2;
       text-align: center;
       margin-top: 20px;
@@ -72,11 +58,9 @@
       }
     }
     &__figure{
-      align-self: center;
-      width: auto;
-      .top-right-figure{
-        width: 500px;
-      }
+      grid-area: figCell;
+      justify-self: flex-end;
+      width: 500px;
     }
   }
 }
