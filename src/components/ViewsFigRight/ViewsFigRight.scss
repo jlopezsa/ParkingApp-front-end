@@ -10,7 +10,7 @@
 
   &__title{
     font-family: Oxygen-Bold;
-    font-size: $headline2;
+    font-size: $headline4;
     color: $blue-color;
     text-align: center;
     p{
@@ -49,6 +49,7 @@
     }
     &__title{
       grid-area: titleCell;
+      font-size: $headline2;
       text-align: center;
       margin-top: 20px;
       margin-bottom: 20px;
