@@ -1,8 +1,11 @@
-import './HomePage.scss';
+
 import React from 'react'
+
 import Footer from '../components/Footer/Footer';
 import Views from '../components/Views/Views';
 import ParkingList from '../components/ParkingList/ParkingList';
+import Signup from './Signup';
+import Login from './Login';
 
 
 const HomePage = (props) =>{
@@ -12,6 +15,8 @@ const HomePage = (props) =>{
       <Views />
       <Footer />
       <ParkingList />
+      <Signup />
+      <Login />
     </div>
   )
 }
