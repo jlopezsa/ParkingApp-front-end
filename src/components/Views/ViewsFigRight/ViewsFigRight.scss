@@ -1,0 +1,66 @@
+@import '../../../App.scss'; // Import global variables
+
+.container-view-r{
+  color: $black-color;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-rows: auto auto auto;
+
+  &__title{
+    font-family: Oxygen-Bold;
+    font-size: $headline4;
+    color: $blue-color;
+    text-align: center;
+    p{
+      margin: 0px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text{
+    text-align: center;
+    font-size: $body1;
+    p{
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .container-view-r{
+    display: grid;
+    max-width: 1440px;
+    grid-template-columns: 720px 720px;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    grid-template-areas:
+      "titleCell ."
+      "textCell  figCell"
+      "textCell  figCell";
+    &__text{
+      grid-area: textCell;
+      text-align: left;
+      font-size: $headline5;
+      align-self: center;
+    }
+    &__title{
+      grid-area: titleCell;
+      font-size: $headline2;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      p{
+        margin: 0px;
+      }
+    }
+    &__figure{
+      grid-area: figCell;
+      justify-self: flex-start;
+      width: 500px;
+    }
+  }
+}

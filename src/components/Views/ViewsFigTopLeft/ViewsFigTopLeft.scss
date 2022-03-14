@@ -1,0 +1,82 @@
+@import '../../../App.scss';
+
+.container-top-left{
+  color: $black-color;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 220px 220px;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  grid-template-areas:
+    "titleCell titleCell"
+    "figCell textCell"
+    "figCell textCell";
+
+  &__title{
+    grid-area: titleCell;
+    font-family: Oxygen-Bold;
+    font-size: $headline4;
+    color: $blue-color;
+    text-align: center;
+    p{
+      margin: 0px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text{
+    grid-area: textCell;
+    text-align: left;
+    font-size: $body1;
+    p{
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }
+  }
+  &__figure{
+    grid-area: figCell;
+    width: auto;
+    .top-figure{
+      width: 220px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .container-top-left{
+    display: grid;
+    max-width: 1440px;
+    grid-template-columns:none;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    grid-template-areas:
+    "titleCell"
+    "figCell"
+    "textCell";
+    &__text{
+      text-align: center;
+      font-size: $headline5;
+      align-self: center;
+      width: 60%;
+    }
+    &__title{
+      font-size: $headline2;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      p{
+        margin: 0px;
+      }
+    }
+    &__figure{
+      align-self: center;
+      width: auto;
+      .top-figure{
+        width: 500px;
+      }
+    }
+  }
+}

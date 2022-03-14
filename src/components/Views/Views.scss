@@ -1,0 +1,39 @@
+@import '../../App.scss';
+
+.container-views{
+  max-width: auto;
+  align-items: center;
+}
+
+.group-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 440px;
+}
+
+.container-title{
+  font-family: Oxygen-Bold;
+    font-size: $headline4;
+    color: $blue-color;
+    text-align: center;
+    p{
+      margin: 0px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+  .container-views{
+    max-width: auto;
+    align-items: center;
+  }
+  .container-title{
+    font-size: $headline2;
+  }
+  /*.group-card{
+    flex-direction: row;
+    max-width: 1440px;
+  }*/
+}
