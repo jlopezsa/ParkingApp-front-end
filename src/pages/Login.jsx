@@ -8,7 +8,7 @@ function Login() {
           <input className="form__input" type="password" name="password" placeholder="Contraseña" />
 
           <p>Olvidó la contraseña?</p>
-          <input className="form__submit" type="submit" name="submit" value="Registrar" />
+          <input className="form__submit" type="submit" name="submit" value="Ingresar" />
           <p>No tiene cuenta? Registrese ahora!</p>
 
         </form>
