@@ -2,6 +2,7 @@ import './HomePage.scss';
 import React from 'react'
 import Footer from '../components/Footer/Footer';
 import Views from '../components/Views/Views';
+import ParkingList from '../components/ParkingList/ParkingList';
 
 const cities = [
   { "hrefLink": "https://es.reactjs.org/", "ciudad": "Bogotá" },
@@ -18,6 +19,7 @@ const HomePage = (props) =>{
       <h1 className="">Hello ParkingApp from React</h1>
       <Views />
       <Footer cities={cities} />
+      <ParkingList />
     </div>
   )
 }

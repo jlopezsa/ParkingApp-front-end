@@ -1,0 +1,68 @@
+@import '../../../App.scss';
+
+.container-parking{
+  max-width: 440px;
+  width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid $strongBlue-color;
+  background-color: $white-color;
+  display: grid;
+  grid-template-columns: 120px auto 120px;
+  grid-template-rows: 120px;
+  grid-template-areas:
+    "imagemCell dataCell valueCell";
+  &__imagen{
+    grid-area: imagemCell;
+    margin: 0px;
+  }
+  .parking__imagen{
+    width: 110px;
+    height: 110px;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+  &__data{
+    grid-area: dataCell;
+    margin: 0px;
+    &--qualy{
+      display: flex;
+      justify-content: space-between;
+    }
+    h5{
+      font-size: $headline5;
+      margin: 0px;
+    }
+    p{
+      font-size: $body1;
+      margin: 0px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+  &__value{
+    grid-area: valueCell;
+    margin: 0px;
+    p{
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    .parking-bottom{
+      text-align: center;
+      button{
+        margin-top: 50px;
+        font-size: $body1;
+        border-radius: 20px;
+        color: $strongBlue-color;
+        border-color: $strongBlue-color;
+      }
+      button:hover{
+        color: $white-color;
+        background-color: $strongBlue-color;
+      }
+    }
+  }
+}
+
+
