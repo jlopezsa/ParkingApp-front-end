@@ -1,3 +1,12 @@
+// Global variables declaration
+$strongBlue-color: #03045E;
+$blue-color: #00B4D8;
+$lightBlue-color: #90E0EF;
+$light-color: #CAF0F8;
+$white-color:#FFFFFF;
+$black-color:#000000;
+
+
 .form{
     width: 50%;
     padding: 20px;
@@ -8,6 +17,10 @@
     h2{
     height: 40px;
     text-align: center;
+    }
+    p{
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
