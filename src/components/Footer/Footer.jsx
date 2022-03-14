@@ -5,8 +5,17 @@ import IconYoutube from '../../figures/youtube_icon.svg';
 import IconInstagram from '../../figures/instagram_icon.svg';
 import IconTwitter from '../../figures/twitter_icon.svg';
 
+const cities = [
+  { "hrefLink": "https://es.reactjs.org/", "ciudad": "Bogotá" },
+  { "hrefLink": "https://es.reactjs.org/", "ciudad": "Cali" },
+  { "hrefLink": "https://es.reactjs.org/", "ciudad": "Medellín" },
+  { "hrefLink": "https://es.reactjs.org/", "ciudad": "Bucaramanga" },
+  { "hrefLink": "https://es.reactjs.org/", "ciudad": "Santa Marta" },
+  { "hrefLink": "https://es.reactjs.org/", "ciudad": "Cartagena" },
+  { "hrefLink": "https://es.reactjs.org/", "ciudad": "Barranquilla" }]
+
 const Footer = (props) => {
-  const {cities} = props
+  //const {cities} = props
   return (
     <div className="container">
       <div className="container__cities">
