@@ -4,9 +4,9 @@ import React from 'react'
 import Footer from '../components/Footer/Footer';
 import Views from '../components/Views/Views';
 import ParkingList from '../components/ParkingList/ParkingList';
-import Signup from './Signup';
-import Login from './Login';
-import Cities from './Cities';
+import Signup from '../components/Signup';
+import Login from '../components/Login';
+import Cities from '../components/Cities/Cities';
 
 
 const HomePage = (props) =>{

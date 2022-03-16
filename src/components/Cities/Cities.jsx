@@ -1,5 +1,6 @@
 import {BrowserRouter,Routes,Route,NavLink} from 'react-router-dom';
-import City from './City';
+import City from '../../pages/City';
+import './Cities.scss';
 
 function Cities() {
   return (
