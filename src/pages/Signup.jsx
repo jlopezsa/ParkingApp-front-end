@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import './Signup.scss';
 function Signup() {
   return (

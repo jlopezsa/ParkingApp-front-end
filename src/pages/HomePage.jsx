@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import React from 'react'
 
 import Footer from '../components/Footer/Footer';
@@ -11,7 +11,7 @@ import Login from './Login';
 const HomePage = (props) =>{
   return(
     <div className="container-home">
-      <h1 className="">Hello ParkingApp from React</h1>
+      <h1 className="">Hello ParkingApp from React with Eslint</h1>
       <Views />
       <Footer />
       <ParkingList />

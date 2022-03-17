@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import './ParkingList.scss'
 import Parking from './Parking/Parking'
