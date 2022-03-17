@@ -1,0 +1,44 @@
+@import '../../App.scss';
+
+.container-header{
+  background-color: $strongBlue-color;
+  height: 100px;
+  min-width: 440px;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 100px auto 0px;
+  grid-template-rows: 100px;
+  grid-template-areas:
+    "imgCell titleCell menuCell";
+  justify-items: center;
+  align-items: center;
+  &__img{
+    grid-area: imgCell;
+    height: 90px;
+    width: 90px;
+    background-image: url('../../figures/hamburguer_icon.svg');
+    background-repeat: no-repeat;
+    background-size: 74px 74px;
+    background-position: center;
+  }
+  &__title{
+    grid-area: titleCell;
+    color: $blue-color;
+    font-size: $headline5;
+  }
+  &__menu{
+    grid-area: menuCell;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container-header{
+    min-width: 1440px;
+    grid-template-columns: 120px 320px auto;
+    grid-template-rows: 100px;
+    &__img{
+      grid-area: imgCell;
+      background-image: url('../../figures/parking_app_logo.svg');
+    }
+  }
+}
