@@ -1,0 +1,20 @@
+@import '../../App.scss'; // Import global variables
+
+nav{
+  width: 100%;
+  background: $strongBlue-color;
+  li{
+    list-style: none;
+
+  }
+  ul{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  NavLink{
+    font-size: 16px;
+    color: $white-color
+  }
+}
+
