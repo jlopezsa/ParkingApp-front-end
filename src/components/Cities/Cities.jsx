@@ -6,7 +6,7 @@ function Cities() {
   return (
     <>
       <BrowserRouter>
-        <nav className="container">
+        <nav>
           <ul>
             <li id="Bogota"><NavLink to ="/City" href="#">Bogotá</NavLink></li>
             <li><NavLink id="Cali" to="/City">Cali</NavLink></li>

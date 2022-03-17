@@ -4,8 +4,8 @@ import React from 'react'
 import Footer from '../components/Footer/Footer';
 import Views from '../components/Views/Views';
 import ParkingList from '../components/ParkingList/ParkingList';
-import Signup from '../components/Signup';
-import Login from '../components/Login';
+import Signup from '../components/Signup/Signup';
+import Login from '../components/Login/Login';
 import Cities from '../components/Cities/Cities';
 
 
