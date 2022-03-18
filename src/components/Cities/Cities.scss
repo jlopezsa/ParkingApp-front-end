@@ -1,0 +1,81 @@
+@import '../../App.scss'; // Import global variables
+
+nav{
+  width: 100%;
+  background: $blue-color;
+  li{
+    list-style: none;
+
+  }
+  ul{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    color: $white-color
+  }
+}
+
+@media(max-width:440px){
+  #Bogota{
+    display: block;
+  }
+  #Cali{
+    display: block;
+  }
+  #Medellin{
+    display: block;
+  }
+
+  #Cartagena{
+    display: none;
+  }
+  #Bucaramanga{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 441px) and (max-width:540px){
+  #Bogota{
+    display: block;
+  }
+  #Cali{
+    display: block;
+  }
+  #Medellin{
+    display: block;
+  }
+
+  #Cartagena{
+    display: block;
+  }
+  #Bucaramanga{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 541px) and (max-width:640px){
+  #Bogota{
+    display: block;
+  }
+  #Cali{
+    display: block;
+  }
+  #Medellin{
+    display: block;
+  }
+
+  #Cartagena{
+    display: block;
+  }
+  #Bucaramanga{
+    display: block;
+  }
+}
+/*// Global variables declaration
+$strongBlue-color: #03045E;
+$blue-color: #00B4D8;
+$lightBlue-color: #90E0EF;
+$light-color: #CAF0F8;
+$white-color:#FFFFFF;
+$black-color:#000000;
+*/
