@@ -1,23 +1,27 @@
-import React from 'react'
+import React from 'react';
+import './Search.scss';
+import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import './Search';
+import ParkingList from '../components/ParkingList/ParkingList';
 
-const Search = (props) =>{
-
-  const cities = [
-    { "hrefLink": "https://es.reactjs.org/", "ciudad": "Bogotá" },
-    { "hrefLink": "https://es.reactjs.org/", "ciudad": "Cali" },
-    { "hrefLink": "https://es.reactjs.org/", "ciudad": "Medellín" },
-    { "hrefLink": "https://es.reactjs.org/", "ciudad": "Bucaramanga" },
-    { "hrefLink": "https://es.reactjs.org/", "ciudad": "Santa Marta" },
-    { "hrefLink": "https://es.reactjs.org/", "ciudad": "Cartagena" },
-    { "hrefLink": "https://es.reactjs.org/", "ciudad": "Barranquilla" }]
-
-  return(
-    <div className="">
-      <Footer cities={cities} />
+function Search() {
+  return (
+    <div className="cont-search">
+      <Header />
+      <div className="body-search">
+        <div className="body-search__map">
+          mapa
+        </div>
+        <div className="body-search__filter">
+          Search and filter
+        </div>
+        <div className="body-search__parking">
+          <ParkingList />
+        </div>
+      </div>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default Search
+export default Search;
