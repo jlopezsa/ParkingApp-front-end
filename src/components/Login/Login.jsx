@@ -1,3 +1,4 @@
+/* eslint-disable */
 import './Login.scss';
 function Login() {
   return (

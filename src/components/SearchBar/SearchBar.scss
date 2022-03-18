@@ -1,0 +1,29 @@
+@import '../../App.scss';
+
+.form-search{
+  text-align: center;
+  &__input{
+    border: 2px solid $lightBlue-color;
+    width: 340px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: $body1;
+  }
+  &__submit{
+    height: 40px;
+    width: 100px;
+    border-color: $strongBlue-color;
+    border-radius: 10px;
+    background: #00B4D8;
+    color: $strongBlue-color;
+    font-size: $body1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .form-search{
+    &__input{
+      width: 946px;
+    }
+  }
+}
