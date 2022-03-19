@@ -3,6 +3,7 @@ import './Search.scss';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import ParkingList from '../components/ParkingList/ParkingList';
+import Maps from '../components/Maps/Maps';
 
 function Search() {
   return (
@@ -10,7 +11,7 @@ function Search() {
       <Header />
       <div className="body-search">
         <div className="body-search__map">
-          mapa
+          <Maps />
         </div>
         <div className="body-search__filter">
           Search and filter
