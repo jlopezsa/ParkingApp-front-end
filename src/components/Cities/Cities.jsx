@@ -1,23 +1,15 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import City from '../../pages/City';
+import { Link } from 'react-router-dom';
 import './Cities.scss';
 
 function Cities() {
   return (
-    <BrowserRouter>
-      <nav>
-        <ul>
-          <li id="Bogota"><NavLink to="/City" href="#">Bogotá</NavLink></li>
-          <li><NavLink id="Cali" to="/City">Cali</NavLink></li>
-          <li><NavLink id="Medellin" to="/City">Medellín</NavLink></li>
-          <li><NavLink id="Cartagena" to="/City">Cartagena</NavLink></li>
-          <li><NavLink id="Bucaramanga" to="/City">Bucaramanga</NavLink></li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/City" element={<City />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="container-cities">
+      <Link className="cities__list" id="Bogota" to="/Cities">Bogotá</Link>
+      <Link className="cities__list" id="Cali" to="/Cities">Cali</Link>
+      <Link className="cities__list" id="Medellin" to="/Cities">Medellín</Link>
+      <Link className="cities__list" id="Cartagena" to="/Cities">Cartagena</Link>
+      <Link className="cities__list" id="Bucaramanga" to="/Cities">Bucaramanga</Link>
+    </div>
   );
 }
 export default Cities;

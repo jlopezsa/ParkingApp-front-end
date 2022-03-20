@@ -8,11 +8,13 @@ import Header from '../components/Header/Header';
 import SearchBar from '../components/SearchBar/SearchBar';
 import Signup from '../components/Signup/Signup';
 import Login from '../components/Login/Login';
+import Cities from '../components/Cities/Cities'
 
 const HomePage = (props) =>{
   return(
     <div className="container-home">
       <Header/>
+      <Cities />
       <SearchBar />
       <Views />
       <Footer />
