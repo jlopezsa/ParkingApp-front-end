@@ -1,13 +1,13 @@
 /* eslint-disable */
 import './App.scss';
-import Search from './pages/Search'
+import Menus from './components/Menus/Menus';
 
 function App() {
   return (
-    <div className="App">
-      <Search />
-    </div>
-  );
+    <>
+      <Menus />
+    </>
+  )
 }
 
 export default App;
