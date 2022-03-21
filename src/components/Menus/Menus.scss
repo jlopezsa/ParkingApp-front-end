@@ -1,13 +1,19 @@
 @import '../../App.scss'; // Import global variables
 
-nav{
-  width: 100%;
+.container-menu{
+  width: 860px;
   background: $strongBlue-color;
+  position: absolute;
+  right: 50px;
+  top: 30px;
+  margin: 0px;
+  font-size: $headline5;
   li{
     list-style: none;
 
   }
   ul{
+    margin: 0px;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -17,4 +23,17 @@ nav{
     color: $white-color
   }
 }
+.menu__list--inactive{
+  color: $light-color;
+  text-decoration: none;
+}
+.menu__list--inactive:hover{
+  color: $blue-color;
+  text-decoration: none;
+}
 
+@media(max-width: 1440px){
+  .container-menu{
+    display: none;
+  }
+}

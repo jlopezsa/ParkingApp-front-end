@@ -1,18 +1,22 @@
 @import '../../App.scss'; // Import global variables
 
-nav{
+.container-cities{
   width: 100%;
   background: $blue-color;
-  li{
-    list-style: none;
-
-  }
-  ul{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    color: $white-color
-  }
+  text-align: center;
+  color: $white-color;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  font-size: $headline5;
+}
+.cities__list{
+  color: $light-color;
+  text-decoration: none;
+}
+.cities__list:hover{
+  color: $strongBlue-color;
+  text-decoration: none;
 }
 
 @media(max-width:440px){
