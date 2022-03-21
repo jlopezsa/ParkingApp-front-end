@@ -5,8 +5,11 @@ function SearchDayHour() {
   return (
     <div className="dayhour">
       <p id="titlesearch">Encuentre su parqueadero mas cercano</p>
-      <input id="search-input" type="search" name="email" placeholder="Ciudad, Dirección" />
-      <button id="botonSearch">Buscar</button>
+      <div className="search-button">
+        <input id="search-input" type="search" name="email" placeholder="Ciudad, Dirección" />
+        <button id="botonSearch">Buscar</button>
+      </div>
+
       <label id="entrada">Entrada</label>
       <label id="salida">Salida</label>
       <input id="fechaini" type="date" name="stardate" />

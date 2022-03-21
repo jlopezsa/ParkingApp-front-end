@@ -10,10 +10,10 @@
   grid-template-rows: repeat(6,16.6%);
   margin: 0px;
   background-color: $white-color;
-  padding: 5px;
+  padding: 0px;
   grid-template-areas:
     "titleCell titleCell"
-    "searchCell btnCell"
+    "searchbuttonCell searchbuttonCell"
     "entradaCell salidaCell"
     "fechainiCell fechafinCell"
     "horainiCell horafinCell"
@@ -27,12 +27,28 @@
   #titlesearch{
     grid-area: titleCell;
     align-items: center;
+    font-size: $body1;
+    margin: 10px;
+
+  }
+
+  .search-button{
+    grid-area: searchbuttonCell;
+    text-align: center;
   }
   #search-input{
-    grid-area: searchCell;
+    width: 80%;
   }
   #botonSearch{
-    grid-area: btnCell;
+    border-color: $strongBlue-color;
+    border-radius: 5px;
+    background: #00B4D8;
+    color: $strongBlue-color;
+    font-size: $body1;
+    margin-left: 10px;
+  }
+  #botonSearch:hover{
+    background: $white-color;
   }
 
   #entrada{
