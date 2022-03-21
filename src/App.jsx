@@ -1,12 +1,13 @@
+/* eslint-disable */
 import './App.scss';
-import HomePage from './pages/HomePage'
+import Menus from './components/Menus/Menus';
 
 function App() {
   return (
-    <div className="App">
-      <HomePage />
-    </div>
-  );
+    <>
+      <Menus />
+    </>
+  )
 }
 
 export default App;

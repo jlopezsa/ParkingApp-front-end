@@ -1,23 +1,20 @@
-
+/* eslint-disable */
 import React from 'react'
 
 import Footer from '../components/Footer/Footer';
 import Views from '../components/Views/Views';
-import ParkingList from '../components/ParkingList/ParkingList';
-import Signup from './Signup';
-import Login from './Login';
-import SearchDayHour from '../components/Searchdayhour/Searchdayhour';
-
+import Header from '../components/Header/Header';
+import SearchBar from '../components/SearchBar/SearchBar';
+import Cities from '../components/Cities/Cities'
 
 const HomePage = (props) =>{
   return(
     <div className="container-home">
-      {/*<Views />
+      <Header/>
+      <Cities />
+      <SearchBar />
+      <Views />
       <Footer />
-      <ParkingList />
-      <Signup />
-      <Login />*/}
-      <SearchDayHour />
     </div>
   )
 }

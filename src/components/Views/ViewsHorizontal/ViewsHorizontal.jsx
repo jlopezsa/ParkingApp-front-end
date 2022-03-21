@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import './ViewsHorizontal.scss'
 import ViewsFigTopRight from "../ViewsFigTopRight/ViewsFigTopRight";
