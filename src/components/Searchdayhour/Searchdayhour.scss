@@ -1,82 +1,76 @@
 @import '../../App.scss'; // Import global variables
 
-.container{
+.dayhour{
   border: 1px solid $strongBlue-color;
   border-radius: 10px;
   width: 100%;
   height: 250px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 220px 220px;
   grid-template-rows: repeat(6,16.6%);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px;
   background-color: $white-color;
   padding: 5px;
-  margin: 10px;
+  grid-template-areas:
+    "titleCell titleCell"
+    "searchCell btnCell"
+    "entradaCell salidaCell"
+    "fechainiCell fechafinCell"
+    "horainiCell horafinCell"
+    ". .";
+
   label{
     color: $black-color;
     text-align: center;
     margin-top: 10px;
   }
-
-  #fechafin{
-    grid-row-start: 5;
+  #titlesearch{
+    grid-area: titleCell;
+    align-items: center;
+  }
+  #search-input{
+    grid-area: searchCell;
+  }
+  #botonSearch{
+    grid-area: btnCell;
   }
 
-  #horaini{
-    grid-row-start:3;
+  #entrada{
+    grid-area: entradaCell;
   }
 
   #salida{
-    grid-row-start: 4;
+    //grid-row-start: 4;
+    grid-area: salidaCell;
   }
+
+  #fechaini{
+    grid-area: fechainiCell;
+  }
+
+  #fechafin{
+    grid-area: fechafinCell;
+    //grid-row-start: 5;
+  }
+
+  #horaini{
+    //grid-row-start:3;
+    grid-area: horainiCell;
+  }
+
+  #horafin{
+    grid-area: horafinCell;
+  }
+
 
   input{
     font-size: 16px;
     height: 30px;
-    width: 40%;
+    width: 90%;
     border: 1px solid $blue-color;
     border-radius: 10px;
     margin: 5px;
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-@media screen and (min-width:441px) and(max-width:540px)  {
-  .container{
-    width: 90%;
-    height: 150px;
-    grid-template-columns: repeat(2,50%);
-    grid-template-rows: 3fr;
-  }
-  input{
-    width:60%;
-  }
-
-  #salida{
-    grid-column-start: 2;
-    grid-row-start: 1;
-
-  }
-
-  #fechaini{
-    grid-column-start: 1;
-    grid-row-start:2;
-  }
-
-  #horaini{
-    grid-column-start: 2;
-    grid-row-start:2;
-  }
-
-  #fechafin{
-    grid-column-start: 1;
-    grid-row-start: 3;
-  }
-
-  #horafin{
-    grid-column-start: 2;
-    grid-row-start: 3;
   }
 }
