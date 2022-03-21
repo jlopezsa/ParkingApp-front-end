@@ -3,7 +3,7 @@
 .container{
   border: 1px solid $strongBlue-color;
   border-radius: 10px;
-  width: 40%;
+  width: 100%;
   height: 250px;
   display: grid;
   grid-template-columns: 1fr;
@@ -12,18 +12,18 @@
   margin-right: auto;
   background-color: $white-color;
   padding: 5px;
-  margin: 5px;
+  margin: 10px;
   label{
     color: $black-color;
     text-align: center;
     margin-top: 10px;
   }
 
-  #enddate{
+  #fechafin{
     grid-row-start: 5;
   }
 
-  #starttime{
+  #horaini{
     grid-row-start:3;
   }
 
@@ -31,11 +31,10 @@
     grid-row-start: 4;
   }
 
-
   input{
     font-size: 16px;
     height: 30px;
-    width: 80%;
+    width: 40%;
     border: 1px solid $blue-color;
     border-radius: 10px;
     margin: 5px;
@@ -44,23 +43,40 @@
   }
 }
 
-@media(min-width:540px) {
+@media screen and (min-width:441px) and(max-width:540px)  {
   .container{
-    width: 60%;
+    width: 90%;
     height: 150px;
-    grid-template-columns: 2fr;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: 3fr;
   }
   input{
-    width:30px;
-  }
-  label{
-    grid-auto-rows: 1;
-  }
-  #enddate{
-    grid-row-start: 5;
+    width:60%;
   }
 
-  #starttime{
-    grid-row-start:3;
+  #salida{
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+  }
+
+  #fechaini{
+    grid-column-start: 1;
+    grid-row-start:2;
+  }
+
+  #horaini{
+    grid-column-start: 2;
+    grid-row-start:2;
+  }
+
+  #fechafin{
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+
+  #horafin{
+    grid-column-start: 2;
+    grid-row-start: 3;
   }
 }

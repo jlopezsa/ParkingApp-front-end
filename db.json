@@ -1,0 +1,29 @@
+{
+  "users":[
+    {"id":1,"name":"Julian","lastname":"Lopez","email":"julianlopez@gmail.com","password":"123","type":"admin"},
+    {"id":2,"name":"Andres","lastname":"Sastoquen","email":"andress@gmail.com","password":"1234","type":"admin"},
+    {"id":3,"name":"Luis","lastname":"Porto","email":"lmportoesq@gmail.com","password":"12345","type":"user"},
+    {"id":3,"name":"Viviana","lastname":"Reales","email":"vrealesq@gmail.com","password":"123456","type":"user"}
+  ],
+  "cities":[
+    {"id":1,"name":"Bogota"},
+    {"id":2,"name":"Cali"},
+    {"id":3,"name":"Medellin"},
+    {"id":4,"name":"Cartagena"},
+    {"id":5,"name":"Bucaramanga"},
+    {"id":6,"name":"Pereira"}
+  ],
+
+  "parking":[
+    {"id":1,"name":"Doña juana","idciudad":1,"direction":"Cra.25 No. 15-43","tel":"3547890"},
+    {"id":2,"name":"El viajero","idciudad":1,"direction":"Cra.25 No. 15-68","tel":"3547896"},
+    {"id":3,"name":"El paisa","idciudad":3,"direction":"Cra.18 No. 12-43","tel":"3546890"},
+    {"id":4,"name":"El mayorista","idciudad":4,"direction":"Cra.44 No. 16-22","tel":"3547770"},
+    {"id":5,"name":"El playon","idciudad":5,"direction":"Cra.20a No. 07-43","tel":"3547390"},
+    {"id":6,"name":"Don Mario","idciudad":5,"direction":"Cra.25f No. 15-15","tel":"3543390"},
+    {"id":7,"name":"La plazoleta","idciudad":5,"direction":"Cra.10 No. 15-43","tel":"3557890"},
+    {"id":8,"name":"La pereirana","idciudad":6,"direction":"Cra.22 No. 12-32","tel":"3546790"},
+    {"id":9,"name":"El calidoso","idciudad":2,"direction":"Cra.08 No. 08-20","tel":"3547856"},
+    {"id":10,"name":"Don Julian","idciudad":6,"direction":"Cra.22 No. 22-20","tel":"3547334"}
+  ]
+}

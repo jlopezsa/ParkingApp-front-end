@@ -12,7 +12,6 @@ import SearchDayHour from '../components/Searchdayhour/Searchdayhour';
 const HomePage = (props) =>{
   return(
     <div className="container-home">
-      <h1 className="">Hello ParkingApp from React</h1>
       {/*<Views />
       <Footer />
       <ParkingList />
