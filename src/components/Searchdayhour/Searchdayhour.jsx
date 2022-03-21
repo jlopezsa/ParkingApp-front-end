@@ -1,16 +1,22 @@
-import './Searchdayhour.scss';
+/* eslint-disable */
+import './Searchdayhour.scss'
 
-function SearchDayHour(){
-  return(
-    <div className="container">
-      <label id='entrada'>Entrada</label>
-      <label id='salida'>Salida</label>
-      <input id='fechaini' type="date" name="stardate" placeholder="ingrese fecha" />
-      <input id='fechafin' type="date" name="enddate" placeholder="ingrese fecha" />
+function SearchDayHour() {
+  return (
+    <div className="dayhour">
+      <p id="titlesearch">Encuentre su parqueadero mas cercano</p>
+      <div className="search-button">
+        <input id="search-input" type="search" name="email" placeholder="Ciudad, Dirección" />
+        <button id="botonSearch">Buscar</button>
+      </div>
 
-      <input id='horaini' type="time" name="starttime" placeholder="ingrese hora" />
-      <input id='horafin' type="time" name="endtime" placeholder="ingrese hora" />
+      <label id="entrada">Entrada</label>
+      <label id="salida">Salida</label>
+      <input id="fechaini" type="date" name="stardate" />
+      <input id="fechafin" type="date" name="enddate" />
+      <input id="horaini" type="time" name="starttime" />
+      <input id="horafin" type="time" name="endtime" />
     </div>
-  )
+  );
 }
 export default SearchDayHour;

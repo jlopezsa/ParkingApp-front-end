@@ -4,6 +4,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import ParkingList from '../components/ParkingList/ParkingList';
 import Maps from '../components/Maps/Maps';
+import Searchdayhour from '../components/Searchdayhour/Searchdayhour';
 
 function Search() {
   return (
@@ -14,7 +15,7 @@ function Search() {
           <Maps />
         </div>
         <div className="body-search__filter">
-          Search and filter
+          <Searchdayhour />
         </div>
         <div className="body-search__parking">
           <ParkingList />
