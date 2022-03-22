@@ -1,1 +1,17 @@
+@import '../App.scss';
 
+.container-home{
+  &__citysearch{
+    height: 800px;
+    width: auto;
+    background-color: $blue-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../figures/Background_blue.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
