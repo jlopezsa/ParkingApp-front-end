@@ -3,16 +3,16 @@ import React from 'react'
 
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
-import SignUp from '../components/Signup/Signup';
+import Login from '../components/Login/Login';
 
-const SingUp = (props) =>{
+function LoginPage(){
   return(
-    <div className="container-signup">
+    <div className="container-login">
       <Header/>
-      <SignUp/>
+      <Login />
       <Footer />
     </div>
   )
 }
 
-export default SingUp;
+export default LoginPage;

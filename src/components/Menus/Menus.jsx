@@ -3,6 +3,7 @@ import HomePage from '../../pages/HomePage';
 import SignupPage from '../../pages/sign-up';
 import City from '../../pages/City';
 import Search from '../../pages/Search';
+import LoginPage from '../../pages/Login';
 import './Menus.scss';
 
 function Menus() {
@@ -20,6 +21,7 @@ function Menus() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/LogUp" element={<SignupPage />} />
+        <Route path="/LogIn" element={<LoginPage />} />
         <Route path="/Cities" element={<City />} />
         <Route path="/Search" element={<Search />} />
       </Routes>
