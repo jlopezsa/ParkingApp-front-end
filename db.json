@@ -1,4 +1,33 @@
 {
+  "admins": [
+    {
+      "id": 1,
+      "name": "Roiner",
+      "lastname": "Medina",
+      "email": "rmedina@gmail.com",
+      "password": "123",
+      "type": "admin",
+      "photo":""
+    },
+    {
+      "id": 2,
+      "name": "Felix",
+      "lastname": "Pastrana",
+      "email": "pastranafelix@gmail.com",
+      "password": "1234",
+      "type": "admin",
+      "photo":""
+    },
+    {
+      "id": 3,
+      "name": "Jorge ",
+      "lastname": "Marin",
+      "email": "jjmarin@gmail.com",
+      "password": "12345",
+      "type": "user",
+      "photo":""
+    }
+  ],
   "users": [
     {
       "id": 1,
@@ -25,7 +54,7 @@
       "type": "user"
     },
     {
-      "id": 3,
+      "id": 4,
       "name": "Viviana",
       "lastname": "Reales",
       "email": "vrealesq@gmail.com",
@@ -161,14 +190,14 @@
       "value": 2500
     },
     {
+      "id":11,
       "name": "Don Matias",
       "idciudad": 1,
       "addres": "Cra.78B No. 56-63",
       "neighborhood": "Kened",
       "tel": "5243156",
       "mean": 4,
-      "value": 3100,
-      "id": 11
+      "value": 3100
     }
   ]
 }
