@@ -30,3 +30,5 @@ function ParkingList(props) {
     </div>
   );
 }
+
+export default ParkingList;
