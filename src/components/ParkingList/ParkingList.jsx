@@ -16,8 +16,6 @@ function ParkingList(props) {
     fetchParkings();
   }, [searchCity]);
 
-
-
   return (
     <div className="container-park">
       <ul className="container-park__list">
