@@ -1,13 +1,23 @@
 /* eslint-disable */
-import './Searchdayhour.scss'
+import { useState } from 'react';
+import './Searchdayhour.scss';
 
-function SearchDayHour() {
+function SearchDayHour(props) {
+  const [searchCity, setSearchCity] = useState('');
+
+  const handleClick = (e) => {
+    props.onHandleChange(searchCity);
+  }
+
+  const handleChange = (e) => {
+    setSearchCity(e.target.value);
+  }
   return (
     <div className="dayhour">
       <p id="titlesearch">Encuentre su parqueadero mas cercano</p>
       <div className="search-button">
-        <input id="search-input" type="search" name="email" placeholder="Ciudad, Dirección" />
-        <button id="botonSearch">Buscar</button>
+        <input id="search-input" type="search" name="city-direction" placeholder="Ciudad, Dirección" onChange={handleChange} />
+        <button id="botonSearch" onClick={handleClick}>Buscar</button>
       </div>
 
       <label id="entrada">Entrada</label>
