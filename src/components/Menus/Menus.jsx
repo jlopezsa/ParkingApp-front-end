@@ -1,6 +1,5 @@
 /* eslint-disable */
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-// import { slide as Menu } from 'react-burger-menu'
 import HomePage from '../../pages/HomePage';
 import SignupPage from '../../pages/sign-up';
 import City from '../../pages/City';
