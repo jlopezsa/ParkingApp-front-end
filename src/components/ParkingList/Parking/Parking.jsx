@@ -1,6 +1,8 @@
 /* eslint-disable */
 import React from "react";
+import { Link } from 'react-router-dom';
 import './Parking.scss'
+import '../../../pages/Booking'
 
 const Parking = (props) => {
   const {parkings} = props;
@@ -23,7 +25,7 @@ const Parking = (props) => {
         <p>${parkings.value}</p>
         <div  className="parking-bottom">
           <button>
-            RESERVAR
+            <Link id="booking-page" to="/Booking">RESERVAR</Link>
           </button>
         </div>
       </div>
