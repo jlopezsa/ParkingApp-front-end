@@ -1,0 +1,93 @@
+@import '../App.scss';
+
+.container-booking{
+  background-color: $white-color;
+}
+
+.booking-body{
+  display: grid;
+  grid-template-columns: 420px;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "summaryCell"
+    "accountCell"
+    "aditionalCell"
+    "payCell";
+  justify-content: center;
+
+  &__account{
+    grid-area: accountCell;
+    background-color: $lightBlue-color;
+    border-radius: 10px;
+    min-width: 420px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 150px;
+    h5{
+      font-size: $headline5;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+    p{
+      font-size: $body1;
+      margin-left: 10px;
+    }
+    #p_exit{
+      text-align: right;
+      margin-right: 10px;
+    }
+  }
+  &__aditional{
+    grid-area: aditionalCell;
+    background-color: $lightBlue-color;
+    border-radius: 10px;
+    min-width: 420px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 335px;
+    h5{
+      font-size: $headline5;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+    &--inputs{
+      display: grid;
+      width: auto;
+      height: 50px;
+      margin-left: 6px;
+      input{
+        font-size: 16px;
+        height: 30px;
+        width: 400px;
+        border: 1px solid $blue-color;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+      textarea{
+        font-size: 16px;
+        height: 100px;
+        width: 400px;
+        border: 1px solid $blue-color;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+    }
+  }
+  &__pay{
+    grid-area: payCell;
+    background-color: $lightBlue-color;
+    border-radius: 10px;
+    min-width: 420px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 360px;
+    h5{
+      font-size: $headline5;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  }
+  &__summary{
+    grid-area: summaryCell;
+  }
+}
