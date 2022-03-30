@@ -1,9 +1,10 @@
 import React from 'react';
-import BookingSummary from '../components/BookingSummary/BookingSummary';
 import './Booking.scss';
 
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
+import cashIcon from '../figures/cash_icon.svg';
+import cardIcon from '../figures/card_icon.svg';
 
 function Booking() {
   return (
@@ -18,16 +19,45 @@ function Booking() {
         <div className="booking-body__aditional">
           <h5>Informaciones adicionales</h5>
           <div className="booking-body__aditional--inputs">
-            <input id="contact_phone" type="tel" name="contactPhone" value="Telefono" />
-            <input id="placa_carro" type="input" name="placaCarro" value="Placa del vehículo" />
-            <textarea id="comments" type="input" name="userComments" value="Observaciones adicionales" />
+            <input id="contact_phone" type="tel" name="contactPhone" placeholder="Telefono" />
+            <input id="placa_carro" type="input" name="placaCarro" placeholder="Placa del vehículo" />
+            <textarea id="comments" type="input" name="userComments" placeholder="Observaciones adicionales" />
+            <button id="buttonContinue" type="button">Continuar</button>
           </div>
         </div>
         <div className="booking-body__pay">
           <h5>Detalles del pago</h5>
+          <p>
+            Costo total de la reserva:
+            {' '}
+            {3500}
+            {' '}
+            pesos
+          </p>
+          <div className="booking-body__pay-methods">
+            <p>Métodos de pago</p>
+            <div className="pay-methods">
+              <img src={cashIcon} alt="cash icon" className="imagenPay" />
+              <img src={cardIcon} alt="card icon" className="imagenPay" />
+            </div>
+          </div>
         </div>
         <div className="booking-body__summary">
-          <BookingSummary />
+          <h1>Parqueadero</h1>
+          <div className="booking-body__summary--image">
+            <p>image</p>
+          </div>
+          <div className="booking-body__summary--infoParking">
+            <h5>La sucursal</h5>
+            <p>2464 Royal Ln. Mesa, New Jersey 45463</p>
+            <p>Tarifa: $2500 x hora</p>
+          </div>
+          <div className="booking-body__summary--summary">
+            <h5>Información de la reserva</h5>
+            <p>Fecha y hora de entrada: </p>
+            <p>Fecha y hora de salida: </p>
+            <p>Valor total: </p>
+          </div>
         </div>
       </div>
       <Footer />
