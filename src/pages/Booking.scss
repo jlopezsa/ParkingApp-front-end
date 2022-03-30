@@ -44,7 +44,7 @@
     min-width: 420px;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 335px;
+    height: 360px;
     h5{
       font-size: $headline5;
       margin-left: 10px;
@@ -66,7 +66,7 @@
       }
       textarea{
         font-size: 16px;
-        height: 100px;
+        height: 120px;
         width: 400px;
         border: 1px solid $blue-color;
         border-radius: 10px;
@@ -136,8 +136,13 @@
       margin-bottom: 0px;
       font-size: $headline5;
     }
-    &--image{
+    &--imagen{
       height: 200px;
+      width: 420px;
+      img{
+        height: 200px;
+        width: 420px;
+      }
     }
     &--infoParking{
       height: 125px;
@@ -154,7 +159,7 @@
     &--summary{
       background-color: $lightBlue-color;
       height: 175px;
-      border-radius: 10px;
+      border-radius: 0px 0px 10px 10px;
       h5{
         font-size: $headline5;
         margin-top: 0px;
@@ -169,5 +174,18 @@
   .pay-methods{
     display: flex;
     justify-content: space-around;
+  }
+}
+
+@media (min-width: 1440px) {
+  .booking-body{
+    display: grid;
+    grid-template-columns: 500px 50px 420px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "accountCell . summaryCell"
+      "aditionalCell . summaryCell"
+      "payCell . summaryCell" ;
+    justify-content: center;
   }
 }

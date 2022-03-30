@@ -43,9 +43,9 @@ function Booking() {
           </div>
         </div>
         <div className="booking-body__summary">
-          <h1>Parqueadero</h1>
-          <div className="booking-body__summary--image">
-            <p>image</p>
+          <h1>Reserva y pago</h1>
+          <div className="booking-body__summary--imagen">
+            <img className="parking__imagen" src="https://d500.epimg.net/cincodias/imagenes/2020/01/22/lifestyle/1579693137_705498_1579693193_noticia_normal.jpg" alt="" />
           </div>
           <div className="booking-body__summary--infoParking">
             <h5>La sucursal</h5>
