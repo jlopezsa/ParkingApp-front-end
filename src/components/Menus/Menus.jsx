@@ -4,7 +4,7 @@ import SignupPage from '../../pages/sign-up';
 import City from '../../pages/City';
 import Search from '../../pages/Search';
 import LoginPage from '../../pages/Login';
-import CreateParkings from '../../pages/CreateParkings';
+import CreateParkings from '../../pages/CreateParkingsPage';
 import './Menus.scss';
 
 function Menus() {
