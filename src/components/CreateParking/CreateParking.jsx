@@ -1,4 +1,5 @@
 import React from 'react';
+import './CreateParking.scss';
 
 function CreateParking() {
   return (
