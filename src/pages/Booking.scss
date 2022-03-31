@@ -2,6 +2,7 @@
 
 .container-booking{
   background-color: $white-color;
+  min-width: 440px;
 }
 
 .booking-body{
@@ -56,10 +57,11 @@
       width: auto;
       height: 50px;
       margin-left: 6px;
+      margin-right: 6px;
       input{
         font-size: 16px;
         height: 30px;
-        width: 400px;
+        width: auto;
         border: 1px solid $blue-color;
         border-radius: 10px;
         margin-top: 20px;
@@ -67,7 +69,7 @@
       textarea{
         font-size: 16px;
         height: 120px;
-        width: 400px;
+        width: auto;
         border: 1px solid $blue-color;
         border-radius: 10px;
         margin-top: 20px;
@@ -112,7 +114,7 @@
   &__pay-methods{
     background-color: $blue-color;
     border-radius: 10px;
-    width: 400px;
+    width: auto;
     height: 180px;
     margin-left: 10px;
     margin-right: 10px;
