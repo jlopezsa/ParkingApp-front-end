@@ -3,7 +3,7 @@
 .container-home{
   &__citysearch{
     height: 800px;
-    width: auto;
+    min-width: 440px;
     background-color: $blue-color;
     display: flex;
     flex-direction: column;

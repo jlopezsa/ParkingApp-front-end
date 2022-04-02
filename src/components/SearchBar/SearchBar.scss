@@ -9,14 +9,18 @@
     border-radius: 10px;
     font-size: $body1;
   }
-  &__submit{
-    height: 40px;
-    width: 100px;
+  &__button{
     border-color: $strongBlue-color;
     border-radius: 10px;
     background: #00B4D8;
     color: $strongBlue-color;
+    height: 40px;
+    width: 100px;
     font-size: $body1;
+    margin-left: 10px;
+  }
+  &__button:hover{
+    background: $white-color;
   }
 }
 
