@@ -11,9 +11,13 @@ function HomePage() {
   return (
     <div className="container-home">
       <Header />
-      <div className="container-home__citysearch">
-        <Cities />
-        <SearchBar />
+      <div className="testes">
+        <div className="container-home__citysearch">
+          <div className="container-home__opac">
+            <Cities />
+            <SearchBar />
+          </div>
+        </div>
       </div>
       <Views />
       <Footer />
