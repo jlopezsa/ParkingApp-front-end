@@ -2,12 +2,11 @@
 
 .container-menu{
   width: 860px;
-  background: $strongBlue-color;
   position: absolute;
   right: 50px;
   top: 30px;
   margin: 0px;
-  font-size: $headline5;
+  font-size: 20px;
   li{
     list-style: none;
   }
@@ -42,7 +41,7 @@
   left: 0px;
   width: 300px;
   height: 100%;
-  background-color: rgb(56, 50, 68);
+  background-color: $strongBlue-color;
   transition: 0.5s;
   padding: 0px 0px;
   box-sizing: border-box;
@@ -51,22 +50,35 @@
 #sidebar-menu{
   display: flex;
   flex-direction: column;
-  align-content: center;
-}
-
-#sidebar-menu h3 {
-  height: 100px;
-  color: $light-color;
+  text-align: center;
+  background: linear-gradient(to bottom, $strongBlue-color 30%,$blue-color);
   font-size: $headline4;
-  //text-align: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-#hamburger-menu hr {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  color: $light-color;
+  &__title{
+    border-bottom: 2px solid $light-color;
+  }
+  h3{
+    margin-top: 27.5px;
+    margin-bottom: 27.5px;
+  }
 }
 
+
+// #sidebar-menu {
+//   height: 100px;
+//
+//
+//   margin-top: 0px;
+//   margin-bottom: 0px;
+//   text-align: center;
+//   top: 50px;
+
+// }
+
+.hamburguer-menu__list{
+  margin-top: 75px;
+  padding: 0px;
+}
 .hamburguer__list--inactive{
   margin-left: 0px;
 }
@@ -103,9 +115,6 @@
   opacity: 0.4;
 }
 
-.hamburguer-menu__list{
-  margin-top: 75px;
-}
 
 @media screen and (max-width: 1440px){
   .container-menu{
@@ -128,7 +137,7 @@
   }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1000px){
   #hamburger-menu #sidebar-menu {
     width: 100%;
   }
