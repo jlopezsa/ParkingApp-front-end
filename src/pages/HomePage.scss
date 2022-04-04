@@ -1,17 +1,20 @@
 @import '../App.scss';
 
 .container-home{
-  &__citysearch{
-    height: 800px;
-    width: auto;
-    background-color: $blue-color;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-image: url(../figures/Background_blue.png);
+  .testes{
+    min-width: 440px;
+    background-image: url(../figures/background_map.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
     background-attachment: fixed;
+  }
+  &__citysearch{
+    height: 800px;
+    min-width: 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 180, 216, 0.8);
   }
 }

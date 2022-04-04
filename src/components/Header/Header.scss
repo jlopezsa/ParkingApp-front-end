@@ -16,9 +16,8 @@
     grid-area: imgCell;
     height: 90px;
     width: 90px;
-    background-image: url('../../figures/hamburguer_icon.svg');
     background-repeat: no-repeat;
-    background-size: 74px 74px;
+    background-size: 40px 40px;
     background-position: center;
   }
   &__title{
@@ -39,6 +38,7 @@
     &__img{
       grid-area: imgCell;
       background-image: url('../../figures/parking_app_logo.svg');
+      background-size: 74px 74px;
     }
   }
 }

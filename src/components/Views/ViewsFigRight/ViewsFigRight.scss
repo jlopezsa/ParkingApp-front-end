@@ -6,6 +6,7 @@
   margin-left: auto;
   margin-right: auto;
   display: grid;
+  grid-template-columns: 440px;
   grid-template-rows: auto auto auto;
 
   &__title{
