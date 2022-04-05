@@ -12,6 +12,6 @@ async function getSingleCities(id) {
   }
 }
 
-module.exports = {
+export default {
   getSingleCities,
 };
