@@ -7,7 +7,7 @@ import Maps from '../components/Maps/Maps';
 import Searchdayhour from '../components/Searchdayhour/Searchdayhour';
 
 function Search() {
-  const [searchCity, setSearchCity] = useState('1');
+  const [searchCity, setSearchCity] = useState('');
   return (
     <div className="cont-search">
       <Header />
