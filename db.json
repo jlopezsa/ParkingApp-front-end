@@ -65,7 +65,7 @@
   "cities": [
     {
       "id": 1,
-      "name": "Bogota",
+      "name": "bogota",
       "coords": {
         "lat": 4.649995,
         "lng": -74.100949
@@ -73,7 +73,7 @@
     },
     {
       "id": 2,
-      "name": "Cali",
+      "name": "cali",
       "coords": {
         "lat": 3.410714,
         "lng": -76.519245
@@ -81,7 +81,7 @@
     },
     {
       "id": 3,
-      "name": "Medellin",
+      "name": "medellin",
       "coords": {
         "lat": 6.250998,
         "lng": -75.574334
@@ -89,7 +89,7 @@
     },
     {
       "id": 4,
-      "name": "Cartagena",
+      "name": "cartagena",
       "coords": {
         "lat": 10.395367,
         "lng": -75.492267
@@ -97,7 +97,7 @@
     },
     {
       "id": 5,
-      "name": "Bucaramanga",
+      "name": "bucaramanga",
       "coords": {
         "lat": 7.110506,
         "lng": -73.129624
@@ -105,7 +105,7 @@
     },
     {
       "id": 6,
-      "name": "Pereira",
+      "name": "pereira",
       "coords": {
         "lat": 4.801977,
         "lng": -75.720822
@@ -117,11 +117,15 @@
       "id": 7
     }
   ],
-  "parking": [
+  "parkings": [
     {
       "id": 1,
       "name": "Doña juana",
-      "idciudad": 1,
+      "city": {
+        "cityName": "bogota",
+        "latitude": 4.649995,
+        "longitude": -74.100949
+      },
       "addres": "Cra.25 No. 15-43",
       "tel": "3547890",
       "mean": 4.5,
@@ -134,7 +138,11 @@
     {
       "id": 2,
       "name": "El viajero",
-      "idciudad": 1,
+      "city": {
+        "cityName": "bogota",
+        "latitude": 4.649995,
+        "longitude": -74.100949
+      },
       "addres": "Cra.25 No. 15-68",
       "tel": "3547896",
       "mean": 4.2,
@@ -147,7 +155,11 @@
     {
       "id": 3,
       "name": "El paisa",
-      "idciudad": 3,
+      "city": {
+        "cityName": "medellin",
+        "latitude": 6.250998,
+        "longitude": -75.574334
+      },
       "addres": "Cra.18 No. 12-43",
       "tel": "3546890",
       "mean": 3.5,
@@ -160,7 +172,11 @@
     {
       "id": 4,
       "name": "El mayorista",
-      "idciudad": 4,
+      "city": {
+        "cityName": "cartagena",
+        "latitude": 10.395367,
+        "longitude": -75.492267
+      },
       "addres": "Cra.44 No. 16-22",
       "tel": "3547770",
       "mean": 4.9,
@@ -173,7 +189,11 @@
     {
       "id": 5,
       "name": "El playon",
-      "idciudad": 5,
+      "city": {
+        "cityName": "bucaramanga",
+        "latitude": 7.110506,
+        "longitude": -73.129624
+      },
       "addres": "Cra.20a No. 07-43",
       "tel": "3547390",
       "mean": 4.3,
@@ -186,7 +206,11 @@
     {
       "id": 6,
       "name": "Don Mario",
-      "idciudad": 5,
+      "city": {
+        "cityName": "bucaramanga",
+        "latitude": 7.110506,
+        "longitude": -73.129624
+      },
       "addres": "Cra.25f No. 15-15",
       "tel": "3543390",
       "mean": 3.2,
@@ -199,7 +223,11 @@
     {
       "id": 7,
       "name": "La plazoleta",
-      "idciudad": 5,
+      "city": {
+        "cityName": "bucaramanga",
+        "latitude": 7.110506,
+        "longitude": -73.129624
+      },
       "addres": "Cra.10 No. 15-43",
       "tel": "3557890",
       "mean": 2.5,
@@ -212,7 +240,11 @@
     {
       "id": 8,
       "name": "La pereirana",
-      "idciudad": 6,
+      "city": {
+        "cityName": "pereira",
+        "latitude": 4.801977,
+        "longitude": -75.720822
+      },
       "addres": "Cra.22 No. 12-32",
       "tel": "3546790",
       "mean": 4.8,
@@ -225,7 +257,11 @@
     {
       "id": 9,
       "name": "El calidoso",
-      "idciudad": 2,
+      "city": {
+        "cityName": "cali",
+        "latitude": 3.410714,
+        "longitude": -76.519245
+      },
       "addres": "Cra.08 No. 08-20",
       "tel": "3547856",
       "mean": 4.5,
@@ -238,7 +274,11 @@
     {
       "id": 10,
       "name": "Don Julian",
-      "idciudad": 6,
+      "city": {
+        "cityName": "pereira",
+        "latitude": 4.801977,
+        "longitude": -75.720822
+      },
       "addres": "Cra.22 No. 22-20",
       "tel": "3547334",
       "mean": 4.1,
@@ -251,7 +291,11 @@
     {
       "id": 11,
       "name": "Don Matias",
-      "idciudad": 1,
+      "city": {
+        "cityName": "bogota",
+        "latitude": 4.649995,
+        "longitude": -74.100949
+      },
       "addres": "Cra.78B No. 56-63",
       "tel": "5243156",
       "mean": 4,
