@@ -1,4 +1,3 @@
-/* eslint-disable */
 const API_URL = 'http://localhost:8080/api';
 
 export async function getAllParkings() {
@@ -8,6 +7,7 @@ export async function getAllParkings() {
     return parkings;
   } catch (error) {
     console.log(error);
+    return null;
   }
 }
 export async function getOneParking(id) {
@@ -17,5 +17,6 @@ export async function getOneParking(id) {
     return parking;
   } catch (error) {
     console.log(error);
+    return null;
   }
 }
