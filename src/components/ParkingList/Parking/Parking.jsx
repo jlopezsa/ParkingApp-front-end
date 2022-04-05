@@ -14,7 +14,7 @@ const Parking = (props) => {
       <div className="container-parking__data">
         <h5>{parkings.name}</h5>
         <p>{parkings.addres}</p>
-        <p>{parkings.idciudad}</p>
+        <p>{parkings.city.cityName}</p>
         <div className="container-parking__data--qualy">
           <p>starts</p>
           <p>{parkings.mean}</p>

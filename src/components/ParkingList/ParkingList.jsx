@@ -10,7 +10,7 @@ function ParkingList(props) {
   useEffect(() => {
     const fetchParkings = async () => {
       const data = await getAllParkings();
-      const filterData = data.filter((item) => item.idciudad === Number(searchCity));
+      const filterData = data.filter((item) => item.city.cityName === searchCity);
       setParkings(filterData);
     };
     fetchParkings();

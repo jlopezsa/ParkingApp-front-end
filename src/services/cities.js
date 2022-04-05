@@ -6,7 +6,7 @@ export async function getSingleCities(id) {
     const response = await fetch(`${API_URL}/cities`);
     const data = await response.json();
     const singleCity = data.find((item)=>{
-      return  item.id === id;
+      return  item.city.cityName === id;
     })
     return singleCity;
   } catch (error) {

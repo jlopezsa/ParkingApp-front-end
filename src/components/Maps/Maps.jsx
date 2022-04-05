@@ -1,7 +1,7 @@
 /* eslint-disable*/
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import { getSingleCities } from '../../services/cities';
+
 import { getAllParkings } from '../../services/parkings';
 
 
@@ -15,24 +15,24 @@ const onLoad = (marker) => {
 
 function Maps(props) {
   const { searchCity } = props;
-  const [city, setCity] = useState([]);
-  useEffect(() => {
-    const fetchCities = async () => {
-      const data = await getSingleCities(Number(searchCity));
-      setCity(data);
-    };
-    fetchCities();
-  },[searchCity]);
 
   const [parkings, setParkings] = useState([]);
+  const [centerCoor, setCenterCords] = useState({"lat":4.65, "long":-74.1});
+
   useEffect(() => {
     const fetchParkings = async () => {
       const data = await getAllParkings();
-      const filterData = data.filter((item)=> item.idciudad === Number(searchCity));
+      const filterData = data.filter((item)=> item.city.cityName === searchCity);
       setParkings(filterData);
+      if(!searchCity){
+        setCenterCords({"lat":4.65, "long":-74.1})
+      }else{
+        setCenterCords({"lat":filterData[0].city.latitude, "long":filterData[0].city.longitude})
+      }
     };
     fetchParkings();
   }, [searchCity]);
+
 
   return (
     <LoadScript
@@ -40,8 +40,11 @@ function Maps(props) {
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={city.coords}
-        zoom={12}
+        center={{
+          "lat": centerCoor.lat,
+          "lng": centerCoor.long
+        }}
+        zoom={11}
       >
         { /* Child components, such as markers, info windows, etc. */}
         {
