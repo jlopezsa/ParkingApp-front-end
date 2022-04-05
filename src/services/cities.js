@@ -7,7 +7,7 @@ async function getSingleCities(id) {
     const singleCity = data.find((item) => item.city.cityName === id);
     return singleCity;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return null;
   }
 }
