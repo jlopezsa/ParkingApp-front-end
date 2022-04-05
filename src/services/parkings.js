@@ -6,7 +6,6 @@ export async function getAllParkings() {
     const parkings = await response.json();
     return parkings;
   } catch (error) {
-    // console.log(error);
     return null;
   }
 }
@@ -16,7 +15,6 @@ export async function getOneParking(id) {
     const parking = await response.json();
     return parking;
   } catch (error) {
-    // console.log(error);
     return null;
   }
 }
