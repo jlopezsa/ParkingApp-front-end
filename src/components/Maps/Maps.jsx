@@ -29,7 +29,7 @@ function Maps({ searchCity }) {
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyDZWvEAZTx1jRNYgfn8hOBiR4MTI6wE1F8"
+      googleMapsApiKey={process.env.REACT_APP_KEY_MAPS}
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
