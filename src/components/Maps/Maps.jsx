@@ -29,7 +29,7 @@ function Maps({ searchCity }) {
 
   return (
     <LoadScript
-      googleMapsApiKey={process.env.REACT_APP_KEY_MAPS}
+      googleMapsApiKey="AIzaSyDZWvEAZTx1jRNYgfn8hOBiR4MTI6wE1F8"
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -52,9 +52,7 @@ function Maps({ searchCity }) {
 }
 
 Maps.propTypes = {
-  searchCity: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-  }).isRequired,
+  searchCity: PropTypes.string.isRequired,
 };
 
 export default React.memo(Maps);
