@@ -11,7 +11,7 @@ function ParkingList(props) {
   useEffect(() => {
     const fetchParkings = async () => {
       const data = await getAllParkings();
-      const filterData = data.filter((item) => item.city.cityName === searchCity);
+      const filterData = data.filter((item) => item.cityName === searchCity);
       setParkings(filterData);
     };
     fetchParkings();

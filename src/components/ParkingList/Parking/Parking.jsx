@@ -16,17 +16,17 @@ function Parking({ parkings }) {
       <div className="container-parking__data">
         <h5>{parkings.name}</h5>
         <p>{parkings.addres}</p>
-        <p>{parkings.city.cityName}</p>
+        <p>{parkings.cityName}</p>
         <div className="container-parking__data--qualy">
           <p>starts</p>
-          <p>{parkings.mean}</p>
+          <p>{parkings.totalPlaces}</p>
         </div>
       </div>
       <div className="container-parking__value">
         <p>Tarifa</p>
         <p>
           $
-          {parkings.value}
+          {parkings.hourValues}
         </p>
         <div className="parking-bottom">
           <button type="submit">
@@ -43,10 +43,9 @@ Parking.propTypes = {
     name: PropTypes.string.isRequired,
     addres: PropTypes.string.isRequired,
     mean: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-    city: PropTypes.shape({
-      cityName: PropTypes.string.isRequired,
-    }).isRequired,
+    hourValues: PropTypes.number.isRequired,
+    totalPlaces: PropTypes.number.isRequired,
+    cityName: PropTypes.string.isRequired,
   }).isRequired,
 };
 
