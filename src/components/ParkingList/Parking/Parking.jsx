@@ -26,7 +26,7 @@ function Parking({ parkings }) {
         <p>Tarifa</p>
         <p>
           $
-          {parkings.hourValues}
+          {parkings.hourValue}
         </p>
         <div className="parking-bottom">
           <button type="submit">
@@ -42,8 +42,7 @@ Parking.propTypes = {
   parkings: PropTypes.shape({
     name: PropTypes.string.isRequired,
     addres: PropTypes.string.isRequired,
-    mean: PropTypes.number.isRequired,
-    hourValues: PropTypes.number.isRequired,
+    hourValue: PropTypes.number.isRequired,
     totalPlaces: PropTypes.number.isRequired,
     cityName: PropTypes.string.isRequired,
   }).isRequired,

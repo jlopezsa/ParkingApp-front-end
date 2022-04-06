@@ -16,12 +16,15 @@ function Maps({ searchCity }) {
   useEffect(() => {
     const fetchParkings = async () => {
       const data = await getAllParkings();
-      const filterData = data.filter((item) => item.city.cityName === searchCity);
+      const filterData = data.filter((item) => item.cityName === searchCity);
       setParkings(filterData);
       if (!searchCity) {
         setCenterCords({ lat: 4.65, long: -74.1 });
       } else {
-        setCenterCords({ lat: filterData[0].city.latitude, long: filterData[0].city.longitude });
+        setCenterCords({
+          lat: filterData[0].position.latitude,
+          long: filterData[0].position.longitude,
+        });
       }
     };
     fetchParkings();
@@ -42,7 +45,13 @@ function Maps({ searchCity }) {
         { /* Child components, such as markers, info windows, etc. */}
         {
           parkings.map((item) => (
-            <Marker key={item.id} position={item.coords} />
+            <Marker
+              key={item.addres}
+              position={{
+                lat: item.position.latitude,
+                lng: item.position.longitude,
+              }}
+            />
           ))
         }
       </GoogleMap>
