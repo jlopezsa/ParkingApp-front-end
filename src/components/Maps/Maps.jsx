@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import PropTypes from 'prop-types';
 
-import { filetringParkingByCity } from '../../services/parkings';
+import { filteringParkingByCity } from '../../services/parkings';
 
 const containerStyle = {
   width: '100%',
@@ -15,7 +15,7 @@ function Maps({ searchCity }) {
 
   useEffect(() => {
     const fetchParkings = async () => {
-      const data = await filetringParkingByCity(searchCity);
+      const data = await filteringParkingByCity(searchCity);
       setParkings(data);
       if (!searchCity) {
         setCenterCords({ lat: 4.65, long: -74.1 });

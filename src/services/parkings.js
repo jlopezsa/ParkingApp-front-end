@@ -19,7 +19,7 @@ export async function getOneParking(id) {
   }
 }
 
-export async function filetringParkingByCity(cityName) {
+export async function filteringParkingByCity(cityName) {
   try {
     const response = await fetch(`${API_URL}/api/parkings?cityName=${cityName}`);
     const parkings = await response.json();

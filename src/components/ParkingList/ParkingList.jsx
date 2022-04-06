@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './ParkingList.scss';
 import Parking from './Parking/Parking';
-import { filetringParkingByCity } from '../../services/parkings';
+import { filteringParkingByCity } from '../../services/parkings';
 
 function ParkingList(props) {
   const { searchCity } = props;
@@ -11,7 +11,7 @@ function ParkingList(props) {
 
   useEffect(() => {
     const fetchParkings = async () => {
-      const data = await filetringParkingByCity(searchCity);
+      const data = await filteringParkingByCity(searchCity);
       setParkings(data);
     };
     fetchParkings();
