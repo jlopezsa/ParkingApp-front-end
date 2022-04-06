@@ -8,6 +8,7 @@ function NavBar() {
       <nav className="container-menu">
         <ul className="container-menu__list">
           <li><NavLink className="menu__list--inactive" to="/">Mi cuenta</NavLink></li>
+          <li><NavLink className="menu__list--inactive" to="/AdminPage">Cuenta Admin</NavLink></li>
           <li><NavLink className="menu__list--inactive" to="/LogIn">Ingresar</NavLink></li>
           <li><NavLink className="menu__list--inactive" to="/LogUp">Registrar</NavLink></li>
           <li><NavLink className="menu__list--inactive" to="/Cities">Ciudades</NavLink></li>
@@ -23,6 +24,7 @@ function NavBar() {
           </div>
           <ul className="hamburguer-menu__list">
             <li><NavLink className="hamburguer__list--inactive" to="/">Mi cuenta</NavLink></li>
+            <li><NavLink className="hamburguer__list--inactive" to="/AdminPage">CuentaAdmin</NavLink></li>
             <li><NavLink className="hamburguer__list--inactive" to="/LogIn">Ingresar</NavLink></li>
             <li><NavLink className="hamburguer__list--inactive" to="/LogUp">Registrar</NavLink></li>
             <li><NavLink className="hamburguer__list--inactive" to="/Cities">Ciudades</NavLink></li>
