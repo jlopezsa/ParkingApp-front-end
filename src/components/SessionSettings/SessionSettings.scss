@@ -1,0 +1,52 @@
+@import '../../App.scss';
+
+.sessionsettings{
+  font-size: $body1;
+  min-width: 440px;
+  width: 420px;
+  &__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title{
+    border: 5px solid $blue-color;
+  }
+  &__title-p{
+    font-size: $headline5;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  &__data{
+    border: 5px solid $blue-color;
+    &--name{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &--email{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &--password{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    p{
+      padding-left: 10px;
+      margin-bottom: 0px;
+    }
+  }
+  &__data-p{
+    font-size: $headline5;
+    font-weight: bold;
+    margin-bottom: 0px;
+    padding-left: 10px;
+  }
+}
