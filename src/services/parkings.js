@@ -18,3 +18,13 @@ export async function getOneParking(id) {
     return null;
   }
 }
+
+export async function filetringParkingByCity(cityName) {
+  try {
+    const response = await fetch(`${API_URL}/api/parkings?cityName=${cityName}`);
+    const parkings = await response.json();
+    return parkings;
+  } catch (error) {
+    return null;
+  }
+}
