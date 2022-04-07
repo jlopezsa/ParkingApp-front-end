@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import PropTypes from 'prop-types';
 
-import { getAllParkings } from '../../services/parkings';
+import { filteringParkingByCity } from '../../services/parkings';
 
 const containerStyle = {
   width: '100%',
@@ -15,13 +15,15 @@ function Maps({ searchCity }) {
 
   useEffect(() => {
     const fetchParkings = async () => {
-      const data = await getAllParkings();
-      const filterData = data.filter((item) => item.city.cityName === searchCity);
-      setParkings(filterData);
+      const data = await filteringParkingByCity(searchCity);
+      setParkings(data);
       if (!searchCity) {
         setCenterCords({ lat: 4.65, long: -74.1 });
       } else {
-        setCenterCords({ lat: filterData[0].city.latitude, long: filterData[0].city.longitude });
+        setCenterCords({
+          lat: data[0].position.latitude,
+          long: data[0].position.longitude,
+        });
       }
     };
     fetchParkings();
@@ -42,7 +44,13 @@ function Maps({ searchCity }) {
         { /* Child components, such as markers, info windows, etc. */}
         {
           parkings.map((item) => (
-            <Marker key={item.id} position={item.coords} />
+            <Marker
+              key={item.addres}
+              position={{
+                lat: item.position.latitude,
+                lng: item.position.longitude,
+              }}
+            />
           ))
         }
       </GoogleMap>
