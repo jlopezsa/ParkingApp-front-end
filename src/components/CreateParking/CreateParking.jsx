@@ -16,9 +16,9 @@ function CreateParking() {
         <input className="container__input" type="number" name="sites" placeholder="Número de puestos" />
         <input className="container__input" type="number" name="length" placeholder="Longitud" />
         <input className="container__input" type="number" name="latitude" placeholder="Latitud" />
-        <input className="container__image" type="imagen" name="image" placeholder="Imagen" />
-        <button type="submit" className="container__Button">Registrar</button>
-        <button type="submit" className="container__Button">Cancelar</button>
+        <input className="container__input" type="text" name="image" placeholder="Imagen" />
+        <button className="container__Button" type="submit">REGISTRAR</button>
+        <button className="container__Button" type="submit">CANCELAR</button>
       </form>
     </div>
   );

@@ -1,36 +1,47 @@
-@import '../../../App.scss';
+@import '../../App.scss';
 
 .container{
-  max-width: 440px;
-  width: 420px;
+  max-width: 550px;
+  width: 550px;
+  height: 550px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  //border: 1px solid $strongBlue-color;
-  //background-color: $white-color;
-  border:1px solid red;
+  background-color: $blue-color;
+  border-radius: 30px;
   display: grid;
-  grid-template-columns: repeat(2,50%);
-  grid-template-rows: 400px;
+  grid-template-columns: 70%;
+  grid-template-rows: 60px 600px 60px;
   grid-template-areas:
-    "imagemCell dataCell";
-  &__image{
-    grid-area: imagemCell;
-    margin: 0px;
-    width: 110px;
-    height: 110px;
-    margin-top: 5px;
-    margin-left: 5px
-  }
+    "titleCell"
+    "dataCell";
   &__input{
     grid-area: dataCell;
-    margin: 0px;
-    &--qualy{
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-  h2{
+    width: 90%;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
     font-size: $headline5;
-    margin: 0px;
   }
+  &__Button{
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 5px;
+    font: $strongBlue-color;
+    border-color: $strongBlue-color;
+    border-radius: 50px;
+    background-color: $white-color;
+  }
+}
+h2{
+  grid-area: titleCell;
+  font-size: $headline5;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
 }
