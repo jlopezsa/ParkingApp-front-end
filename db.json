@@ -7,7 +7,7 @@
       "email": "rmedina@gmail.com",
       "password": "123",
       "type": "admin",
-      "photo":""
+      "photo": ""
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "email": "pastranafelix@gmail.com",
       "password": "1234",
       "type": "admin",
-      "photo":""
+      "photo": ""
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "email": "jjmarin@gmail.com",
       "password": "12345",
       "type": "user",
-      "photo":""
+      "photo": ""
     }
   ],
   "users": [
@@ -65,139 +65,275 @@
   "cities": [
     {
       "id": 1,
-      "name": "Bogota"
+      "name": "bogota",
+      "coords": {
+        "lat": 4.649995,
+        "lng": -74.100949
+      }
     },
     {
       "id": 2,
-      "name": "Cali"
+      "name": "cali",
+      "coords": {
+        "lat": 3.410714,
+        "lng": -76.519245
+      }
     },
     {
       "id": 3,
-      "name": "Medellin"
+      "name": "medellin",
+      "coords": {
+        "lat": 6.250998,
+        "lng": -75.574334
+      }
     },
     {
       "id": 4,
-      "name": "Cartagena"
+      "name": "cartagena",
+      "coords": {
+        "lat": 10.395367,
+        "lng": -75.492267
+      }
     },
     {
       "id": 5,
-      "name": "Bucaramanga"
+      "name": "bucaramanga",
+      "coords": {
+        "lat": 7.110506,
+        "lng": -73.129624
+      }
     },
     {
       "id": 6,
-      "name": "Pereira"
+      "name": "pereira",
+      "coords": {
+        "lat": 4.801977,
+        "lng": -75.720822
+      }
+    },
+    {
+      "name": "Julian Lopez",
+      "number": "57-5-45686",
+      "id": 7
     }
   ],
-  "parking": [
+  "parkings": [
     {
-      "id": 1,
-      "name": "Doña juana",
-      "idciudad": 1,
-      "addres": "Cra.25 No. 15-43",
-      "neighborhood": "Engativa",
-      "tel": "3547890",
-      "mean": 4.5,
-      "value": 2500
+      "position": {
+        "latitude": 4.676349221321472,
+        "longitude": -74.05122683472025
+      },
+      "_id": "624a21db8a2706d1ad061db9",
+      "name": "PARQUEADERO LA 93",
+      "cityName": "BOGOTÁ",
+      "addres": "cl. 93 #14-29",
+      "phone": 314931429,
+      "openTime": "0h00m",
+      "closeTime": "0h00m",
+      "hourValue": 4500,
+      "totalPlaces": 50,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-03T22:38:19.367Z",
+      "updatedAt": "2022-04-04T15:55:55.068Z",
+      "user": "624a245af8208c44da90931f"
     },
     {
-      "id": 2,
-      "name": "El viajero",
-      "idciudad": 1,
-      "addres": "Cra.25 No. 15-68",
-      "neighborhood": "Suba",
-      "tel": "3547896",
-      "mean": 4.2,
-      "value": 3500
+      "position": {
+        "latitude": 4.675822114740796,
+        "longitude": -74.05490829074094
+      },
+      "_id": "624a267bf8208c44da909327",
+      "name": "APARCAR",
+      "cityName": "BOGOTÁ",
+      "addres": "cl. 90 #17-45",
+      "phone": 315901745,
+      "openTime": "6h00m",
+      "closeTime": "19h00m",
+      "hourValue": 4250,
+      "totalPlaces": 60,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-03T22:58:03.029Z",
+      "updatedAt": "2022-04-04T15:56:44.280Z"
     },
     {
-      "id": 3,
-      "name": "El paisa",
-      "idciudad": 3,
-      "addres": "Cra.18 No. 12-43",
-      "neighborhood": "Envigado",
-      "tel": "3546890",
-      "mean": 3.5,
-      "value": 2500
+      "position": {
+        "latitude": 4.6659597239350745,
+        "longitude": -74.0527506612594
+      },
+      "_id": "624a26fef8208c44da90932a",
+      "name": "PARKING BROKERS",
+      "cityName": "BOGOTÁ",
+      "addres": "cl. 82 #10-39",
+      "phone": 315821039,
+      "openTime": "6h00m",
+      "closeTime": "22h00m",
+      "hourValue": 4000,
+      "totalPlaces": 30,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-03T23:00:14.300Z",
+      "updatedAt": "2022-04-04T15:58:03.752Z"
     },
     {
-      "id": 4,
-      "name": "El mayorista",
-      "idciudad": 4,
-      "addres": "Cra.44 No. 16-22",
-      "neighborhood": "Centro",
-      "tel": "3547770",
-      "mean": 4.9,
-      "value": 2600
+      "position": {
+        "latitude": 3.4517820866804323,
+        "longitude": -76.53005763194443
+      },
+      "_id": "624a27e0f8208c44da90932d",
+      "name": "PARQUEADERO VER",
+      "cityName": "CALI",
+      "addres": "cra. 6 #13104",
+      "phone": 3016013104,
+      "openTime": "6h00m",
+      "closeTime": "22h00m",
+      "hourValue": 3200,
+      "totalPlaces": 80,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-03T23:04:00.997Z",
+      "updatedAt": "2022-04-04T15:58:39.419Z"
     },
     {
-      "id": 5,
-      "name": "El playon",
-      "idciudad": 5,
-      "addres": "Cra.20a No. 07-43",
-      "neighborhood": "Centro",
-      "tel": "3547390",
-      "mean": 4.3,
-      "value": 2800
+      "position": {
+        "latitude": 3.453493508431484,
+        "longitude": -76.5305735093539
+      },
+      "_id": "624a282af8208c44da909330",
+      "name": "PARQUEADERO PUBLICO",
+      "cityName": "CALI",
+      "addres": "cra. 4 #13-84",
+      "phone": 3015401384,
+      "openTime": "6h00m",
+      "closeTime": "20h00m",
+      "hourValue": 3100,
+      "totalPlaces": 20,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-03T23:05:14.530Z",
+      "updatedAt": "2022-04-04T16:00:38.530Z"
     },
     {
-      "id": 6,
-      "name": "Don Mario",
-      "idciudad": 5,
-      "addres": "Cra.25f No. 15-15",
-      "neighborhood": "Robles",
-      "tel": "3543390",
-      "mean": 3.2,
-      "value": 4500
+      "position": {
+        "latitude": 3.452864982432888,
+        "longitude": -76.53364381959231
+      },
+      "_id": "624a673bcbebfdf5712da293",
+      "name": "PARQUEADERO PLAZOLETA CENTRAL",
+      "cityName": "CALI",
+      "addres": "cra. 3 ##10-36",
+      "phone": 3015031036,
+      "openTime": "6h00m",
+      "closeTime": "22h00m",
+      "hourValue": 3000,
+      "totalPlaces": 100,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-04T03:34:19.546Z",
+      "updatedAt": "2022-04-04T16:01:12.802Z"
     },
     {
-      "id": 7,
-      "name": "La plazoleta",
-      "idciudad": 5,
-      "addres": "Cra.10 No. 15-43",
-      "neighborhood": "Santa Maria",
-      "tel": "3557890",
-      "mean": 2.5,
-      "value": 2500
+      "position": {
+        "latitude": 6.241490531137971,
+        "longitude": -75.57272529128745
+      },
+      "_id": "624a67e6cbebfdf5712da296",
+      "name": "PARQUEADERO PÚBLICO KR52",
+      "cityName": "MEDELLÍN",
+      "addres": "cra 52 #40-30",
+      "phone": 3135524030,
+      "openTime": "8h00m",
+      "closeTime": "20h00m",
+      "hourValue": 4100,
+      "totalPlaces": 75,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-04T03:37:10.956Z",
+      "updatedAt": "2022-04-04T16:02:07.833Z"
     },
     {
-      "id": 8,
-      "name": "La pereirana",
-      "idciudad": 6,
-      "addres": "Cra.22 No. 12-32",
-      "neighborhood": "Centro",
-      "tel": "3546790",
-      "mean": 4.8,
-      "value": 1500
+      "position": {
+        "latitude": 6.244028852258511,
+        "longitude": -75.57022547256459
+      },
+      "_id": "624a686acbebfdf5712da299",
+      "name": "PARQUEADERO PALACE",
+      "cityName": "MEDELLÍN",
+      "addres": "av. palacé #3",
+      "phone": 3135478632,
+      "openTime": "05h00m",
+      "closeTime": "19h00m",
+      "hourValue": 4300,
+      "totalPlaces": 30,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-04T03:39:22.805Z",
+      "updatedAt": "2022-04-04T16:02:34.393Z"
     },
     {
-      "id": 9,
-      "name": "El calidoso",
-      "idciudad": 2,
-      "addres": "Cra.08 No. 08-20",
-      "neighborhood": "Limonar",
-      "tel": "3547856",
-      "mean": 4.5,
-      "value": 7500
+      "position": {
+        "latitude": 6.225951279610248,
+        "longitude": -75.57550043760395
+      },
+      "_id": "624a68b1cbebfdf5712da29c",
+      "name": "ECO PARK",
+      "cityName": "MEDELLÍN",
+      "addres": "cl. 24 #48-51",
+      "phone": 3139244851,
+      "openTime": "07h00m",
+      "closeTime": "19h00m",
+      "hourValue": 4500,
+      "totalPlaces": 20,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-04T03:40:33.241Z",
+      "updatedAt": "2022-04-04T16:03:00.912Z"
     },
     {
-      "id": 10,
-      "name": "Don Julian",
-      "idciudad": 6,
-      "addres": "Cra.22 No. 22-20",
-      "neighborhood": "Boston",
-      "tel": "3547334",
-      "mean": 4.1,
-      "value": 2500
+      "position": {
+        "latitude": 6.170028068075212,
+        "longitude": -75.62342457836789
+      },
+      "_id": "624b13c87c6d14212125796f",
+      "name": "PARQUEADERO LA TRINIDAD",
+      "cityName": "MEDELLÍN",
+      "addres": "cl. 36 #54-38",
+      "phone": 3056365438,
+      "openTime": "9h00m",
+      "closeTime": "21h00m",
+      "hourValue": 2800,
+      "totalPlaces": 30,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-04T15:50:32.828Z",
+      "updatedAt": "2022-04-04T15:50:32.828Z"
     },
     {
-      "id":11,
-      "name": "Don Matias",
-      "idciudad": 1,
-      "addres": "Cra.78B No. 56-63",
-      "neighborhood": "Kened",
-      "tel": "5243156",
-      "mean": 4,
-      "value": 3100
+      "position": {
+        "latitude": 10.405881299971458,
+        "longitude": -75.51093419650545
+      },
+      "_id": "624b30d8f6c91597a24d6c1c",
+      "name": "PARQUEADERO TECNOLOGICO COMFENALCO",
+      "cityName": "CARTAGENA",
+      "addres": "cl. 44d #30-65",
+      "phone": 3134443065,
+      "openTime": "00h00m",
+      "closeTime": "00h00m",
+      "hourValue": 4800,
+      "totalPlaces": 30,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-04T17:54:32.409Z",
+      "updatedAt": "2022-04-04T17:54:32.409Z"
+    },
+    {
+      "position": {
+        "latitude": 4.817008780350052,
+        "longitude": -75.69741972681375
+      },
+      "_id": "624d09e4113164216036e1a4",
+      "name": "PARKING VÍA SEXTA",
+      "cityName": "PEREIRA",
+      "addres": "cra. 5 #27-5",
+      "phone": 3014052705,
+      "openTime": "06h00m",
+      "closeTime": "18h00m",
+      "hourValue": 3800,
+      "totalPlaces": 40,
+      "busyPlaces": 0,
+      "createdAt": "2022-04-06T03:32:52.249Z",
+      "updatedAt": "2022-04-06T03:32:52.249Z"
     }
   ]
 }

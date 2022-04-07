@@ -30,7 +30,7 @@
       justify-content: space-between;
     }
     h5{
-      font-size: $headline5;
+      font-size: 14px;
       margin: 0px;
     }
     p{
@@ -60,6 +60,15 @@
       button:hover{
         color: $white-color;
         background-color: $strongBlue-color;
+      }
+      #booking-page{
+        color: $strongBlue-color;
+        text-decoration: none;
+      }
+      #booking-page:hover{
+        color: $white-color;
+        background-color: $strongBlue-color;
+        text-decoration: none;
       }
     }
   }

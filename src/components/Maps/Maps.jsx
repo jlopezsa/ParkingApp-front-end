@@ -1,69 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import PropTypes from 'prop-types';
+
+import { filteringParkingByCity } from '../../services/parkings';
 
 const containerStyle = {
   width: '100%',
   height: '100%',
 };
 
-const center = [
-  {
-    lat: 4.683683,
-    lng: -74.096274,
-  },
-  {
-    lat: 6.243929,
-    lng: -75.577607,
-  },
-  {
-    lat: 10.393158,
-    lng: -75.485892,
-  },
-];
+function Maps({ searchCity }) {
+  const [parkings, setParkings] = useState([]);
+  const [centerCoor, setCenterCords] = useState({ lat: 4.65, long: -74.1 });
 
-const position = [
-  {
-    id: 0,
-    lat: 4.632507,
-    lng: -74.080506,
-  },
-  {
-    id: 1,
-    lat: 4.636181,
-    lng: -74.091321,
-  },
-  {
-    id: 2,
-    lat: 4.644539,
-    lng: -74.078116,
-  },
-  {
-    id: 3,
-    lat: 4.645266,
-    lng: -74.092536,
-  },
-];
+  useEffect(() => {
+    const fetchParkings = async () => {
+      const data = await filteringParkingByCity(searchCity);
+      setParkings(data);
+      if (!searchCity) {
+        setCenterCords({ lat: 4.65, long: -74.1 });
+      } else {
+        setCenterCords({
+          lat: data[0].position.latitude,
+          long: data[0].position.longitude,
+        });
+      }
+    };
+    fetchParkings();
+  }, [searchCity]);
 
-const onLoad = (marker) => {
-  console.log('marker: ', marker);
-};
-
-function Maps() {
   return (
-
     <LoadScript
-      googleMapsApiKey="AIzaSyDZWvEAZTx1jRNYgfn8hOBiR4MTI6wE1F8
-        "
+      googleMapsApiKey={process.env.REACT_APP_KEY_MAPS}
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center[0]}
-        zoom={12}
+        center={{
+          lat: centerCoor.lat,
+          lng: centerCoor.long,
+        }}
+        zoom={11}
       >
         { /* Child components, such as markers, info windows, etc. */}
         {
-          position.map((item) => (
-            <Marker key={item.id} onLoad={onLoad} position={item} />
+          parkings.map((item) => (
+            <Marker
+              key={item.addres}
+              position={{
+                lat: item.position.latitude,
+                lng: item.position.longitude,
+              }}
+            />
           ))
         }
       </GoogleMap>
@@ -71,5 +58,9 @@ function Maps() {
 
   );
 }
+
+Maps.propTypes = {
+  searchCity: PropTypes.string.isRequired,
+};
 
 export default React.memo(Maps);
