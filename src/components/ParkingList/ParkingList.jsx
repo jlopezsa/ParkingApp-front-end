@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 import './ParkingList.scss';
 import Parking from './Parking/Parking';
-import { getAllParkings } from '../../services/parkings';
+import { filteringParkingByCity } from '../../services/parkings';
 
 function ParkingList(props) {
   const { searchCity } = props;
   const [parkings, setParkings] = useState([]);
+
   useEffect(() => {
     const fetchParkings = async () => {
-      const data = await getAllParkings();
-      const filterData = data.filter((item) => item.city.cityName === searchCity);
-      setParkings(filterData);
+      const data = await filteringParkingByCity(searchCity);
+      setParkings(data);
     };
     fetchParkings();
   }, [searchCity]);
