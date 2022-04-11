@@ -5,11 +5,7 @@ import SignupPage from '../../pages/sign-up';
 import City from '../../pages/City';
 import Search from '../../pages/Search';
 import LoginPage from '../../pages/Login';
-<<<<<<< HEAD
-import CreateParkings from '../../pages/CreateParkingsPage';
-=======
 import Booking from '../../pages/Booking';
->>>>>>> develop
 import './Menus.scss';
 import NavBar from '../NavBar/NavBar';
 
