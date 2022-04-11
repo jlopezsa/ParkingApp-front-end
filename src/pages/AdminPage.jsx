@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import SessionSettings from '../components/SessionSettings/SessionSettings';
 import './AdminPage.scss';
+import './CreateParkingsPage';
 
 function AdminPage() {
   return (
@@ -11,6 +13,7 @@ function AdminPage() {
       <h1>
         Admin Page
       </h1>
+      <Link to="/CreateParkingsPage">CREAR PARQUEADERO</Link>
       <SessionSettings />
       <Footer />
     </div>
