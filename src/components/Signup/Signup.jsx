@@ -10,6 +10,13 @@ function Signup() {
           <input className="form__input" type="email" name="email" placeholder="email" />
           <input className="form__input" type="password" name="password" placeholder="Contraseña" />
           <input className="form__input" type="password" name="confirm-password" placeholder="Confirmar contraseña" />
+          <p>
+            <label for="Rol" >Tipo de usuario</label>
+            <select className="form__input" name='Rol'>
+              <option value="admin">Admininistrador</option>
+              <option value="user">Usuario</option>
+            </select>
+          </p>
 
           <input className="form__submit" type="submit" name="submit" value="Registrar" />
 
