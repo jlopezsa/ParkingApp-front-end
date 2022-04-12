@@ -5,6 +5,8 @@
   width: 410px;
   margin-left: auto;
   margin-right: auto;
+  background-color: $white-color;
+  border: 1px solid black;
 
   &__figure {
     width: 400px;
@@ -66,4 +68,39 @@
   margin-bottom: 0px;
   margin-left: 10px;
   font-size: $body1;
+}
+
+@media (min-width: 1440px) {
+  .contParkReg {
+    //min-width: 410px;
+    width: 900px;
+    display: grid;
+    direction: wrap;
+    grid-template-columns: 400px 360px 170px;
+    grid-template-rows: 290px;
+    grid-template-areas:
+      "figureCell inormationCell buttonsCell ";
+      &__figure{
+        grid-area: figureCell;
+        width: 380px;
+        height: 150px;
+        &--img {
+          margin-top: auto;
+          margin-bottom: auto;
+          width: 380px;
+          height: auto;
+        }
+      }
+      &__information{
+        grid-area: inormationCell;
+        margin-left: 25px;
+      }
+      &__buttons{
+        grid-area: buttonsCell;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+      }
+    }
 }
