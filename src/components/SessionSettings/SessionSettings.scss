@@ -2,13 +2,22 @@
 
 .sessionsettings{
   font-size: $body1;
-  min-width: 440px;
+  min-width: 420px;
   width: 420px;
   &__header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    &--figure{
+      width: 74px;
+      height: 74%;
+    }
+    &--figureImag {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+    }
   }
   &__title{
     border: 5px solid $blue-color;

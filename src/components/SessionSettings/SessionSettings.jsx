@@ -8,7 +8,7 @@ function SessionSettings() {
     <div className="sessionsettings">
       <div className="sessionsettings__header">
         <div className="sessionsettings__header--figure">
-          <p>figuras</p>
+          <img className="sessionsettings__header--figureImag" src="https://pickaface.net/gallery/avatar/unr_lieke_220315_1522_113e55.png" alt="" />
         </div>
         <div className="sessionsettings__header--info">
           <p>Mi cuenta (Administrador)</p>
