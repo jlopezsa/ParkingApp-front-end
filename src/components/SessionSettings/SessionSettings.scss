@@ -4,6 +4,8 @@
   font-size: $body1;
   min-width: 420px;
   width: 420px;
+  margin-left: auto;
+  margin-right: auto;
   &__header{
     display: flex;
     flex-direction: row;
