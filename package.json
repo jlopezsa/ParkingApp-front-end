@@ -11,6 +11,7 @@
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.2.2",
     "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -25,7 +26,6 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "json-server": "^0.17.0",
     "react-scripts": "5.0.0",
-    "redux-devtools-extension": "^2.13.9",
     "sass": "^1.49.9"
   },
   "scripts": {
