@@ -1,0 +1,69 @@
+@import "../App.scss";
+
+.container-admin{
+  &__list{
+    background-color: $blue-color;
+    min-width: 420px;
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    &--header{
+      display: flex;
+      justify-content: space-between;
+    }
+    &--parkings-scroll{
+      padding-left: 0px;
+      height: 1095px;
+      list-style-type:none;
+      overflow-y: scroll;
+      li{
+        margin: 0px;
+        margin-top: 10px
+      }
+    }
+  }
+}
+#container-admin_p1 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  font-size: $headline5;
+}
+#container-admin_p2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  font-size: $headline5;
+  text-align: end;
+}
+
+@media (min-width: 1440px) {
+  .container-admin{
+    display: grid;
+    grid-template-columns: 440px auto 900px;
+    grid-template-rows: 800px;
+    grid-template-areas:
+    "settingsCell listCell";
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    &__settings{
+      grid-area: settingsCell;
+    }
+    &__list{
+      margin-top: 78px;
+      grid-area: listCell;
+      width: 950px;
+      height: 670px;
+      &--parkings-scroll{
+        padding-left: 0px;
+        height: 610px;
+        list-style-type:none;
+        overflow-y: scroll;
+      }
+    }
+
+  }
+}

@@ -1,7 +1,8 @@
+/* eslint-disable */
 import { Link } from 'react-router-dom';
 import './ParkingRegistered.scss';
 
-function ParkingRegistered() {
+function ParkingRegistered({ parkingsAdmin }) {
   return (
     <div className="contParkReg">
       <div className="contParkReg__figure">
@@ -16,14 +17,14 @@ function ParkingRegistered() {
           Calificación y média
         </div>
         <div>
-          <h2>Nombre</h2>
+          <h2>{parkingsAdmin.name}</h2>
         </div>
         <div className="contParkReg__information--data">
           <p id="contParkReg-p__fixed">
             Dirección:
           </p>
           <p id="contParkReg-p__varible">
-            Calle 85 # 9-45
+            {parkingsAdmin.addres}
           </p>
         </div>
         <div className="contParkReg__information--data">
@@ -31,7 +32,7 @@ function ParkingRegistered() {
             Ciudad:
           </p>
           <p id="contParkReg-p__varible">
-            Cali
+            {parkingsAdmin.cityName}
           </p>
         </div>
         <div className="contParkReg__information--data">
@@ -39,7 +40,7 @@ function ParkingRegistered() {
             Tarifa:
           </p>
           <p id="contParkReg-p__varible">
-            2500
+            {parkingsAdmin.hourValue}
           </p>
         </div>
         <div className="contParkReg__information--data">
@@ -47,7 +48,7 @@ function ParkingRegistered() {
             Hora de apertura:
           </p>
           <p id="contParkReg-p__varible">
-            06h30
+            {parkingsAdmin.openTime}
           </p>
         </div>
         <div className="contParkReg__information--data">
@@ -55,7 +56,7 @@ function ParkingRegistered() {
             Hora de cierre:
           </p>
           <p id="contParkReg-p__varible">
-            18h30
+            {parkingsAdmin.closeTime}
           </p>
         </div>
         <div className="contParkReg__information--data">
@@ -63,7 +64,7 @@ function ParkingRegistered() {
             Total de cupos:
           </p>
           <p id="contParkReg-p__varible">
-            120
+            {parkingsAdmin.totalPlaces}
           </p>
         </div>
         <div className="contParkReg__information--data">
@@ -71,7 +72,7 @@ function ParkingRegistered() {
             Cupos usados:
           </p>
           <p id="contParkReg-p__varible">
-            100
+            {parkingsAdmin.busyPlaces}
           </p>
         </div>
         <div className="contParkReg__information--data">
@@ -79,7 +80,7 @@ function ParkingRegistered() {
             Cupos libres:
           </p>
           <p id="contParkReg-p__varible">
-            20
+            {parkingsAdmin.totalPlaces - parkingsAdmin.busyPlaces}
           </p>
         </div>
       </div>

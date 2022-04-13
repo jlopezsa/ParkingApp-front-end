@@ -14,7 +14,9 @@
     height: 196px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 10px;
     &--img {
+      border-radius: 10px;
       width: 400px;
       height: 196px;
     }
@@ -35,6 +37,7 @@
     text-align: center;
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 10px;
     button {
       margin-top: 20px;
       width: 100px;
@@ -77,11 +80,12 @@
     display: grid;
     align-items: center;
     grid-template-columns: 400px 380px 150px;
-    grid-template-rows: 290px;
+    grid-template-rows: auto;
     grid-template-areas:
     "figureCell informationCell buttonsCell ";
     &__figure{
       grid-area: figureCell;
+      padding-top: 0px;
       width: 380px;
       height: auto;
       &--img {
@@ -94,6 +98,7 @@
     &__information{
         grid-area: informationCell;
         margin-left: 25px;
+        padding-bottom: 10px;
       }
       &__buttons{
         grid-area: buttonsCell;
