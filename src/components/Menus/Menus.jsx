@@ -6,6 +6,8 @@ import City from '../../pages/City';
 import Search from '../../pages/Search';
 import LoginPage from '../../pages/Login';
 import Booking from '../../pages/Booking';
+import AdminPage from '../../pages/AdminPage';
+import CreateParkingsPage from '../../pages/CreateParkingsPage';
 import './Menus.scss';
 import NavBar from '../NavBar/NavBar';
 
@@ -20,6 +22,8 @@ function Menus() {
         <Route path="/Cities" element={<City />} />
         <Route path="/Search" element={<Search />} />
         <Route path="/Booking" element={<Booking />} />
+        <Route path="/AdminPage" element={<AdminPage />} />
+        <Route path="/CreateParkingsPage" element={<CreateParkingsPage />} />
       </Routes>
     </BrowserRouter>
   );

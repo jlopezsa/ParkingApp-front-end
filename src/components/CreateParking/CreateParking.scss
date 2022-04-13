@@ -1,17 +1,18 @@
 @import '../../App.scss';
 
-.container{
+.container-create{
   max-width: 550px;
   width: 550px;
-  height: 550px;
-  margin-top: 50px;
+  height: 640px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   background-color: $blue-color;
   border-radius: 30px;
   display: grid;
+  justify-content: center;
   grid-template-columns: 70%;
-  grid-template-rows: 60px 600px 60px;
+  grid-template-rows: 60px 550px;
   grid-template-areas:
     "titleCell"
     "dataCell";
@@ -27,6 +28,7 @@
     font-size: $headline5;
   }
   &__Button{
+    grid-area: buttonCell;
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -36,12 +38,13 @@
     border-color: $strongBlue-color;
     border-radius: 50px;
     background-color: $white-color;
+    text-align: center;
   }
-}
-h2{
-  grid-area: titleCell;
-  font-size: $headline5;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
+  h2{
+    grid-area: titleCell;
+    font-size: $headline5;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+  }
 }

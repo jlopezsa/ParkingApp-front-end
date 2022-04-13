@@ -1,0 +1,103 @@
+/* eslint-disable */
+import { Link } from 'react-router-dom';
+import './ParkingRegistered.scss';
+
+function ParkingRegistered({ parkingsAdmin }) {
+  return (
+    <div className="contParkReg">
+      <div className="contParkReg__figure">
+        <img
+          className="contParkReg__figure--img"
+          src="https://d500.epimg.net/cincodias/imagenes/2020/01/22/lifestyle/1579693137_705498_1579693193_noticia_normal.jpg"
+          alt="parkingFigure"
+        />
+      </div>
+      <div className="contParkReg__information">
+        <div className="contParkReg__information--qualify">
+          Calificación y média
+        </div>
+        <div>
+          <h2>{parkingsAdmin.name}</h2>
+        </div>
+        <div className="contParkReg__information--data">
+          <p id="contParkReg-p__fixed">
+            Dirección:
+          </p>
+          <p id="contParkReg-p__varible">
+            {parkingsAdmin.addres}
+          </p>
+        </div>
+        <div className="contParkReg__information--data">
+          <p id="contParkReg-p__fixed">
+            Ciudad:
+          </p>
+          <p id="contParkReg-p__varible">
+            {parkingsAdmin.cityName}
+          </p>
+        </div>
+        <div className="contParkReg__information--data">
+          <p id="contParkReg-p__fixed">
+            Tarifa:
+          </p>
+          <p id="contParkReg-p__varible">
+            {parkingsAdmin.hourValue}
+          </p>
+        </div>
+        <div className="contParkReg__information--data">
+          <p id="contParkReg-p__fixed">
+            Hora de apertura:
+          </p>
+          <p id="contParkReg-p__varible">
+            {parkingsAdmin.openTime}
+          </p>
+        </div>
+        <div className="contParkReg__information--data">
+          <p id="contParkReg-p__fixed">
+            Hora de cierre:
+          </p>
+          <p id="contParkReg-p__varible">
+            {parkingsAdmin.closeTime}
+          </p>
+        </div>
+        <div className="contParkReg__information--data">
+          <p id="contParkReg-p__fixed">
+            Total de cupos:
+          </p>
+          <p id="contParkReg-p__varible">
+            {parkingsAdmin.totalPlaces}
+          </p>
+        </div>
+        <div className="contParkReg__information--data">
+          <p id="contParkReg-p__fixed">
+            Cupos usados:
+          </p>
+          <p id="contParkReg-p__varible">
+            {parkingsAdmin.busyPlaces}
+          </p>
+        </div>
+        <div className="contParkReg__information--data">
+          <p id="contParkReg-p__fixed">
+            Cupos libres:
+          </p>
+          <p id="contParkReg-p__varible">
+            {parkingsAdmin.totalPlaces - parkingsAdmin.busyPlaces}
+          </p>
+        </div>
+      </div>
+      <div className="contParkReg__buttons">
+        <div>
+          <button type="submit">
+            <Link id="booking-page" to="/">Editar</Link>
+          </button>
+        </div>
+        <div>
+          <button type="submit">
+            <Link id="booking-page" to="/">Eliminar</Link>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ParkingRegistered;
