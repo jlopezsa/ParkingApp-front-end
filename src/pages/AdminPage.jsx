@@ -11,6 +11,7 @@ import './CreateParkingsPage';
 function AdminPage() {
   const idAdmin = '624b3301f6c91597a24d6c21';
   const [parkingsAdmin, setParkingsAdmin] = useState([]);
+
   useEffect(() => {
     const fetchParkings = async () => {
       const data = await getAllParkings();
@@ -18,7 +19,7 @@ function AdminPage() {
       setParkingsAdmin(dataAdmin);
     };
     fetchParkings();
-  }, []);
+  }, [parkingsAdmin]);
 
   return (
     <div>

@@ -7,16 +7,9 @@ function ParkingRegistered({ parkingsAdmin }) {
 
   const fetchDeleteParking = async (idParking) => {
     const isDelete = await deleteParking(idParking);
-    console.log('FLAG-02: ', isDelete);
-    if(!isDelete){
-      console.log('Id not found')
-    }else{
-      console.log('Parking was delete');
-    }
   }
 
   const handlerClick = () => {
-    console.log('FLAG-01: ', parkingsAdmin._id);
     fetchDeleteParking(parkingsAdmin._id);
   }
 
