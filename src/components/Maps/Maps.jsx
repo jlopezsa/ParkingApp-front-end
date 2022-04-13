@@ -11,7 +11,6 @@ const containerStyle = {
 function Maps() {
   // eslint-disable-next-line arrow-parens
   const inputCity = useSelector(state => state.searchCity);
-  console.log('FLAG-01: ', inputCity);
 
   const [parkings, setParkings] = useState([]);
   const [centerCoor, setCenterCords] = useState({ lat: 4.65, long: -74.1 });
