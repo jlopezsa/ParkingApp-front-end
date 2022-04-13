@@ -6,6 +6,7 @@
   margin-left: auto;
   margin-right: auto;
   background-color: $white-color;
+  border-radius: 10px;
   border: 1px solid black;
 
   &__figure {
@@ -72,27 +73,26 @@
 
 @media (min-width: 1440px) {
   .contParkReg {
-    //min-width: 410px;
-    width: 900px;
+    width: 930px;
     display: grid;
-    direction: wrap;
-    grid-template-columns: 400px 360px 170px;
+    align-items: center;
+    grid-template-columns: 400px 380px 150px;
     grid-template-rows: 290px;
     grid-template-areas:
-      "figureCell inormationCell buttonsCell ";
-      &__figure{
-        grid-area: figureCell;
+    "figureCell informationCell buttonsCell ";
+    &__figure{
+      grid-area: figureCell;
+      width: 380px;
+      height: auto;
+      &--img {
+        //margin-top: auto;
+        //margin-bottom: auto;
         width: 380px;
-        height: 150px;
-        &--img {
-          margin-top: auto;
-          margin-bottom: auto;
-          width: 380px;
-          height: auto;
-        }
+        height: auto;
       }
-      &__information{
-        grid-area: inormationCell;
+    }
+    &__information{
+        grid-area: informationCell;
         margin-left: 25px;
       }
       &__buttons{

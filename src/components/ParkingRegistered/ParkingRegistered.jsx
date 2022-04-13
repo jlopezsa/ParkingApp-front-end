@@ -8,7 +8,7 @@ function ParkingRegistered() {
         <img
           className="contParkReg__figure--img"
           src="https://d500.epimg.net/cincodias/imagenes/2020/01/22/lifestyle/1579693137_705498_1579693193_noticia_normal.jpg"
-          alt=""
+          alt="parkingFigure"
         />
       </div>
       <div className="contParkReg__information">
