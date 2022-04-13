@@ -1,6 +1,7 @@
 const API_URL = process.env.REACT_APP_BASE_URL;
 
-async function createUser(user) {
+// eslint-disable-next-line import/prefer-default-export
+export async function createUser(user) {
   const payload = {
     method: 'POST',
     headers: {
@@ -8,7 +9,6 @@ async function createUser(user) {
     },
     body: JSON.stringify(user),
   };
-
   try {
     const response = await fetch(`${API_URL}/api/users`, payload);
     const data = await response.json();
@@ -17,7 +17,3 @@ async function createUser(user) {
     throw new Error(error);
   }
 }
-
-module.exports = {
-  createUser,
-};
