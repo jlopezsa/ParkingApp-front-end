@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './Search.scss';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -7,19 +6,18 @@ import Maps from '../components/Maps/Maps';
 import Searchdayhour from '../components/Searchdayhour/Searchdayhour';
 
 function Search() {
-  const [searchCity, setSearchCity] = useState('');
   return (
     <div className="cont-search">
       <Header />
       <div className="body-search">
         <div className="body-search__map">
-          <Maps searchCity={searchCity} />
+          <Maps />
         </div>
         <div className="body-search__filter">
-          <Searchdayhour onHandleChange={setSearchCity} />
+          <Searchdayhour />
         </div>
         <div className="body-search__parking">
-          <ParkingList searchCity={searchCity} />
+          <ParkingList />
         </div>
       </div>
       <Footer />

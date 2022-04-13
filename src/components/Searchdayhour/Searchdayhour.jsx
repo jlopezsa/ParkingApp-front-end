@@ -1,16 +1,20 @@
 /* eslint-disable */
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './Searchdayhour.scss';
+import { searchCity } from '../../store/actions';
 
-function SearchDayHour(props) {
-  const [searchCity, setSearchCity] = useState('');
+function SearchDayHour() {
+  const dispatch = useDispatch();
+
+  const [inputCity, setInputCity] = useState('');
 
   const handleClick = (e) => {
-    props.onHandleChange(searchCity);
+    dispatch(searchCity(inputCity));
   }
 
   const handleChange = (e) => {
-    setSearchCity(e.target.value);
+    setInputCity(e.target.value);
   }
   return (
     <div className="dayhour">

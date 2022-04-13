@@ -1,7 +1,6 @@
+import { useSelector } from 'react-redux';
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import PropTypes from 'prop-types';
-
 import { filteringParkingByCity } from '../../services/parkings';
 
 const containerStyle = {
@@ -9,15 +8,19 @@ const containerStyle = {
   height: '100%',
 };
 
-function Maps({ searchCity }) {
+function Maps() {
+  // eslint-disable-next-line arrow-parens
+  const inputCity = useSelector(state => state.searchCity);
+  console.log('FLAG-01: ', inputCity);
+
   const [parkings, setParkings] = useState([]);
   const [centerCoor, setCenterCords] = useState({ lat: 4.65, long: -74.1 });
 
   useEffect(() => {
     const fetchParkings = async () => {
-      const data = await filteringParkingByCity(searchCity);
+      const data = await filteringParkingByCity(inputCity);
       setParkings(data);
-      if (!searchCity) {
+      if (!inputCity) {
         setCenterCords({ lat: 4.65, long: -74.1 });
       } else {
         setCenterCords({
@@ -27,7 +30,7 @@ function Maps({ searchCity }) {
       }
     };
     fetchParkings();
-  }, [searchCity]);
+  }, [inputCity]);
 
   return (
     <LoadScript
@@ -58,9 +61,5 @@ function Maps({ searchCity }) {
 
   );
 }
-
-Maps.propTypes = {
-  searchCity: PropTypes.string.isRequired,
-};
 
 export default React.memo(Maps);
