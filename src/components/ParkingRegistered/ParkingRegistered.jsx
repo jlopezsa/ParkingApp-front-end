@@ -1,8 +1,18 @@
 /* eslint-disable */
 import { Link } from 'react-router-dom';
+import { deleteParking } from '../../services/parkings';
 import './ParkingRegistered.scss';
 
 function ParkingRegistered({ parkingsAdmin }) {
+
+  const fetchDeleteParking = async (idParking) => {
+    const isDelete = await deleteParking(idParking);
+  }
+
+  const handlerClick = () => {
+    fetchDeleteParking(parkingsAdmin._id);
+  }
+
   return (
     <div className="contParkReg">
       <div className="contParkReg__figure">
@@ -91,8 +101,9 @@ function ParkingRegistered({ parkingsAdmin }) {
           </button>
         </div>
         <div>
-          <button type="submit">
-            <Link id="booking-page" to="/">Eliminar</Link>
+          <button type="submit" onClick={handlerClick} >
+            Eliminar
+            {/*<Link id="booking-page" >Eliminar</Link>*/}
           </button>
         </div>
       </div>
