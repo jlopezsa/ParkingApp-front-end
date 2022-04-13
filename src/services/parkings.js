@@ -64,16 +64,15 @@ export async function updateParking(parking) {
   }
 }
 
-export async function deleteParking(parking) {
+export async function deleteParking(parkingId) {
   const payload = {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json',
     },
-    body: JSON.stringify(parking),
   };
   try {
-    const response = await fetch(`${API_URL}/api/parkings/${parking.id}`, payload);
+    const response = await fetch(`${API_URL}/api/parkings/${parkingId}`, payload);
     const data = await response.json();
     return data;
   } catch (error) {
