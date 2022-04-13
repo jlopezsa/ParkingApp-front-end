@@ -2,12 +2,13 @@ const initialState = {
   searchCity: '',
 };
 
-function reducer(action, state = initialState) {
+// eslint-disable-next-line default-param-last
+function reducer(state = initialState, action) {
   switch (action.type) {
     case 'SEARCH_CITY':
       return {
         ...state,
-        searchCity: state.searchCity,
+        searchCity: action.payload,
       };
     default:
       return state;
