@@ -3,9 +3,9 @@
 .container-home{
   .testes{
     min-width: 440px;
-    background-image: url(../figures/background_map.jpg);
+    background-image: url(../figures/background_map_v2.png);
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 70% 70%;
     background-size: cover;
     background-attachment: fixed;
   }
@@ -15,6 +15,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: rgba(0, 180, 216, 0.8);
+    background: rgba(0, 180, 216, 0.65);
   }
 }
