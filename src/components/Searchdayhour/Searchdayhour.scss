@@ -53,11 +53,12 @@
 
   #entrada{
     grid-area: entradaCell;
+    text-align: center;
   }
 
   #salida{
-    //grid-row-start: 4;
     grid-area: salidaCell;
+    text-align: center;
   }
 
   #fechaini{
