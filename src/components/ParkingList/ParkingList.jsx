@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 import './ParkingList.scss';
 import Parking from './Parking/Parking';
 import { filteringParkingByCity } from '../../services/parkings';
 
-function ParkingList(props) {
-  const { searchCity } = props;
+function ParkingList() {
+  const inputCity = useSelector((state) => state.searchCity);
+
   const [parkings, setParkings] = useState([]);
 
   useEffect(() => {
     const fetchParkings = async () => {
-      const data = await filteringParkingByCity(searchCity);
+      const data = await filteringParkingByCity(inputCity);
       setParkings(data);
     };
     fetchParkings();
-  }, [searchCity]);
+  }, [inputCity]);
 
   return (
     <div className="container-park">
@@ -29,9 +30,5 @@ function ParkingList(props) {
     </div>
   );
 }
-
-ParkingList.propTypes = {
-  searchCity: PropTypes.string.isRequired,
-};
 
 export default ParkingList;
