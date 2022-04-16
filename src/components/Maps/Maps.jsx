@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import { filteringParkingByCity } from '../../services/parkings';
 
 const containerStyle = {
   width: '100%',
@@ -9,32 +9,23 @@ const containerStyle = {
 };
 
 function Maps() {
-  // eslint-disable-next-line arrow-parens
-  const inputCity = useSelector(state => state.searchCity);
+  const parkings = useSelector((state) => state.parkingsFiltered);
 
-  const [parkings, setParkings] = useState([]);
   const [centerCoor, setCenterCords] = useState({ lat: 4.65, long: -74.1 });
 
-  useEffect(() => {
-    const fetchParkings = async () => {
-      const data = await filteringParkingByCity(inputCity);
-      setParkings(data);
-      if (!inputCity) {
-        setCenterCords({ lat: 4.65, long: -74.1 });
-      } else {
-        setCenterCords({
-          lat: data[0].position.latitude,
-          long: data[0].position.longitude,
-        });
-      }
-    };
-    fetchParkings();
-  }, [inputCity]);
+  useEffect(()=>{
+    if (parkings.length === 0) {
+      setCenterCords({ lat: 4.65, long: -74.1 });
+    } else {
+      setCenterCords({
+        lat: parkings[0].position.latitude,
+        long: parkings[0].position.longitude,
+      });
+    }
+  },[parkings])
 
   return (
-    <LoadScript
-      googleMapsApiKey={process.env.REACT_APP_KEY_MAPS}
-    >
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_KEY_MAPS}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={{

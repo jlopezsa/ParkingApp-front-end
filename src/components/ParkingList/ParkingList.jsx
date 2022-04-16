@@ -9,7 +9,6 @@ function ParkingList() {
   const dispatch = useDispatch();
   const inputCity = useSelector((state) => state.searchCity);
   const parkings = useSelector((state) => state.parkingsFiltered);
-  // const [parkings, setParkings] = useState([]);
 
   useEffect(() => {
     dispatch(listParkingsByCity(inputCity));
