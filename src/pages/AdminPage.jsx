@@ -9,7 +9,7 @@ import './AdminPage.scss';
 import './CreateParkingsPage';
 
 function AdminPage() {
-  const idAdmin = '624b3301f6c91597a24d6c21';
+  const idAdmin = '624a245af8208c44da90931f';
   const [parkingsAdmin, setParkingsAdmin] = useState([]);
 
   useEffect(() => {
