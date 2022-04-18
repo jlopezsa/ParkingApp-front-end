@@ -21,11 +21,6 @@ function reducer(state = initialState, action) {
         ...state,
         parkingsFiltered: action.payload,
       };
-      // case 'GET_ALL_PARKINGS':
-      //   return {
-      //     ...state,
-      //     parkingsFiltered: action.payload,
-      //   };
 
     default:
       return state;
