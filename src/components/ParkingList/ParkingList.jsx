@@ -1,21 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './ParkingList.scss';
 import Parking from './Parking/Parking';
-import { filteringParkingByCity } from '../../services/parkings';
+import { listParkingsByCity } from '../../store/actions';
 
 function ParkingList() {
+  const dispatch = useDispatch();
   const inputCity = useSelector((state) => state.searchCity);
-
-  const [parkings, setParkings] = useState([]);
+  const parkings = useSelector((state) => state.parkingsFiltered);
 
   useEffect(() => {
-    const fetchParkings = async () => {
-      const data = await filteringParkingByCity(inputCity);
-      setParkings(data);
-    };
-    fetchParkings();
+    dispatch(listParkingsByCity(inputCity));
   }, [inputCity]);
 
   return (
