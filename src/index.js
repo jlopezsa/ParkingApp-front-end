@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import './index.css';
 import { Provider } from 'react-redux';
 import store from './store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const stripePromise = loadStripe('pk_test_oq7pqvp0SDA5gPZfe9fbD9kC');
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Elements stripe={stripePromise}>
+        <App />
+      </Elements>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
