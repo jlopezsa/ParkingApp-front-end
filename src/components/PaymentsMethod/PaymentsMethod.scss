@@ -1,0 +1,23 @@
+@import '../../App.scss';
+
+.contPayments{
+  p{
+    font-size: $headline5;
+  }
+  &__methods{
+    background-color: $white-color;
+    border-radius: 10px;
+    width: auto;
+    height: 180px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &--imagenPay{
+      width: 70%;
+      height: 70%;
+    }
+  }
+}
+

@@ -3,8 +3,7 @@ import './Booking.scss';
 
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
-import cashIcon from '../figures/cash_icon.svg';
-import cardIcon from '../figures/card_icon.svg';
+import PaymentsMethod from '../components/PaymentsMethod/PaymentsMethod';
 
 function Booking() {
   return (
@@ -34,12 +33,8 @@ function Booking() {
             {' '}
             pesos
           </p>
-          <div className="booking-body__pay-methods">
-            <p>Métodos de pago</p>
-            <div className="pay-methods">
-              <img src={cashIcon} alt="cash icon" className="imagenPay" />
-              <img src={cardIcon} alt="card icon" className="imagenPay" />
-            </div>
+          <div>
+            <PaymentsMethod />
           </div>
         </div>
         <div className="booking-body__summary">

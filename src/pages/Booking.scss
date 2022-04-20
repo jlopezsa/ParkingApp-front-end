@@ -100,7 +100,8 @@
     min-width: 420px;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 340px;
+    padding-bottom: 10px;
+    height: auto;
     h5{
       font-size: $headline5;
       margin-left: 10px;
@@ -109,17 +110,6 @@
     p{
       font-size: $body1;
       margin-left: 10px;
-    }
-  }
-  &__pay-methods{
-    background-color: $blue-color;
-    border-radius: 10px;
-    width: auto;
-    height: 180px;
-    margin-left: 10px;
-    margin-right: 10px;
-    p{
-      font-size: $headline5;
     }
   }
   &__summary{
@@ -172,10 +162,6 @@
         margin-left: 10px;
       }
     }
-  }
-  .pay-methods{
-    display: flex;
-    justify-content: space-around;
   }
 }
 
