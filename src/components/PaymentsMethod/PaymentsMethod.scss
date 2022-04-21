@@ -8,14 +8,18 @@
     background-color: $white-color;
     border-radius: 10px;
     width: auto;
-    height: 180px;
+    height: auto;
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    &--strip{
+      width: 80%;
+    }
     &--imagenPay{
-      width: 70%;
+      width: 20%;
       height: 70%;
     }
   }
