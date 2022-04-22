@@ -9,8 +9,8 @@ function PaymentsMethod() {
   const elements = useElements();
   const stripe = useStripe();
 
-  const fetchCreateTokenCard = async (tokenCard) => {
-    await createTokenCard(tokenCard);
+  const fetchCreateTokenCard = async (payload) => {
+    await createTokenCard(payload);
   };
 
   const handleSubmit = async (e) => {
@@ -21,19 +21,8 @@ function PaymentsMethod() {
     });
     if (!error) {
       console.log('Payment method created!', paymentMethod);
-      const payload = {
-        mehod: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          paymentMethod,
-          amount: 10 * 100, // 10 US in cents
-        }),
-      };
-      fetchCreateTokenCard(payload);
+      fetchCreateTokenCard(paymentMethod);
       elements.getElement(CardElement).clear();
-      console.log('Succesfull token send to DB!');
     } else {
       console.log('Payment method error!', error);
     }
