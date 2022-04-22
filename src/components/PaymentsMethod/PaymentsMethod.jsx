@@ -20,11 +20,8 @@ function PaymentsMethod() {
       card: elements.getElement(CardElement),
     });
     if (!error) {
-      console.log('Payment method created!', paymentMethod);
       fetchCreateTokenCard(paymentMethod);
       elements.getElement(CardElement).clear();
-    } else {
-      console.log('Payment method error!', error);
     }
   };
 
