@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import cashIcon from '../../figures/cash_icon.svg';
+// import cashIcon from '../../figures/cash_icon.svg';
 import cardIcon from '../../figures/card_icon.svg';
 import { createTokenCard } from '../../services/payments';
 import './PaymentsMethod.scss';
@@ -27,14 +27,21 @@ function PaymentsMethod() {
 
   return (
     <div className="contPayments">
-      <p>Métodos de pago</p>
+      <p className="contPayments__title">Métodos de pago</p>
       <div className="contPayments__methods">
+        <div className="contPayments__methods--header">
+          <img src={cardIcon} alt="card icon" className="contPayments__methods--imagenPay" />
+          <p>Datos de la tarjeta</p>
+        </div>
         <form className="contPayments__methods--strip" onSubmit={handleSubmit}>
-          <CardElement />
-          <button type="submit">Submit</button>
+          <div className="contPayments__methods--strip-card">
+            <CardElement />
+          </div>
+          <div className="contPayments__methods--strip-button">
+            <button type="submit">Realizar pago</button>
+          </div>
         </form>
-        <img src={cardIcon} alt="card icon" className="contPayments__methods--imagenPay" />
-        <img src={cashIcon} alt="cash icon" className="contPayments__methods--imagenPay" />
+        {/* <img src={cashIcon} alt="cash icon" className="contPayments__methods--imagenPay" /> */}
       </div>
     </div>
   );

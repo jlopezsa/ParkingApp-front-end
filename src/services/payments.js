@@ -6,11 +6,11 @@ export async function createTokenCard(paymentMethod) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkpVTElBTiBsb3BleiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoianVsaWFuQHBhcmtpbmcuY29tIiwiaWF0IjoxNjUwNjY1NTc0LCJleHAiOjE2NTA2NzI3NzR9.PD1D6RZbX1HhhEKOF7bq0so98MReej-lrM1rGXU7VIg',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkpVTElBTiBsb3BleiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoianVsaWFuQHBhcmtpbmcuY29tIiwiaWF0IjoxNjUwODI2MDIwLCJleHAiOjE2NTA4MzMyMjB9.nhcvotI1axD6Aqv7HFn6W468SJr2F1NfnhQCT0ympRo',
     },
     body: JSON.stringify({
       paymentMethod,
-      amount: 10 * 100, // 10 US in cents
+      amount: 20 * 100, // 10 US in cents
     }),
   };
   try {
