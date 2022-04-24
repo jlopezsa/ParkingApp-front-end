@@ -1,7 +1,6 @@
 const API_URL = process.env.REACT_APP_LOCAL_URL;
 
 export async function createTokenCard(paymentMethod) {
-  console.log(paymentMethod);
   const payload = {
     method: 'POST',
     headers: {
