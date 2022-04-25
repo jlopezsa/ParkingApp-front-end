@@ -57,7 +57,7 @@ function Booking() {
           <p>
             Costo total de la reserva:
             {' '}
-            {3500}
+            {parking.hourValue}
             {' '}
             pesos
           </p>

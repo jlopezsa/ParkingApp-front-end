@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './Searchdayhour.scss';
 import {
@@ -28,25 +28,27 @@ function SearchDayHour() {
   };
 
   const handleChangeDataIn = (e) => {
-    console.log(e.currentTarget.value);
     setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
-    dispatch(bookingDateHour(dateHourInfo));
   };
 
   const handleChangeDataOut = (e) => {
     setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
-    dispatch(bookingDateHour(dateHourInfo));
   };
 
   const handleChangeHourIn = (e) => {
     setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
-    dispatch(bookingDateHour(dateHourInfo));
   };
 
   const handleChangeHourOut = (e) => {
     setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
-    dispatch(bookingDateHour(dateHourInfo));
   };
+
+  useEffect(() => {
+    const setData = () => {
+      dispatch(bookingDateHour(dateHourInfo));
+    };
+    setData();
+  }, [dateHourInfo]);
 
   return (
     <div className="dayhour">
