@@ -1,6 +1,6 @@
 import React from 'react';
 import './Booking.scss';
-
+import moment from 'moment';
 import { useSelector } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
@@ -11,21 +11,19 @@ function Booking() {
   const dateHour = useSelector((state) => state.bookingInfo);
 
   const calculateValue = () => {
-    const start = new Date(`${dateHour.startDate}, ${dateHour.startTime}`);
-    const end = new Date(`${dateHour.endDate}, ${dateHour.endTime}`);
-    const difference = Math.abs(start - end);
-    const days = difference / (1000 * 3600 * 24);
-    // const fecha1 = moment('2016-09-30 07:30:00', 'YYYY-MM-DD HH:mm:ss');
-    // const fecha2 = moment('2016-10-03 07:30:00', 'YYYY-MM-DD HH:mm:ss');
-
-    // const diff = fecha2.diff(fecha1, 'h'); // Diff in hours
-    // console.log(diff);
+    // const start = new Date(`${dateHour.startDate}, ${dateHour.startTime}`);
+    // const end = new Date(`${dateHour.endDate}, ${dateHour.endTime}`);
+    // const difference = Math.abs(start - end);
+    // const days = difference / (1000 * 3600 * 24);
+    const fecha1 = moment(`${dateHour.startDate} ${dateHour.startTime}`, 'YYYY-MM-DD HH:mm');
+    const fecha2 = moment(`${dateHour.endDate} ${dateHour.endTime}`, 'YYYY-MM-DD HH:mm');
+    const diff = fecha2.diff(fecha1, 'h'); // Diff in hours
     return (
       <div>
         <p>
           Valor de la reserva:
           {' '}
-          {days}
+          {diff}
         </p>
       </div>
     );
