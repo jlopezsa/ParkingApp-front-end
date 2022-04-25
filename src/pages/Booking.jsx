@@ -11,19 +11,24 @@ function Booking() {
   const dateHour = useSelector((state) => state.bookingInfo);
 
   const calculateValue = () => {
-    // const start = new Date(`${dateHour.startDate}, ${dateHour.startTime}`);
-    // const end = new Date(`${dateHour.endDate}, ${dateHour.endTime}`);
-    // const difference = Math.abs(start - end);
-    // const days = difference / (1000 * 3600 * 24);
     const fecha1 = moment(`${dateHour.startDate} ${dateHour.startTime}`, 'YYYY-MM-DD HH:mm');
     const fecha2 = moment(`${dateHour.endDate} ${dateHour.endTime}`, 'YYYY-MM-DD HH:mm');
     const diff = fecha2.diff(fecha1, 'h'); // Diff in hours
     return (
       <div>
         <p>
-          Valor de la reserva:
+          Horas de la reserva:
           {' '}
           {diff}
+          {' '}
+          hora(s)
+        </p>
+        <p>
+          Costo total de la reserva:
+          {' '}
+          COP
+          {' '}
+          {diff * parking.hourValue}
         </p>
       </div>
     );

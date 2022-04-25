@@ -28,6 +28,7 @@ function SearchDayHour() {
   };
 
   const handleChangeDataIn = (e) => {
+    console.log(e.currentTarget.value);
     setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
     dispatch(bookingDateHour(dateHourInfo));
   };
