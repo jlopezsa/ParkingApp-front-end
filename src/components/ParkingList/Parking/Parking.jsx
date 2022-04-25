@@ -15,8 +15,18 @@ function Parking({ parkings }) {
   const handlerClick = () => {
     dispatch(bookingParking(parkings));
   };
+
+  const handleMouseOver = () => {
+    console.log(parkings.position.latitude);
+    console.log(parkings.position.longitude);
+  };
+  const handleOnFocus = () => {
+    console.log('fuera');
+  };
+
   return (
-    <div className="container-parking">
+    // eslint-disable-next-line no-void
+    <div className="container-parking" onMouseOver={handleMouseOver} onFocus={handleOnFocus}>
       <div className="container-parking__imagen">
         <img className="parking__imagen" src={figParking} alt="" />
       </div>
@@ -52,6 +62,10 @@ Parking.propTypes = {
     hourValue: PropTypes.number.isRequired,
     totalPlaces: PropTypes.number.isRequired,
     cityName: PropTypes.string.isRequired,
+    position: PropTypes.shape({
+      latitude: PropTypes.number.isRequired,
+      longitude: PropTypes.number.isRequired,
+    }).isRequired,
   }).isRequired,
 };
 
