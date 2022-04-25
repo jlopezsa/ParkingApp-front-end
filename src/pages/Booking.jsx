@@ -1,11 +1,14 @@
 import React from 'react';
 import './Booking.scss';
 
+import { useSelector } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import PaymentsMethod from '../components/PaymentsMethod/PaymentsMethod';
 
 function Booking() {
+  const parking = useSelector((state) => state.bookingParking);
+  console.log('FLAG-02: ', parking.name);
   return (
     <div className="container-booking">
       <Header />
@@ -43,9 +46,15 @@ function Booking() {
             <img className="parking__imagen" src="https://d500.epimg.net/cincodias/imagenes/2020/01/22/lifestyle/1579693137_705498_1579693193_noticia_normal.jpg" alt="" />
           </div>
           <div className="booking-body__summary--infoParking">
-            <h5>La sucursal</h5>
-            <p>2464 Royal Ln. Mesa, New Jersey 45463</p>
-            <p>Tarifa: $2500 x hora</p>
+            <h5>{ parking.name }</h5>
+            <p>{ parking.addres}</p>
+            <p>
+              Tarifa:
+              $
+              {parking.hourValue}
+              {' '}
+              x hora
+            </p>
           </div>
           <div className="booking-body__summary--summary">
             <h5>Información de la reserva</h5>

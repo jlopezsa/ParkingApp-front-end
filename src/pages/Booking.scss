@@ -115,7 +115,7 @@
   &__summary{
     grid-area: summaryCell;
     width: 420px;
-    height: 530px;
+    height: auto;
     margin: 0px;
     margin-top: 10px;
     border: 1px solid $strongBlue-color;
@@ -137,7 +137,7 @@
       }
     }
     &--infoParking{
-      height: 125px;
+      height: auto;
       h5{
         font-size: $headline5;
         margin-top: 0px;
