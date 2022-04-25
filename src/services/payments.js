@@ -5,7 +5,7 @@ export async function createTokenCard(paymentMethod) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkpVTElBTiBsb3BleiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoianVsaWFuQHBhcmtpbmcuY29tIiwiaWF0IjoxNjUwODQyOTQ0LCJleHAiOjE2NTA4NTAxNDR9.P2mAW7UmnLFHpWwU2F7mtFWmjislh9kUACbdfSo1D-I',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkpVTElBTiBsb3BleiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoianVsaWFuQHBhcmtpbmcuY29tIiwiaWF0IjoxNjUwOTEyNzE1LCJleHAiOjE2NTA5MTk5MTV9.G4o9zuch8gWm7W25UH0z-51dYOScJG_468FrwTkqLew',
     },
     body: JSON.stringify({
       paymentMethod,

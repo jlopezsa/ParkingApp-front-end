@@ -14,24 +14,25 @@ function Booking() {
     const fecha1 = moment(`${dateHour.startDate} ${dateHour.startTime}`, 'YYYY-MM-DD HH:mm');
     const fecha2 = moment(`${dateHour.endDate} ${dateHour.endTime}`, 'YYYY-MM-DD HH:mm');
     const diff = fecha2.diff(fecha1, 'h'); // Diff in hours
-    return (
-      <div>
-        <p>
-          Horas de la reserva:
-          {' '}
-          {diff}
-          {' '}
-          hora(s)
-        </p>
-        <p>
-          Costo total de la reserva:
-          {' '}
-          COP
-          {' '}
-          {diff * parking.hourValue}
-        </p>
-      </div>
-    );
+    return diff;
+    // return (
+    //   <div>
+    //     <p>
+    //       Horas de la reserva:
+    //       {' '}
+    //       {diff}
+    //       {' '}
+    //       hora(s)
+    //     </p>
+    //     <p>
+    //       Costo total de la reserva:
+    //       {' '}
+    //       COP
+    //       {' '}
+    //       {diff * parking.hourValue}
+    //     </p>
+    //   </div>
+    // );
   };
 
   return (
@@ -57,7 +58,7 @@ function Booking() {
           <p>
             Costo total de la reserva:
             {' '}
-            {parking.hourValue}
+            {calculateValue() * parking.hourValue}
             {' '}
             pesos
           </p>
@@ -97,7 +98,20 @@ function Booking() {
               {' / '}
               {dateHour.endTime}
             </p>
-            {calculateValue()}
+            <p>
+              Horas de la reserva:
+              {' '}
+              {calculateValue()}
+              {' '}
+              hora(s)
+            </p>
+            <p>
+              Costo total de la reserva:
+              {' '}
+              COP
+              {' '}
+              {calculateValue() * parking.hourValue}
+            </p>
           </div>
         </div>
       </div>
