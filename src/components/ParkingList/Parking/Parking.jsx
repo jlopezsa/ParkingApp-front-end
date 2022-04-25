@@ -4,10 +4,17 @@ import PropTypes from 'prop-types';
 
 import './Parking.scss';
 import '../../../pages/Booking';
+import { useDispatch } from 'react-redux';
+import { bookingParking } from '../../../store/actions';
 
 const figParking = require('../../../figures/parking_reserva.png');
 
 function Parking({ parkings }) {
+  const dispatch = useDispatch();
+
+  const handlerClick = () => {
+    dispatch(bookingParking(parkings));
+  };
   return (
     <div className="container-parking">
       <div className="container-parking__imagen">
@@ -30,7 +37,7 @@ function Parking({ parkings }) {
         </p>
         <div className="parking-bottom">
           <button type="submit">
-            <Link id="booking-page" to="/Booking">RESERVAR</Link>
+            <Link id="booking-page" to="/Booking" onClick={handlerClick}>RESERVAR</Link>
           </button>
         </div>
       </div>

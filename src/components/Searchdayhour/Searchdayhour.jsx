@@ -1,12 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './Searchdayhour.scss';
-import { searchCity } from '../../store/actions';
+import {
+  searchCity,
+  bookingDateHour,
+} from '../../store/actions';
 
 function SearchDayHour() {
   const dispatch = useDispatch();
 
   const [inputCity, setInputCity] = useState('');
+  const [dateHourInfo, setDateHourInfo] = useState(
+    {
+      startDate: '',
+      endDate: '',
+      startTime: '',
+      endTime: '',
+    },
+  );
 
   const handleClick = () => {
     dispatch(searchCity(inputCity));
@@ -15,6 +26,30 @@ function SearchDayHour() {
   const handleChange = (e) => {
     setInputCity(e.target.value);
   };
+
+  const handleChangeDataIn = (e) => {
+    setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
+  };
+
+  const handleChangeDataOut = (e) => {
+    setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
+  };
+
+  const handleChangeHourIn = (e) => {
+    setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
+  };
+
+  const handleChangeHourOut = (e) => {
+    setDateHourInfo({ ...dateHourInfo, [e.target.name]: e.target.value });
+  };
+
+  useEffect(() => {
+    const setData = () => {
+      dispatch(bookingDateHour(dateHourInfo));
+    };
+    setData();
+  }, [dateHourInfo]);
+
   return (
     <div className="dayhour">
       <p id="titlesearch">Encuentre su parqueadero mas cercano</p>
@@ -25,10 +60,10 @@ function SearchDayHour() {
 
       <p id="entrada">Entrada</p>
       <p id="salida">Salida</p>
-      <input id="fechaini" type="date" name="stardate" />
-      <input id="fechafin" type="date" name="enddate" />
-      <input id="horaini" type="time" name="starttime" />
-      <input id="horafin" type="time" name="endtime" />
+      <input id="fechaini" type="date" name="startDate" onChange={handleChangeDataIn} />
+      <input id="fechafin" type="date" name="endDate" onChange={handleChangeDataOut} />
+      <input id="horaini" type="time" name="startTime" onChange={handleChangeHourIn} />
+      <input id="horafin" type="time" name="endTime" onChange={handleChangeHourOut} />
     </div>
   );
 }

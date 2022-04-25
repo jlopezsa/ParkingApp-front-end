@@ -1,11 +1,40 @@
 import React from 'react';
 import './Booking.scss';
-
+import moment from 'moment';
+import { useSelector } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import PaymentsMethod from '../components/PaymentsMethod/PaymentsMethod';
 
 function Booking() {
+  const parking = useSelector((state) => state.bookingParking);
+  const dateHour = useSelector((state) => state.bookingInfo);
+
+  const calculateValue = () => {
+    const fecha1 = moment(`${dateHour.startDate} ${dateHour.startTime}`, 'YYYY-MM-DD HH:mm');
+    const fecha2 = moment(`${dateHour.endDate} ${dateHour.endTime}`, 'YYYY-MM-DD HH:mm');
+    const diff = fecha2.diff(fecha1, 'h'); // Diff in hours
+    return diff;
+    // return (
+    //   <div>
+    //     <p>
+    //       Horas de la reserva:
+    //       {' '}
+    //       {diff}
+    //       {' '}
+    //       hora(s)
+    //     </p>
+    //     <p>
+    //       Costo total de la reserva:
+    //       {' '}
+    //       COP
+    //       {' '}
+    //       {diff * parking.hourValue}
+    //     </p>
+    //   </div>
+    // );
+  };
+
   return (
     <div className="container-booking">
       <Header />
@@ -29,7 +58,7 @@ function Booking() {
           <p>
             Costo total de la reserva:
             {' '}
-            {3500}
+            {calculateValue() * parking.hourValue}
             {' '}
             pesos
           </p>
@@ -43,15 +72,46 @@ function Booking() {
             <img className="parking__imagen" src="https://d500.epimg.net/cincodias/imagenes/2020/01/22/lifestyle/1579693137_705498_1579693193_noticia_normal.jpg" alt="" />
           </div>
           <div className="booking-body__summary--infoParking">
-            <h5>La sucursal</h5>
-            <p>2464 Royal Ln. Mesa, New Jersey 45463</p>
-            <p>Tarifa: $2500 x hora</p>
+            <h5>{ parking.name }</h5>
+            <p>{ parking.addres}</p>
+            <p>
+              Tarifa:
+              $
+              {parking.hourValue}
+              {' '}
+              x hora
+            </p>
           </div>
           <div className="booking-body__summary--summary">
             <h5>Información de la reserva</h5>
-            <p>Fecha y hora de entrada: </p>
-            <p>Fecha y hora de salida: </p>
-            <p>Valor total: </p>
+            <p>
+              Fecha y hora de entrada:
+              {' '}
+              {dateHour.startDate}
+              {' / '}
+              {dateHour.startTime}
+            </p>
+            <p>
+              Fecha y hora de salida:
+              {' '}
+              {dateHour.endDate}
+              {' / '}
+              {dateHour.endTime}
+            </p>
+            <p>
+              Horas de la reserva:
+              {' '}
+              {calculateValue()}
+              {' '}
+              hora(s)
+            </p>
+            <p>
+              Costo total de la reserva:
+              {' '}
+              COP
+              {' '}
+              {calculateValue() * parking.hourValue}
+            </p>
           </div>
         </div>
       </div>
