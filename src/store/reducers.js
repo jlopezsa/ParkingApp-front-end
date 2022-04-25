@@ -2,12 +2,18 @@ import {
   SET_PARKINGS,
   SEARCH_CITY,
   BOOKING_PARKING,
+  BOOKING_DATE_HOUR,
 } from './types';
 
 const initialState = {
   searchCity: '',
   parkingsFiltered: [],
-  bookingParking: {},
+  bookingInfo: {
+    startDate: '',
+    endDate: '',
+    startTime: '',
+    endTime: '',
+  },
 };
 
 // eslint-disable-next-line default-param-last
@@ -27,6 +33,16 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         bookingParking: action.payload,
+      };
+    case BOOKING_DATE_HOUR:
+      return {
+        ...state,
+        bookingInfo: {
+          startDate: action.payload.startDate,
+          endDate: action.payload.endDate,
+          startTime: action.payload.startTime,
+          endTime: action.payload.endTime,
+        },
       };
     default:
       return state;

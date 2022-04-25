@@ -8,7 +8,29 @@ import PaymentsMethod from '../components/PaymentsMethod/PaymentsMethod';
 
 function Booking() {
   const parking = useSelector((state) => state.bookingParking);
-  console.log('FLAG-02: ', parking.name);
+  const dateHour = useSelector((state) => state.bookingInfo);
+
+  const calculateValue = () => {
+    const start = new Date(`${dateHour.startDate}, ${dateHour.startTime}`);
+    const end = new Date(`${dateHour.endDate}, ${dateHour.endTime}`);
+    const difference = Math.abs(start - end);
+    const days = difference / (1000 * 3600 * 24);
+    // const fecha1 = moment('2016-09-30 07:30:00', 'YYYY-MM-DD HH:mm:ss');
+    // const fecha2 = moment('2016-10-03 07:30:00', 'YYYY-MM-DD HH:mm:ss');
+
+    // const diff = fecha2.diff(fecha1, 'h'); // Diff in hours
+    // console.log(diff);
+    return (
+      <div>
+        <p>
+          Valor de la reserva:
+          {' '}
+          {days}
+        </p>
+      </div>
+    );
+  };
+
   return (
     <div className="container-booking">
       <Header />
@@ -58,9 +80,21 @@ function Booking() {
           </div>
           <div className="booking-body__summary--summary">
             <h5>Información de la reserva</h5>
-            <p>Fecha y hora de entrada: </p>
-            <p>Fecha y hora de salida: </p>
-            <p>Valor total: </p>
+            <p>
+              Fecha y hora de entrada:
+              {' '}
+              {dateHour.startDate}
+              {' / '}
+              {dateHour.startTime}
+            </p>
+            <p>
+              Fecha y hora de salida:
+              {' '}
+              {dateHour.endDate}
+              {' / '}
+              {dateHour.endTime}
+            </p>
+            {calculateValue()}
           </div>
         </div>
       </div>

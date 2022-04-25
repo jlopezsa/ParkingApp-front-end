@@ -2,6 +2,7 @@ import {
   SET_PARKINGS,
   SEARCH_CITY,
   BOOKING_PARKING,
+  BOOKING_DATE_HOUR,
 } from './types';
 
 import {
@@ -30,3 +31,4 @@ export const getParkings = () => async (dispatch) => {
 };
 
 export const bookingParking = (parking) => ({ type: BOOKING_PARKING, payload: parking });
+export const bookingDateHour = (dateHour) => ({ type: BOOKING_DATE_HOUR, payload: dateHour });
