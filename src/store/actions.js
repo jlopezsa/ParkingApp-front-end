@@ -1,6 +1,7 @@
 import {
   SET_PARKINGS,
   SEARCH_CITY,
+  BOOKING_PARKING,
 } from './types';
 
 import {
@@ -27,3 +28,5 @@ export const getParkings = () => async (dispatch) => {
   } catch (error) {
   }
 };
+
+export const bookingParking = (parking) => ({ type: BOOKING_PARKING, payload: parking });

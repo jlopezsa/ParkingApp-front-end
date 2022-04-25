@@ -1,11 +1,13 @@
 import {
   SET_PARKINGS,
   SEARCH_CITY,
+  BOOKING_PARKING,
 } from './types';
 
 const initialState = {
   searchCity: '',
   parkingsFiltered: [],
+  bookingParking: {},
 };
 
 // eslint-disable-next-line default-param-last
@@ -21,7 +23,11 @@ function reducer(state = initialState, action) {
         ...state,
         parkingsFiltered: action.payload,
       };
-
+    case BOOKING_PARKING:
+      return {
+        ...state,
+        bookingParking: action.payload,
+      };
     default:
       return state;
   }
