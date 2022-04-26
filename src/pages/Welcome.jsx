@@ -6,6 +6,7 @@ function Welcome() {
   return (
     <div className="container-welcome">
       <img src={parkingTitle} alt="title" />
+      <p> Welcome to the Parking App!</p>
     </div>
   );
 }

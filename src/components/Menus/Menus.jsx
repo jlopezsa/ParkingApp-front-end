@@ -26,6 +26,7 @@ function Menus() {
         <Route path="/AdminPage" element={<AdminPage />} />
         <Route path="/CreateParkingsPage" element={<CreateParkingsPage />} />
         <Route path="/activate/:token" element={<ActivatePage />} />
+        <Route path="/activate" element={<ActivatePage />} />
       </Routes>
     </BrowserRouter>
   );
