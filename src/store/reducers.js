@@ -3,6 +3,7 @@ import {
   SEARCH_CITY,
   BOOKING_PARKING,
   BOOKING_DATE_HOUR,
+  TARGET_PARKING_POSITION,
 } from './types';
 
 const initialState = {
@@ -13,6 +14,10 @@ const initialState = {
     endDate: '',
     startTime: '',
     endTime: '',
+  },
+  targetPosition: {
+    latitude: 0,
+    longitude: 0,
   },
 };
 
@@ -42,6 +47,14 @@ function reducer(state = initialState, action) {
           endDate: action.payload.endDate,
           startTime: action.payload.startTime,
           endTime: action.payload.endTime,
+        },
+      };
+    case TARGET_PARKING_POSITION:
+      return {
+        ...state,
+        targetPosition: {
+          latitude: action.payload.latitude,
+          longitude: action.payload.longitude,
         },
       };
     default:
