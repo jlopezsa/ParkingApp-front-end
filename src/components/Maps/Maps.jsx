@@ -9,6 +9,7 @@ const containerStyle = {
 
 function Maps() {
   const parkings = useSelector((state) => state.parkingsFiltered);
+  const targetParking = useSelector((state) => state.targetPosition);
 
   const [centerCoor, setCenterCords] = useState({ lat: 4.65, long: -74.1 });
 
@@ -46,16 +47,16 @@ function Maps() {
               />
               <Marker
                 icon={{
-                  path: 'M8 12l-4.7023 2.4721.898-5.236L.3916 5.5279l5.2574-.764L8 0l2.3511 4.764 5.2574.7639-3.8043 3.7082.898 5.236z',
-                  fillColor: 'green',
+                  path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+                  fillColor: '#00ff0d',
                   fillOpacity: 0.9,
-                  scale: 2,
-                  strokeColor: 'gold',
-                  strokeWeight: 2,
+                  scale: 1.1,
+                  strokeColor: 'green',
+                  strokeWeight: 4,
                 }}
                 position={{
-                  lat: item.position.latitude,
-                  lng: item.position.longitude,
+                  lat: targetParking.latitude,
+                  lng: targetParking.longitude,
                 }}
               />
 

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './Parking.scss';
 import '../../../pages/Booking';
 import { useDispatch } from 'react-redux';
-import { bookingParking } from '../../../store/actions';
+import { bookingParking, targetParkingPosition } from '../../../store/actions';
 
 const figParking = require('../../../figures/parking_reserva.png');
 
@@ -17,8 +17,13 @@ function Parking({ parkings }) {
   };
 
   const handleMouseOver = () => {
-    console.log(parkings.position.latitude);
-    console.log(parkings.position.longitude);
+    // console.log(parkings.position.latitude);
+    // console.log(parkings.position.longitude);
+    const targetPosition = {
+      latitude: parkings.position.latitude,
+      longitude: parkings.position.longitude,
+    };
+    dispatch(targetParkingPosition(targetPosition));
   };
   const handleOnFocus = () => {
     console.log('fuera');
