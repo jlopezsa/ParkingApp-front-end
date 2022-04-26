@@ -10,7 +10,7 @@ function Activate() {
   const navigate = Navigate();
   const activate = async () => {
     const response = await fetch(`${URL_BASE}/auth/local/verify-account/${token}`);
-    const data = await response.json();
+
     console.log('Estoy en activate', data);
     if (data.token) {
       localStorage.setItem('token', data.token);
