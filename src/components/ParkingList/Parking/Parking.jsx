@@ -25,13 +25,33 @@ function Parking({ parkings }) {
     };
     dispatch(targetParkingPosition(targetPosition));
   };
+
+  const handleMouseOut = () => {
+    const targetPosition = {
+      latitude: 0,
+      longitude: 0,
+    };
+    dispatch(targetParkingPosition(targetPosition));
+  };
+
   const handleOnFocus = () => {
-    console.log('fuera');
+    const targetPosition = {
+      latitude: 0,
+      longitude: 0,
+    };
+    dispatch(targetParkingPosition(targetPosition));
+  };
+  const handleOnBlur = () => {
+    const targetPosition = {
+      latitude: 0,
+      longitude: 0,
+    };
+    dispatch(targetParkingPosition(targetPosition));
   };
 
   return (
     // eslint-disable-next-line no-void
-    <div className="container-parking" onMouseOver={handleMouseOver} onFocus={handleOnFocus}>
+    <div className="container-parking" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onBlur={handleOnBlur} onFocus={handleOnFocus}>
       <div className="container-parking__imagen">
         <img className="parking__imagen" src={figParking} alt="" />
       </div>
