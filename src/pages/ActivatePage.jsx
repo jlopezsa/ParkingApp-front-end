@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-
+import Welcome from './Welcome';
 const URL_BASE = 'http://localhost:8080';
 
 function Activate() {
@@ -20,7 +20,10 @@ function Activate() {
   }, []);
 
   return (
-    <div>Bienvenid@</div>
+    <div>
+    <Welcome />
+    </div>
   );
 }
+
 export default Activate;

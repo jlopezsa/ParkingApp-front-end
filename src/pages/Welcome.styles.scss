@@ -1,0 +1,145 @@
+@import '../App.scss';
+.body__welcome{
+  height: 100vh;
+  background-color: $light-color;
+}
+.welcome{
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: $strongBlue-color;
+  &__img{
+    height: 80px;
+    margin-top: 10px;
+  }
+}
+.target{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2*1fr;
+  margin: auto;
+  width: 80%;
+  &__text{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    &__title{
+      font-size: $headline3;
+      color: $strongBlue-color;
+      text-align: left;
+      font-family: $Bold;
+    }
+    &__description{
+      margin-top: -10px;
+      font-family: $Bold;
+      font-size: $headline5;
+      color: $black-color;
+      text-align: left;
+    }
+  }
+  &__buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: $Bold;
+    &__a{
+      height: 53px;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: $blue-color;
+      border-radius: 140px;
+      border: none;
+      color: $strongBlue-color;
+      font-family: $Bold;
+      font-size: $headline5;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      text-align: center;
+      }
+    &__b{
+      height: 53px;
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: $blue-color;
+      border-radius: 140px;
+      border: none;
+      color: $strongBlue-color;
+      font-family: $Bold;
+      font-size: $headline5;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      text-align: center;
+      }
+    }
+  }
+  @media screen and (min-width: $Desktop){
+  .welcome{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: $strongBlue-color;
+    margin-bottom: 30px;
+  }
+  .target{
+    background-color: $lightBlue-color;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2*1fr;
+    margin: auto;
+    width: 80%;
+    border-radius: 40px;
+    &__text{
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      margin-left: 80px;
+      margin-top: 40px;
+      &__title{
+        font-size: $headline3;
+        color: $strongBlue-color;
+        text-align: left;
+        font-family: $Bold;
+      }
+      &__description{
+        margin-top: -10px;
+        font-family: $Bold;
+        font-size: $headline5;
+        color: $black-color;
+        text-align: left;
+        margin-bottom: 70px;
+      }
+    }
+    &__buttons{
+      font-family: $Bold;
+      margin-bottom: 70px;
+      &__a{
+        height: 53px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: $blue-color;
+        border-radius: 140px;
+        border: none;
+        color: $strongBlue-color;
+        font-family: $Bold;
+        font-size: $headline5;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-align: center;
+        }
+      &__b{
+        height: 53px;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: $blue-color;
+        border-radius: 140px;
+        border: none;
+        color: $strongBlue-color;
+        font-family: $Bold;
+        font-size: $headline5;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-align: center;
+        }
+      }
+    }
+  }
