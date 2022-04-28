@@ -20,7 +20,7 @@ function Welcome() {
         </div>
         <div className="target__buttons">
           <Link className="target__buttons__a" to="/Search">Continuar con mi reserva</Link>
-          <Link className="target__buttons__b" to="/">Aceptar</Link>
+          <Link className="target__buttons__b" to="/LogIn">Aceptar</Link>
         </div>
       </div>
     </div>
