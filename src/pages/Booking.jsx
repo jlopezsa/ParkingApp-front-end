@@ -57,10 +57,10 @@ function Booking() {
           <h5>Detalles del pago</h5>
           <p>
             Costo total de la reserva:
-            {' '}
-            {calculateValue() * parking.hourValue}
-            {' '}
-            pesos
+            <strong>
+              {' COP '}
+              {calculateValue() * parking.hourValue}
+            </strong>
           </p>
           <div>
             <PaymentsMethod />
@@ -73,13 +73,19 @@ function Booking() {
           </div>
           <div className="booking-body__summary--infoParking">
             <h5>{ parking.name }</h5>
-            <p>{ parking.addres}</p>
+            <p>
+              Dirección:
+              {' '}
+              <strong>{ parking.addres }</strong>
+            </p>
             <p>
               Tarifa:
-              $
-              {parking.hourValue}
-              {' '}
-              x hora
+              {' COP '}
+              <strong>
+                {parking.hourValue}
+                {' '}
+                x hora
+              </strong>
             </p>
           </div>
           <div className="booking-body__summary--summary">
@@ -87,30 +93,32 @@ function Booking() {
             <p>
               Fecha y hora de entrada:
               {' '}
-              {dateHour.startDate}
+              <strong>{dateHour.startDate}</strong>
               {' / '}
-              {dateHour.startTime}
+              <strong>{dateHour.startTime}</strong>
             </p>
             <p>
               Fecha y hora de salida:
               {' '}
-              {dateHour.endDate}
+              <strong>{dateHour.endDate}</strong>
               {' / '}
-              {dateHour.endTime}
+              <strong>{dateHour.endTime}</strong>
             </p>
             <p>
               Horas de la reserva:
               {' '}
-              {calculateValue()}
-              {' '}
-              hora(s)
+              <strong>
+                {calculateValue()}
+                {' '}
+                hora(s)
+              </strong>
             </p>
             <p>
               Costo total de la reserva:
               {' '}
               COP
               {' '}
-              {calculateValue() * parking.hourValue}
+              <strong>{calculateValue() * parking.hourValue}</strong>
             </p>
           </div>
         </div>
