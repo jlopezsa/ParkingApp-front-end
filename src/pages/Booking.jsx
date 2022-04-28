@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Booking.scss';
 import moment from 'moment';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import PaymentsMethod from '../components/PaymentsMethod/PaymentsMethod';
+import { bookingDateHour } from '../store/actions';
 
 function Booking() {
+  const dispatch = useDispatch();
+
   const parking = useSelector((state) => state.bookingParking);
   const dateHour = useSelector((state) => state.bookingInfo);
 
@@ -15,25 +18,17 @@ function Booking() {
     const fecha2 = moment(`${dateHour.endDate} ${dateHour.endTime}`, 'YYYY-MM-DD HH:mm');
     const diff = fecha2.diff(fecha1, 'h'); // Diff in hours
     return diff;
-    // return (
-    //   <div>
-    //     <p>
-    //       Horas de la reserva:
-    //       {' '}
-    //       {diff}
-    //       {' '}
-    //       hora(s)
-    //     </p>
-    //     <p>
-    //       Costo total de la reserva:
-    //       {' '}
-    //       COP
-    //       {' '}
-    //       {diff * parking.hourValue}
-    //     </p>
-    //   </div>
-    // );
   };
+
+  useEffect(() => {
+    const diffData = calculateValue();
+    dispatch(bookingDateHour(
+      {
+        ...dateHour,
+        valueBooking: (diffData * parking.hourValue),
+      },
+    ));
+  }, []);
 
   return (
     <div className="container-booking">
