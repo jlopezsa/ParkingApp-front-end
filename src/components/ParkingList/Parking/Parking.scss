@@ -72,6 +72,13 @@
       }
     }
   }
+  transition: background-color 0.8s;
+  // transition: width 2s;
+  // transition: box-shadow;
 }
 
-
+.container-parking:hover {
+  // box-shadow: 5px 10px 18px #888888;
+  background-color: #ced6d5;
+  // width: 460px;
+}
