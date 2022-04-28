@@ -8,10 +8,9 @@ function Signup() {
     lastName: "",
     email: "",
     password: "",
+    confirmPass: "",
   });
-
   const handleChange = (e) => {
-    //setDataUser(e.currentTarget.value);
     setDataUser({
       ...dataUser,
       [e.target.name]: e.target.value
@@ -24,13 +23,12 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //setDataUser(dataUser);
     fetchCreateUser();
   }
 
   const handlerValidate = () => {
-    const { firstName, lastName, email, password } = dataUser;
-    let valido = !firstName.length || !lastName.length || !email.length || !password.length
+    const { firstName, lastName, email, password, confirmPass } = dataUser;
+    let valido = !firstName.length || !lastName.length || !email.length || !password.length || !confirmPass.length
     return valido;
   }
 
@@ -42,7 +40,7 @@ function Signup() {
         <input className="form__input" type="text" onChange={handleChange} name="lastName" placeholder="Apellidos" />
         <input className="form__input" type="email" onChange={handleChange} name="email" placeholder="email" />
         <input className="form__input" type="password" onChange={handleChange} name="password" placeholder="Contraseña" />
-        <input className="form__input" type="password" name="confirm-password" placeholder="Confirmar contraseña" />
+        <input className="form__input" type="password" onChange={handleChange} name="confirmPass" placeholder="Confirmar contraseña" />
         <p>
           <label htmlFor="Rol" >Tipo de usuario</label>
           <select className="form__input" onChange={handleChange} name='role'>
