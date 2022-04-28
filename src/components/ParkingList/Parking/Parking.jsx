@@ -17,8 +17,6 @@ function Parking({ parkings }) {
   };
 
   const handleMouseOver = () => {
-    // console.log(parkings.position.latitude);
-    // console.log(parkings.position.longitude);
     const targetPosition = {
       latitude: parkings.position.latitude,
       longitude: parkings.position.longitude,
