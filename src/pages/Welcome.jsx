@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import parkingTitle from '../figures/parking_title.svg';
 import './Welcome.styles.scss';
 
@@ -18,12 +19,8 @@ function Welcome() {
           </p>
         </div>
         <div className="target__buttons">
-          <button className="target__buttons__a" type="button">
-            Continuar con mi reserva
-          </button>
-          <button className="target__buttons__b" type="button">
-            Aceptar
-          </button>
+          <Link className="target__buttons__a" to="/Search">Continuar con mi reserva</Link>
+          <Link className="target__buttons__b" to="/LogIn">Aceptar</Link>
         </div>
       </div>
     </div>
