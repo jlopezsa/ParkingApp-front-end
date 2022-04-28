@@ -25,18 +25,24 @@ function Maps() {
     }
   }, [parkings]);
 
-  const onMarkerClick = (e) => {
-    console.log('hello', e);
-    console.log('hello', e.latLng.lat());
-    console.log('hello', e.latLng.lng());
+  const onMouseOver = (e) => {
+    const nameParking = parkings.find((item) => item.position.latitude === e.latLng.lat());
     setCoordParking({
+      name: nameParking.name,
       latitude: e.latLng.lat(),
       longitude: e.latLng.lng(),
     });
   };
 
+  const onMouseOut = () => {
+    setCoordParking({
+      name: '',
+      latitude: 0,
+      longitude: 0,
+    });
+  };
+
   useEffect(() => {
-    console.log('FLAG', coordParking);
   }, [coordParking]);
 
   return (
@@ -58,7 +64,8 @@ function Maps() {
                 lat: item.position.latitude,
                 lng: item.position.longitude,
               }}
-              onClick={onMarkerClick}
+              onMouseOver={onMouseOver}
+              onMouseOut={onMouseOut}
             />
           ))
         }
@@ -76,6 +83,23 @@ function Maps() {
             lng: targetParking.longitude,
           }}
         />
+        <InfoBox
+          position={{
+            lat: targetParking.latitude,
+            lng: targetParking.longitude,
+          }}
+          options={{
+            boxStyle: {
+              width: 'auto',
+            },
+          }}
+        >
+          <div style={{ background: '#90E0EF', border: '1px solid #ccc', padding: 15 }}>
+            <div style={{ fontSize: 16, fontColor: '#08233B' }}>
+              {targetParking.name}
+            </div>
+          </div>
+        </InfoBox>
         {
             Object.keys(coordParking).length
               ? (
@@ -86,20 +110,19 @@ function Maps() {
                   }}
                   options={{
                     boxStyle: {
-                      width: '150px',
+                      width: 'auto',
                     },
                   }}
                 >
-                  <div style={{ background: 'white', border: '1px solid #ccc', padding: 15, width: '100px' }}>
-                    <div style={{ fontSize: 16, fontColor: '#08233B', width: '50px' }}>
-                      <p>Hello, World!</p>
+                  <div style={{ background: '#90E0EF', border: '1px solid #ccc', padding: 15 }}>
+                    <div style={{ fontSize: 16, fontColor: '#08233B' }}>
+                      <p>{coordParking.name}</p>
                     </div>
                   </div>
                 </InfoBox>
               )
               : <div />
           }
-
       </GoogleMap>
     </LoadScript>
 
