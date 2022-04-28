@@ -1,7 +1,6 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { useSelector } from 'react-redux';
+import { GoogleMap, LoadScript, Marker, InfoBox } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
@@ -10,10 +9,12 @@ const containerStyle = {
 
 function Maps() {
   const parkings = useSelector((state) => state.parkingsFiltered);
+  const targetParking = useSelector((state) => state.targetPosition);
 
   const [centerCoor, setCenterCords] = useState({ lat: 4.65, long: -74.1 });
+  const [coordParking, setCoordParking] = useState({});
 
-  useEffect(()=>{
+  useEffect(() => {
     if (parkings.length === 0) {
       setCenterCords({ lat: 4.65, long: -74.1 });
     } else {
@@ -22,7 +23,27 @@ function Maps() {
         long: parkings[0].position.longitude,
       });
     }
-  },[parkings])
+  }, [parkings]);
+
+  const onMouseOver = (e) => {
+    const nameParking = parkings.find((item) => item.position.latitude === e.latLng.lat());
+    setCoordParking({
+      name: nameParking.name,
+      latitude: e.latLng.lat(),
+      longitude: e.latLng.lng(),
+    });
+  };
+
+  const onMouseOut = () => {
+    setCoordParking({
+      name: '',
+      latitude: 0,
+      longitude: 0,
+    });
+  };
+
+  useEffect(() => {
+  }, [coordParking]);
 
   return (
     <LoadScript googleMapsApiKey={process.env.REACT_APP_KEY_MAPS}>
@@ -32,7 +53,7 @@ function Maps() {
           lat: centerCoor.lat,
           lng: centerCoor.long,
         }}
-        zoom={11}
+        zoom={14}
       >
         { /* Child components, such as markers, info windows, etc. */}
         {
@@ -43,9 +64,65 @@ function Maps() {
                 lat: item.position.latitude,
                 lng: item.position.longitude,
               }}
+              onMouseOver={onMouseOver}
+              onMouseOut={onMouseOut}
             />
           ))
         }
+        <Marker
+          icon={{
+            path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+            fillColor: '#00ff0d',
+            fillOpacity: 0.9,
+            scale: 1.1,
+            strokeColor: 'green',
+            strokeWeight: 4,
+          }}
+          position={{
+            lat: targetParking.latitude,
+            lng: targetParking.longitude,
+          }}
+        />
+        <InfoBox
+          position={{
+            lat: targetParking.latitude,
+            lng: targetParking.longitude,
+          }}
+          options={{
+            boxStyle: {
+              width: 'auto',
+            },
+          }}
+        >
+          <div style={{ background: '#90E0EF', border: '1px solid #ccc', padding: 15 }}>
+            <div style={{ fontSize: 16, fontColor: '#08233B' }}>
+              {targetParking.name}
+            </div>
+          </div>
+        </InfoBox>
+        {
+            Object.keys(coordParking).length
+              ? (
+                <InfoBox
+                  position={{
+                    lat: coordParking.latitude,
+                    lng: coordParking.longitude,
+                  }}
+                  options={{
+                    boxStyle: {
+                      width: 'auto',
+                    },
+                  }}
+                >
+                  <div style={{ background: '#90E0EF', border: '1px solid #ccc', padding: 15 }}>
+                    <div style={{ fontSize: 16, fontColor: '#08233B' }}>
+                      <p>{coordParking.name}</p>
+                    </div>
+                  </div>
+                </InfoBox>
+              )
+              : <div />
+          }
       </GoogleMap>
     </LoadScript>
 

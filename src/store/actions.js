@@ -3,6 +3,7 @@ import {
   SEARCH_CITY,
   BOOKING_PARKING,
   BOOKING_DATE_HOUR,
+  TARGET_PARKING_POSITION,
 } from './types';
 
 import {
@@ -32,3 +33,9 @@ export const getParkings = () => async (dispatch) => {
 
 export const bookingParking = (parking) => ({ type: BOOKING_PARKING, payload: parking });
 export const bookingDateHour = (dateHour) => ({ type: BOOKING_DATE_HOUR, payload: dateHour });
+export const targetParkingPosition = (targetPosition) => (
+  {
+    type: TARGET_PARKING_POSITION,
+    payload: targetPosition,
+  }
+);

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './Parking.scss';
 import '../../../pages/Booking';
 import { useDispatch } from 'react-redux';
-import { bookingParking } from '../../../store/actions';
+import { bookingParking, targetParkingPosition } from '../../../store/actions';
 
 const figParking = require('../../../figures/parking_reserva.png');
 
@@ -15,8 +15,42 @@ function Parking({ parkings }) {
   const handlerClick = () => {
     dispatch(bookingParking(parkings));
   };
+
+  const handleMouseOver = () => {
+    const targetPosition = {
+      name: parkings.name,
+      latitude: parkings.position.latitude,
+      longitude: parkings.position.longitude,
+    };
+    dispatch(targetParkingPosition(targetPosition));
+  };
+
+  const handleMouseOut = () => {
+    const targetPosition = {
+      latitude: 0,
+      longitude: 0,
+    };
+    dispatch(targetParkingPosition(targetPosition));
+  };
+
+  const handleOnFocus = () => {
+    const targetPosition = {
+      latitude: 0,
+      longitude: 0,
+    };
+    dispatch(targetParkingPosition(targetPosition));
+  };
+  const handleOnBlur = () => {
+    const targetPosition = {
+      latitude: 0,
+      longitude: 0,
+    };
+    dispatch(targetParkingPosition(targetPosition));
+  };
+
   return (
-    <div className="container-parking">
+    // eslint-disable-next-line no-void
+    <div className="container-parking" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onBlur={handleOnBlur} onFocus={handleOnFocus}>
       <div className="container-parking__imagen">
         <img className="parking__imagen" src={figParking} alt="" />
       </div>
@@ -52,6 +86,10 @@ Parking.propTypes = {
     hourValue: PropTypes.number.isRequired,
     totalPlaces: PropTypes.number.isRequired,
     cityName: PropTypes.string.isRequired,
+    position: PropTypes.shape({
+      latitude: PropTypes.number.isRequired,
+      longitude: PropTypes.number.isRequired,
+    }).isRequired,
   }).isRequired,
 };
 
