@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Booking.scss';
 import moment from 'moment';
+import jwtDecode from 'jwt-decode';
 import { useSelector, useDispatch } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
@@ -12,6 +13,9 @@ function Booking() {
 
   const parking = useSelector((state) => state.bookingParking);
   const dateHour = useSelector((state) => state.bookingInfo);
+
+  const [showForm, setShowForm] = useState(true);
+  const [userToken, setUserToken] = useState({});
 
   const calculateValue = () => {
     const fecha1 = moment(`${dateHour.startDate} ${dateHour.startTime}`, 'YYYY-MM-DD HH:mm');
@@ -28,6 +32,12 @@ function Booking() {
         valueBooking: (diffData * parking.hourValue),
       },
     ));
+    const token = localStorage.getItem('token');
+    setUserToken(jwtDecode(token));
+    if (token) {
+      setShowForm(false);
+    }
+    console.log(showForm);
   }, []);
 
   return (
@@ -36,7 +46,16 @@ function Booking() {
       <div className="booking-body">
         <div className="booking-body__account">
           <h5>Información de cuenta</h5>
-          <p>Registrado como: jhondoe@gmail.com</p>
+          <p>
+            Nombre:
+            {' '}
+            <strong>{userToken.fullName}</strong>
+          </p>
+          <p>
+            email:
+            {' '}
+            <strong>{userToken.email}</strong>
+          </p>
           <p id="p_exit">Salir</p>
         </div>
         <div className="booking-body__aditional">

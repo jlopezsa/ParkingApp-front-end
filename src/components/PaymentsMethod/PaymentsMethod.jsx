@@ -1,9 +1,9 @@
-import React from 'react';
+import { React } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
-import cardIcon from '../../figures/card_icon.svg';
 import { createTokenCard } from '../../services/payments';
 import './PaymentsMethod.scss';
+import cardIcon from '../../figures/card_icon.svg';
 
 function PaymentsMethod() {
   const elements = useElements();
