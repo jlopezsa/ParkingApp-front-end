@@ -14,7 +14,6 @@ function Booking() {
   const parking = useSelector((state) => state.bookingParking);
   const dateHour = useSelector((state) => state.bookingInfo);
 
-  const [showForm, setShowForm] = useState(true);
   const [userToken, setUserToken] = useState({});
 
   const calculateValue = () => {
@@ -34,10 +33,6 @@ function Booking() {
     ));
     const token = localStorage.getItem('token');
     setUserToken(jwtDecode(token));
-    if (token) {
-      setShowForm(false);
-    }
-    console.log(showForm);
   }, []);
 
   return (
