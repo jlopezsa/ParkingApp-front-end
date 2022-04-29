@@ -12,7 +12,8 @@ function PaymentsMethod() {
   const bookingInfo = useSelector((state) => state.bookingInfo);
 
   const fetchCreateTokenCard = async (payload) => {
-    await createTokenCard(payload, bookingInfo);
+    const token = localStorage.getItem('token');
+    await createTokenCard(payload, bookingInfo, token);
   };
 
   const handleSubmit = async (e) => {
