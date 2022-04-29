@@ -49,13 +49,6 @@
           "minProperties": 3
         }
       }
-    ],
-    "jest/expect-expect": [
-      "error",
-      {
-        "assertFunctionNames": ["expect", "test"],
-        "additionalTestBlockFunctions": []
-      }
     ]
   }
 }
