@@ -1,39 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Booking.scss';
 import moment from 'moment';
-import { useSelector } from 'react-redux';
+import jwtDecode from 'jwt-decode';
+import { useSelector, useDispatch } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import PaymentsMethod from '../components/PaymentsMethod/PaymentsMethod';
+import { bookingDateHour } from '../store/actions';
 
 function Booking() {
+  const dispatch = useDispatch();
+
   const parking = useSelector((state) => state.bookingParking);
   const dateHour = useSelector((state) => state.bookingInfo);
+
+  const [userToken, setUserToken] = useState({});
 
   const calculateValue = () => {
     const fecha1 = moment(`${dateHour.startDate} ${dateHour.startTime}`, 'YYYY-MM-DD HH:mm');
     const fecha2 = moment(`${dateHour.endDate} ${dateHour.endTime}`, 'YYYY-MM-DD HH:mm');
     const diff = fecha2.diff(fecha1, 'h'); // Diff in hours
     return diff;
-    // return (
-    //   <div>
-    //     <p>
-    //       Horas de la reserva:
-    //       {' '}
-    //       {diff}
-    //       {' '}
-    //       hora(s)
-    //     </p>
-    //     <p>
-    //       Costo total de la reserva:
-    //       {' '}
-    //       COP
-    //       {' '}
-    //       {diff * parking.hourValue}
-    //     </p>
-    //   </div>
-    // );
   };
+
+  useEffect(() => {
+    const diffData = calculateValue();
+    dispatch(bookingDateHour(
+      {
+        ...dateHour,
+        valueBooking: (diffData * parking.hourValue),
+      },
+    ));
+    const token = localStorage.getItem('token');
+    setUserToken(jwtDecode(token));
+  }, []);
 
   return (
     <div className="container-booking">
@@ -41,7 +41,16 @@ function Booking() {
       <div className="booking-body">
         <div className="booking-body__account">
           <h5>Información de cuenta</h5>
-          <p>Registrado como: jhondoe@gmail.com</p>
+          <p>
+            Nombre:
+            {' '}
+            <strong>{userToken.fullName}</strong>
+          </p>
+          <p>
+            email:
+            {' '}
+            <strong>{userToken.email}</strong>
+          </p>
           <p id="p_exit">Salir</p>
         </div>
         <div className="booking-body__aditional">
@@ -57,10 +66,10 @@ function Booking() {
           <h5>Detalles del pago</h5>
           <p>
             Costo total de la reserva:
-            {' '}
-            {calculateValue() * parking.hourValue}
-            {' '}
-            pesos
+            <strong>
+              {' COP '}
+              {calculateValue() * parking.hourValue}
+            </strong>
           </p>
           <div>
             <PaymentsMethod />
@@ -73,13 +82,19 @@ function Booking() {
           </div>
           <div className="booking-body__summary--infoParking">
             <h5>{ parking.name }</h5>
-            <p>{ parking.addres}</p>
+            <p>
+              Dirección:
+              {' '}
+              <strong>{ parking.addres }</strong>
+            </p>
             <p>
               Tarifa:
-              $
-              {parking.hourValue}
-              {' '}
-              x hora
+              {' COP '}
+              <strong>
+                {parking.hourValue}
+                {' '}
+                x hora
+              </strong>
             </p>
           </div>
           <div className="booking-body__summary--summary">
@@ -87,30 +102,32 @@ function Booking() {
             <p>
               Fecha y hora de entrada:
               {' '}
-              {dateHour.startDate}
+              <strong>{dateHour.startDate}</strong>
               {' / '}
-              {dateHour.startTime}
+              <strong>{dateHour.startTime}</strong>
             </p>
             <p>
               Fecha y hora de salida:
               {' '}
-              {dateHour.endDate}
+              <strong>{dateHour.endDate}</strong>
               {' / '}
-              {dateHour.endTime}
+              <strong>{dateHour.endTime}</strong>
             </p>
             <p>
               Horas de la reserva:
               {' '}
-              {calculateValue()}
-              {' '}
-              hora(s)
+              <strong>
+                {calculateValue()}
+                {' '}
+                hora(s)
+              </strong>
             </p>
             <p>
               Costo total de la reserva:
               {' '}
               COP
               {' '}
-              {calculateValue() * parking.hourValue}
+              <strong>{calculateValue() * parking.hourValue}</strong>
             </p>
           </div>
         </div>

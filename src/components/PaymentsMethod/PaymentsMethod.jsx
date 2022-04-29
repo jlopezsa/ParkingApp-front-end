@@ -1,16 +1,19 @@
-import React from 'react';
+import { React } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-// import cashIcon from '../../figures/cash_icon.svg';
-import cardIcon from '../../figures/card_icon.svg';
+import { useSelector } from 'react-redux';
 import { createTokenCard } from '../../services/payments';
 import './PaymentsMethod.scss';
+import cardIcon from '../../figures/card_icon.svg';
 
 function PaymentsMethod() {
   const elements = useElements();
   const stripe = useStripe();
 
+  const bookingInfo = useSelector((state) => state.bookingInfo);
+
   const fetchCreateTokenCard = async (payload) => {
-    await createTokenCard(payload);
+    const token = localStorage.getItem('token');
+    await createTokenCard(payload, bookingInfo, token);
   };
 
   const handleSubmit = async (e) => {
@@ -41,7 +44,6 @@ function PaymentsMethod() {
             <button type="submit">Realizar pago</button>
           </div>
         </form>
-        {/* <img src={cashIcon} alt="cash icon" className="contPayments__methods--imagenPay" /> */}
       </div>
     </div>
   );

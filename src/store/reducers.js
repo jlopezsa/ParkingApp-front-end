@@ -14,6 +14,7 @@ const initialState = {
     endDate: '',
     startTime: '',
     endTime: '',
+    value: 0,
   },
   targetPosition: {
     name: '',
@@ -48,6 +49,7 @@ function reducer(state = initialState, action) {
           endDate: action.payload.endDate,
           startTime: action.payload.startTime,
           endTime: action.payload.endTime,
+          value: action.payload.valueBooking,
         },
       };
     case TARGET_PARKING_POSITION:
