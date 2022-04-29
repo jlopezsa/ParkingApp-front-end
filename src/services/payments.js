@@ -10,7 +10,7 @@ export async function createTokenCard(paymentMethod, bookingInfo, token) {
     },
     body: JSON.stringify({
       paymentMethod,
-      amount: valueBookingUS.toFixed(0), // 10 US in cents
+      amount: valueBookingUS.toFixed(0), // US in cents
     }),
   };
   try {
