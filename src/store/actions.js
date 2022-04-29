@@ -7,7 +7,8 @@ import {
 } from './types';
 
 import {
-  filteringParkingByCity, getAllParkings,
+  filteringParkingByCity,
+  getAllParkings,
 } from '../services/parkings';
 
 export const setParkings = (parkings) => ({ type: SET_PARKINGS, payload: parkings });
