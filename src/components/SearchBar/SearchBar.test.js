@@ -1,31 +1,16 @@
 /* eslint-disable */
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from "redux-mock-store";
 import SearchBar from './SearchBar';
 import { BrowserRouter } from 'react-router-dom';
+import initialState from '../../store'
 
-const initialState = {
-  searchCity: '',
-  parkingsFiltered: [],
-  bookingInfo: {
-    startDate: '',
-    endDate: '',
-    startTime: '',
-    endTime: '',
-    value: 0,
-  },
-  targetPosition: {
-    name: '',
-    latitude: 0,
-    longitude: 0,
-  },
-};
 const mockStore = configureStore();
+const store = mockStore(initialState);
 
 describe('Hola mundo', () => {
-  test('Render test and buttons', () => {
-    const store = mockStore(initialState);
+  test('Render input field and button', () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
@@ -35,5 +20,8 @@ describe('Hola mundo', () => {
     )
     const buttonElement = screen.getByText(/Buscar/i);
     expect(buttonElement).toBeInTheDocument();
+    const inputElement = screen.getByTestId('input-test')
+    expect(inputElement).toBeInTheDocument();
+    expect(inputElement).toBeInTheDocument();
   });
 })

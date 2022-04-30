@@ -19,7 +19,7 @@ function SearchBar() {
 
   return (
     <form className="form-search">
-      <input className="form-search__input" type="search" name="email" placeholder="Ciudad, Dirección" onChange={handleChange} />
+      <input data-testid="input-test" className="form-search__input testesss" type="search" name="email" placeholder="Ciudad, Dirección" onChange={handleChange} />
       <Link to="/Search">
         <button className="form-search__button" onClick={handleClick} type="submit">Buscar</button>
       </Link>
