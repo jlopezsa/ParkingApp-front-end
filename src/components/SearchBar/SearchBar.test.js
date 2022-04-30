@@ -9,7 +9,7 @@ import initialState from '../../store'
 const mockStore = configureStore();
 const store = mockStore(initialState);
 
-describe('Hola mundo', () => {
+describe('Test of SearchBar component', () => {
   test('Render input field and button', () => {
     render(
       <Provider store={store}>
