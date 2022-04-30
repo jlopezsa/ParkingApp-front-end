@@ -5,6 +5,7 @@
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.13.10",
     "@react-google-maps/api": "^2.7.0",
+    "@reduxjs/toolkit": "^1.8.1",
     "@stripe/react-stripe-js": "^1.7.2",
     "@stripe/stripe-js": "^1.27.0",
     "jwt-decode": "^3.1.2",
@@ -31,6 +32,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "json-server": "^0.17.0",
     "react-scripts": "5.0.0",
+    "redux-mock-store": "^1.5.4",
     "sass": "^1.49.9"
   },
   "scripts": {
