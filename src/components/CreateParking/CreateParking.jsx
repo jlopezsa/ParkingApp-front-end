@@ -1,7 +1,10 @@
 import { React, useState } from 'react';
 import './CreateParking.scss';
+import { useDispatch } from 'react-redux';
+import { newParkingRegistered } from '../../store/actions';
 
 function CreateParking() {
+  const dispatch = useDispatch();
   const [parkingData, setParkingData] = useState({});
   const [parkingImage, setParkingImage] = useState(null);
 
@@ -18,9 +21,9 @@ function CreateParking() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('TO SUBMIT: ', parkingData);
     const formData = new FormData();
     formData.append('file', parkingImage);
-
     const payload = {
       method: 'POST',
       body: formData,
@@ -29,7 +32,13 @@ function CreateParking() {
     try {
       const result = await fetch(`${process.env.REACT_APP_LOCAL_URL}/api/upload/image`, payload);
       const { url } = await result.json();
-      alert(`El url de la imagen es: ${url}`);
+      setParkingData({
+        ...parkingData,
+        image: url,
+      });
+      dispatch(newParkingRegistered({
+        parkingData,
+      }));
     } catch (error) {
       throw new Error(error.message);
     }
@@ -53,8 +62,8 @@ function CreateParking() {
           <input className="container-create__input" type="time" name="endTime" placeholder="Hora de cierre" />
         </label>
         <input className="container-create__input" type="number" name="sites" placeholder="Número de puestos" />
-        <input className="container-create__input" type="number" name="length" placeholder="Longitud" />
-        <input className="container-create__input" type="number" name="latitude" placeholder="Latitud" />
+        <input className="container-create__input" type="number" step="any" name="latitude" placeholder="Latitud" />
+        <input className="container-create__input" type="number" step="any" name="longitude" placeholder="Longitud" />
         <label htmlFor="image">
           Subir imagen de parqueadero
           <input className="container-create__input" type="file" name="image" placeholder="Imagen" accept="image/*" />
