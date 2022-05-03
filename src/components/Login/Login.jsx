@@ -6,6 +6,10 @@ import './Login.scss';
 
 function Login() {
   const [form, setForm] = useState(null);
+  const [dataUser, setDataUser] = useState({
+    email: "",
+    password: "",
+  });
   //const [showForm, setShowForm] = useState(true);
 
   const handleInputChange = (e) => {
@@ -13,6 +17,10 @@ function Login() {
       ...form,
       [e.target.name]: e.target.value,
     });
+    setDataUser({
+      ...dataUser,
+      [e.target.name]: e.target.value
+    })
   };
 
   const handleSubmit = async (e) => {
@@ -32,8 +40,8 @@ function Login() {
       if(response.status === 401){
         Swal.fire({
           icon: 'error',
-          title: 'Algo salió mal!',
-          text: 'Usuario o contraseña no válida...',
+          title: 'Algo salió mal',
+          text: 'Usuario o contraseña no válida...'
         })
       }
       //setShowForm(false);
@@ -53,6 +61,12 @@ function Login() {
     //}
   }, []);
 
+  const handlerValidate = () => {
+    const { email, password } = dataUser;
+    let valido = !email.length || !password.length
+    return valido;
+  }
+
   return (
     <div>
       <form className="form" onSubmit={handleSubmit}>
@@ -61,7 +75,7 @@ function Login() {
         <input className="form__input" type="password" name="password" placeholder="Enter a password" onChange={handleInputChange} />
 
         <p>Olvidó la contraseña?</p>
-        <button className="form__submit" type="submit" name="submit">Login</button>
+        <button className="form__submit" type="submit" name="submit" disabled={handlerValidate()} >Login</button>
         <p>No tiene cuenta? Registrese ahora!</p>
       </form>
     </div>
