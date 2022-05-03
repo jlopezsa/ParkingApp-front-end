@@ -7,7 +7,6 @@ function CreateParking() {
   const dispatch = useDispatch();
   const [parkingData, setParkingData] = useState({});
   const [parkingImage, setParkingImage] = useState(null);
-
   const handleChange = (e) => {
     if (!e.target.files) {
       setParkingData({
@@ -21,7 +20,6 @@ function CreateParking() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('TO SUBMIT: ', parkingData);
     const formData = new FormData();
     formData.append('file', parkingImage);
     const payload = {
