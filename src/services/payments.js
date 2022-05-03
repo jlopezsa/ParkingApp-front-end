@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_LOCAL_URL;
+const API_URL = process.env.REACT_APP_URL;
 
 export async function createTokenCard(paymentMethod, bookingInfo, token) {
   const valueBookingUS = (bookingInfo.value / 3962.33) * 100;

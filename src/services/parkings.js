@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_BASE_URL;
+const API_URL = process.env.REACT_APP_URL;
 
 export async function getAllParkings() {
   try {
@@ -34,6 +34,7 @@ export async function createParking(parking) {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkpVTElBTiBsb3BleiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoianVsaWFuQHBhcmtpbmcuY29tIiwiaWF0IjoxNjUxNjE3NzEyLCJleHAiOjE2NTE2MjQ5MTJ9.YAqUf6e02LF9DMYHC8dFD9WALA7vho9ee0VTaTrGfrI',
     },
     body: JSON.stringify(parking),
   };
