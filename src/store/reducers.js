@@ -5,6 +5,7 @@ import {
   BOOKING_DATE_HOUR,
   TARGET_PARKING_POSITION,
   CREATE_PARKING,
+  GET_ADMIN_DATA,
 } from './types';
 
 const initialState = {
@@ -39,6 +40,7 @@ const initialState = {
     busyPlaces: 0,
     image: '',
   },
+  adminRole: {},
 };
 
 // eslint-disable-next-line default-param-last
@@ -83,6 +85,11 @@ function reducer(state = initialState, action) {
       return {
         ...state,
         newParking: action.payload,
+      };
+    case GET_ADMIN_DATA:
+      return {
+        ...state,
+        adminRole: action.payload,
       };
     default:
       return state;
