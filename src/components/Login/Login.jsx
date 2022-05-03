@@ -1,5 +1,7 @@
 /* eslint-disable */
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
+
 import './Login.scss';
 
 function Login() {
@@ -23,8 +25,17 @@ function Login() {
         },
         body: JSON.stringify(form),
       });
+
       const token = await response.json();
       localStorage.setItem('token', token);
+
+      if(response.status === 401){
+        Swal.fire({
+          icon: 'error',
+          title: 'Algo salió mal!',
+          text: 'Usuario o contraseña no válida...',
+        })
+      }
       //setShowForm(false);
     } catch (error) {
       console.log(error);
