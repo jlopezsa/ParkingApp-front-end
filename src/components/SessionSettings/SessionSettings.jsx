@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
+import { useSelector } from 'react-redux';
 import './SessionSettings.scss';
 
-function SessionSettings(props) {
-  const { adminToken } = props;
+function SessionSettings() {
+  const adminUser = useSelector((state) => state.userData);
+
   return (
     <div className="sessionsettings">
       <div className="sessionsettings__header">
@@ -26,12 +26,12 @@ function SessionSettings(props) {
       <div className="sessionsettings__data">
         <p className="sessionsettings__data-p">Nombre:</p>
         <div className="sessionsettings__data--name">
-          <p>{adminToken.fullName}</p>
+          <p>{ adminUser.fullName }</p>
           <Link to="https://github.com/makeitrealcamp/top-v20">Cambiar</Link>
         </div>
         <p className="sessionsettings__data-p">Email:</p>
         <div className="sessionsettings__data--email">
-          <p>{adminToken.email}</p>
+          <p>{adminUser.email}</p>
           <Link to="https://github.com/makeitrealcamp/top-v20">Cambiar</Link>
         </div>
         <p className="sessionsettings__data-p">Password:</p>
@@ -43,12 +43,5 @@ function SessionSettings(props) {
     </div>
   );
 }
-
-SessionSettings.propTypes = {
-  adminToken: PropTypes.shape({
-    fullName: PropTypes.string,
-    email: PropTypes.string,
-  }).isRequired,
-};
 
 export default SessionSettings;

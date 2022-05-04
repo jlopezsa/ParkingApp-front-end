@@ -1,8 +1,9 @@
 /* eslint-disable */
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
+import { saveAdminData } from '../../store/actions';
 import './Login.scss';
 
 const API_URL = process.env.REACT_APP_URL;
@@ -15,7 +16,7 @@ function Login() {
   });
   const navigate = useNavigate();
   //const [showForm, setShowForm] = useState(true);
-
+  const dispatch = useDispatch();
   const handleInputChange = (e) => {
     setForm({
       ...form,
@@ -40,7 +41,7 @@ function Login() {
 
       const { token, profile } = await response.json();
       localStorage.setItem('token', token);
-
+      dispatch(saveAdminData(profile));
       if(response.status === 401){
         Swal.fire({
           icon: 'error',

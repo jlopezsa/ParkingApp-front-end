@@ -8,8 +8,6 @@ import Header from '../components/Header/Header';
 import ParkingRegistered from '../components/ParkingRegistered/ParkingRegistered';
 import SessionSettings from '../components/SessionSettings/SessionSettings';
 import { getAllParkingsByAdmin } from '../services/parkings';
-// import { filteringUserByEmail } from '../services/users';
-// import { saveAdminData } from '../store/actions';
 import './AdminPage.scss';
 import './CreateParkingsPage';
 
@@ -45,7 +43,7 @@ function AdminPage() {
       <Header />
       <div className="container-admin">
         <div className="container-admin__settings">
-          <SessionSettings adminToken={adminToken} />
+          <SessionSettings />
         </div>
         <div className="container-admin__list">
           <div className="container-admin__list--header">

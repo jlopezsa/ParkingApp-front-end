@@ -40,7 +40,7 @@ const initialState = {
     busyPlaces: 0,
     image: '',
   },
-  adminRole: {},
+  userData: {},
 };
 
 // eslint-disable-next-line default-param-last
@@ -89,7 +89,7 @@ function reducer(state = initialState, action) {
     case GET_ADMIN_DATA:
       return {
         ...state,
-        adminRole: action.payload,
+        userData: action.payload,
       };
     default:
       return state;
