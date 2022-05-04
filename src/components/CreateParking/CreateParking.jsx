@@ -1,10 +1,12 @@
-import { React, useState } from 'react';
+/* eslint-disable no-underscore-dangle */
+import { React, useState, useEffect } from 'react';
 import './CreateParking.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { newParkingRegistered } from '../../store/actions';
 
 function CreateParking() {
   const dispatch = useDispatch();
+  const adminData = useSelector((state) => state.adminRole);
   const [parkingData, setParkingData] = useState({});
   const [parkingImage, setParkingImage] = useState(null);
   const [position, setPosition] = useState({});
@@ -52,6 +54,14 @@ function CreateParking() {
       throw new Error(error.message);
     }
   };
+
+  useEffect(() => {
+    console.log(adminData._id);
+    setParkingData({
+      ...parkingData,
+      user: adminData._id,
+    });
+  }, []);
 
   return (
     <div className="container-create">

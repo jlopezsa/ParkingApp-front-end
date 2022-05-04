@@ -1,14 +1,15 @@
 /* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import ParkingRegistered from '../components/ParkingRegistered/ParkingRegistered';
 import SessionSettings from '../components/SessionSettings/SessionSettings';
-import { getAllParkings } from '../services/parkings';
-import { filteringUserByEmail } from '../services/users';
+import { getAllParkingsByAdmin } from '../services/parkings';
+// import { filteringUserByEmail } from '../services/users';
+// import { saveAdminData } from '../store/actions';
 import './AdminPage.scss';
 import './CreateParkingsPage';
 
@@ -17,25 +18,25 @@ function AdminPage() {
   const [parkingsAdmin, setParkingsAdmin] = useState([]);
   const [adminToken, setAdminToken] = useState({});
   const [idAdmin, setIdAdmin] = useState('');
+  const token = localStorage.getItem('token');
 
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const adminReg = await filteringUserByEmail(adminToken.email);
+  //     console.log('ADMIN : ', adminReg);
+  //     dispatch(saveAdminData(adminReg));
+  //     setIdAdmin(adminReg._id);
+  //   };
+  //   // setAdminToken(jwtDecode(token));
+  //   fetchUser();
+  // }, []);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    setAdminToken(jwtDecode(token));
-  }, []);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      const adminReg = await filteringUserByEmail(adminToken.email);
-      setIdAdmin(adminReg._id);
-    };
     const fetchParkings = async () => {
-      const data = await getAllParkings();
-      // eslint-disable-next-line no-underscore-dangle
-      const dataAdmin = data.filter((item) => item.user === idAdmin);
-      setParkingsAdmin(dataAdmin);
+      const data = await getAllParkingsByAdmin();
+      // const dataAdmin = data.filter((item) => item.user === idAdmin);
+      setParkingsAdmin(data);
     };
-    fetchUser();
     fetchParkings();
   }, []);
 

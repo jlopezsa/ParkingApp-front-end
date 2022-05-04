@@ -80,3 +80,20 @@ export async function deleteParking(parkingId) {
     throw new Error(error);
   }
 }
+
+export async function getAllParkingsByAdmin() {
+  const payload = {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  };
+  try {
+    const response = await fetch(`${API_URL}/api/parkings/byadmin`, payload);
+    const parkings = await response.json();
+    return parkings;
+  } catch (error) {
+    return null;
+  }
+}

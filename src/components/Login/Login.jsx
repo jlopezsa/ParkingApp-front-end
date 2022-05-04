@@ -5,6 +5,8 @@ import Swal from 'sweetalert2';
 
 import './Login.scss';
 
+const API_URL = process.env.REACT_APP_URL;
+
 function Login() {
   const [form, setForm] = useState(null);
   const [dataUser, setDataUser] = useState({
@@ -28,7 +30,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://parkingapp-back-end.herokuapp.com/auth/local/login', {
+      const response = await fetch(`${API_URL}/auth/local/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +38,7 @@ function Login() {
         body: JSON.stringify(form),
       });
 
-      const token = await response.json();
+      const { token, profile } = await response.json();
       localStorage.setItem('token', token);
 
       if(response.status === 401){
