@@ -34,10 +34,11 @@ export async function createParking(parking) {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkpVTElBTiBsb3BleiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoianVsaWFuQHBhcmtpbmcuY29tIiwiaWF0IjoxNjUxNjE3NzEyLCJleHAiOjE2NTE2MjQ5MTJ9.YAqUf6e02LF9DMYHC8dFD9WALA7vho9ee0VTaTrGfrI',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkpVTElBTiBsb3BleiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoianVsaWFuQHBhcmtpbmcuY29tIiwiaWF0IjoxNjUxNjIxMzQxLCJleHAiOjE2NTE2Mjg1NDF9.86hJpr1fOTwoJtPeBOEocer7Rt6ExOfyTQSYuIa3FGM',
     },
     body: JSON.stringify(parking),
   };
+  console.log('FLAG-01: ', payload);
   try {
     const response = await fetch(`${API_URL}/api/parkings`, payload);
     const data = await response.json();

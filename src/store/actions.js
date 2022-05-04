@@ -49,8 +49,10 @@ export const targetParkingPosition = (targetPosition) => (
 );
 
 export const newParkingRegistered = (newParking) => async (dispatch) => {
+  console.log('newParking 1', newParking);
   try {
-    await createParking(newParking);
+    const response = await createParking(newParking);
+    console.log('newParking 2', response);
     dispatch(addNewParking(newParking));
   } catch (error) {
     throw new Error(error);

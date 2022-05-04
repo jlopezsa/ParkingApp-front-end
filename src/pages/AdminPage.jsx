@@ -24,22 +24,20 @@ function AdminPage() {
     setAdminToken(jwtDecode(token));
   }, []);
 
-
-  const fetchUser = async () => {
-    const adminReg = await filteringUserByEmail(adminToken.email);
-    setIdAdmin(adminReg._id);
-  };
-  const fetchParkings = async () => {
-    const data = await getAllParkings();
-    // eslint-disable-next-line no-underscore-dangle
-    const dataAdmin = data.filter((item) => item.user === idAdmin);
-    setParkingsAdmin(dataAdmin);
-  };
-
   useEffect(() => {
+    const fetchUser = async () => {
+      const adminReg = await filteringUserByEmail(adminToken.email);
+      setIdAdmin(adminReg._id);
+    };
+    const fetchParkings = async () => {
+      const data = await getAllParkings();
+      // eslint-disable-next-line no-underscore-dangle
+      const dataAdmin = data.filter((item) => item.user === idAdmin);
+      setParkingsAdmin(dataAdmin);
+    };
     fetchUser();
     fetchParkings();
-  }, [parkingsAdmin]);
+  }, []);
 
   return (
     <div>

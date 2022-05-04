@@ -34,9 +34,7 @@ function CreateParking() {
         ...parkingData,
         image: url,
       });
-      dispatch(newParkingRegistered({
-        parkingData,
-      }));
+      dispatch(newParkingRegistered(parkingData));
     } catch (error) {
       throw new Error(error.message);
     }
@@ -47,19 +45,19 @@ function CreateParking() {
       <h2>Ingrese datos del parqueadero</h2>
       <form id="form" onChange={handleChange} onSubmit={handleSubmit}>
         <input className="container-create__input" type="text" name="name" placeholder="Nombre del parqueadero" />
-        <input className="container-create__input" type="text" name="city" placeholder="Ciudad" />
-        <input className="container-create__input" type="text" name="adress" placeholder="Dirección" />
+        <input className="container-create__input" type="text" name="cityName" placeholder="Ciudad" />
+        <input className="container-create__input" type="text" name="addres" placeholder="Dirección" />
         <input className="container-create__input" type="number" name="phone" placeholder="Teléfono" />
-        <input className="container-create__input" type="number" name="price" placeholder="Valor hora" />
+        <input className="container-create__input" type="number" name="hourValue" placeholder="Valor hora" />
         <label htmlFor="startTime">
           Hora de apertura
-          <input className="container-create__input" id="startTime" type="time" name="startTime" placeholder="Hora" />
+          <input className="container-create__input" id="startTime" type="time" name="openTime" placeholder="Hora" />
         </label>
         <label htmlFor="endTime">
           Hora de cierre
-          <input className="container-create__input" type="time" name="endTime" placeholder="Hora de cierre" />
+          <input className="container-create__input" type="time" name="closeTime" placeholder="Hora de cierre" />
         </label>
-        <input className="container-create__input" type="number" name="sites" placeholder="Número de puestos" />
+        <input className="container-create__input" type="number" name="totalPlaces" placeholder="Número de puestos" />
         <input className="container-create__input" type="number" step="any" name="latitude" placeholder="Latitud" />
         <input className="container-create__input" type="number" step="any" name="longitude" placeholder="Longitud" />
         <label htmlFor="image">
