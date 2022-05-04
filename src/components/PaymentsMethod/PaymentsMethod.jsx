@@ -8,7 +8,6 @@ import cardIcon from '../../figures/card_icon.svg';
 function PaymentsMethod() {
   const elements = useElements();
   const stripe = useStripe();
-
   const bookingInfo = useSelector((state) => state.bookingInfo);
 
   const fetchCreateTokenCard = async (payload) => {
