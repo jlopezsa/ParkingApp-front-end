@@ -49,14 +49,12 @@ function CreateParking() {
         image: url,
       });
       dispatch(newParkingRegistered(parkingData, token));
-      console.log('FLAG-01: ', parkingData);
     } catch (error) {
       throw new Error(error.message);
     }
   };
 
   useEffect(() => {
-    console.log(adminData._id);
     setParkingData({
       ...parkingData,
       user: adminData._id,

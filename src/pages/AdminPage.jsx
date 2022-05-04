@@ -1,8 +1,5 @@
-/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import jwtDecode from 'jwt-decode';
-import { useDispatch } from 'react-redux';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import ParkingRegistered from '../components/ParkingRegistered/ParkingRegistered';
@@ -12,27 +9,12 @@ import './AdminPage.scss';
 import './CreateParkingsPage';
 
 function AdminPage() {
-  const dispatch = useDispatch();
   const [parkingsAdmin, setParkingsAdmin] = useState([]);
-  const [adminToken, setAdminToken] = useState({});
-  const [idAdmin, setIdAdmin] = useState('');
-  const token = localStorage.getItem('token');
-
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const adminReg = await filteringUserByEmail(adminToken.email);
-  //     console.log('ADMIN : ', adminReg);
-  //     dispatch(saveAdminData(adminReg));
-  //     setIdAdmin(adminReg._id);
-  //   };
-  //   // setAdminToken(jwtDecode(token));
-  //   fetchUser();
-  // }, []);
+  // const token = localStorage.getItem('token');
 
   useEffect(() => {
     const fetchParkings = async () => {
       const data = await getAllParkingsByAdmin();
-      // const dataAdmin = data.filter((item) => item.user === idAdmin);
       setParkingsAdmin(data);
     };
     fetchParkings();
@@ -53,9 +35,11 @@ function AdminPage() {
           <div className="container-admin__list--parkings">
             <ul className="container-admin__list--parkings-scroll">
               {
-                parkingsAdmin.map((item) => (
-                  <li key={item.addres}><ParkingRegistered parkingsAdmin={item} /></li>
-                ))
+                parkingsAdmin.length !== 0
+                  ? parkingsAdmin.map((item) => (
+                    <li key={item.addres}><ParkingRegistered parkingsAdmin={item} /></li>
+                  ))
+                  : <h2 style={{ textAlign: 'center' }}>No hay parqueaderos registrados</h2>
               }
             </ul>
           </div>
