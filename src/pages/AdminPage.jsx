@@ -10,7 +10,6 @@ import './CreateParkingsPage';
 
 function AdminPage() {
   const [parkingsAdmin, setParkingsAdmin] = useState([]);
-  // const token = localStorage.getItem('token');
 
   useEffect(() => {
     const fetchParkings = async () => {

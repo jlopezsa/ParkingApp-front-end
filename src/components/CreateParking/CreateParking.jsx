@@ -6,7 +6,7 @@ import { newParkingRegistered } from '../../store/actions';
 
 function CreateParking() {
   const dispatch = useDispatch();
-  const adminData = useSelector((state) => state.adminRole);
+  const adminData = useSelector((state) => state.userData);
   const [parkingData, setParkingData] = useState({});
   const [parkingImage, setParkingImage] = useState(null);
   const [position, setPosition] = useState({});
