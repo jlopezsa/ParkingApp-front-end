@@ -7,8 +7,20 @@ function CreateParking() {
   const dispatch = useDispatch();
   const [parkingData, setParkingData] = useState({});
   const [parkingImage, setParkingImage] = useState(null);
+  const [position, setPosition] = useState({});
+  const token = localStorage.getItem('token');
+
   const handleChange = (e) => {
-    if (!e.target.files) {
+    if (e.target.name === 'latitude' || e.target.name === 'longitude') {
+      setPosition({
+        ...position,
+        [e.target.name]: e.target.value,
+      });
+      setParkingData({
+        ...parkingData,
+        position,
+      });
+    } else if (!e.target.files) {
       setParkingData({
         ...parkingData,
         [e.target.name]: e.target.value,
@@ -34,7 +46,8 @@ function CreateParking() {
         ...parkingData,
         image: url,
       });
-      dispatch(newParkingRegistered(parkingData));
+      dispatch(newParkingRegistered(parkingData, token));
+      console.log('FLAG-01: ', parkingData);
     } catch (error) {
       throw new Error(error.message);
     }

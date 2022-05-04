@@ -29,16 +29,15 @@ export async function filteringParkingByCity(cityName) {
   }
 }
 
-export async function createParking(parking) {
+export async function createParking(parking, token) {
   const payload = {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsTmFtZSI6IkpVTElBTiBsb3BleiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoianVsaWFuQHBhcmtpbmcuY29tIiwiaWF0IjoxNjUxNjIxMzQxLCJleHAiOjE2NTE2Mjg1NDF9.86hJpr1fOTwoJtPeBOEocer7Rt6ExOfyTQSYuIa3FGM',
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(parking),
   };
-  console.log('FLAG-01: ', payload);
   try {
     const response = await fetch(`${API_URL}/api/parkings`, payload);
     const data = await response.json();

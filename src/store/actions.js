@@ -48,11 +48,10 @@ export const targetParkingPosition = (targetPosition) => (
   }
 );
 
-export const newParkingRegistered = (newParking) => async (dispatch) => {
-  console.log('newParking 1', newParking);
+export const newParkingRegistered = (newParking, token) => async (dispatch) => {
   try {
-    const response = await createParking(newParking);
-    console.log('newParking 2', response);
+    const response = await createParking(newParking, token);
+    console.log('RESPONSE:  ', response);
     dispatch(addNewParking(newParking));
   } catch (error) {
     throw new Error(error);
