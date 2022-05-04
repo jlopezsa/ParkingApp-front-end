@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_BASE_URL;
+const API_URL = process.env.REACT_APP_URL;
 
 export async function getAllParkings() {
   try {
@@ -29,11 +29,12 @@ export async function filteringParkingByCity(cityName) {
   }
 }
 
-export async function createParking(parking) {
+export async function createParking(parking, token) {
   const payload = {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(parking),
   };
@@ -77,5 +78,22 @@ export async function deleteParking(parkingId) {
     return data;
   } catch (error) {
     throw new Error(error);
+  }
+}
+
+export async function getAllParkingsByAdmin() {
+  const payload = {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  };
+  try {
+    const response = await fetch(`${API_URL}/api/parkings/byadmin`, payload);
+    const parkings = await response.json();
+    return parkings;
+  } catch (error) {
+    return null;
   }
 }

@@ -4,6 +4,8 @@ import {
   BOOKING_PARKING,
   BOOKING_DATE_HOUR,
   TARGET_PARKING_POSITION,
+  CREATE_PARKING,
+  GET_ADMIN_DATA,
 } from './types';
 
 const initialState = {
@@ -21,6 +23,24 @@ const initialState = {
     latitude: 0,
     longitude: 0,
   },
+  newParking: {
+    name: '',
+    user: {},
+    cityName: '',
+    addres: '',
+    phone: 0,
+    position: {
+      latitude: 0,
+      longitude: 0,
+    },
+    openTime: '',
+    closeTime: '',
+    hourValue: 0,
+    totalPlaces: 0,
+    busyPlaces: 0,
+    image: '',
+  },
+  userData: {},
 };
 
 // eslint-disable-next-line default-param-last
@@ -60,6 +80,16 @@ function reducer(state = initialState, action) {
           latitude: action.payload.latitude,
           longitude: action.payload.longitude,
         },
+      };
+    case CREATE_PARKING:
+      return {
+        ...state,
+        newParking: action.payload,
+      };
+    case GET_ADMIN_DATA:
+      return {
+        ...state,
+        userData: action.payload,
       };
     default:
       return state;

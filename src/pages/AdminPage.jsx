@@ -4,22 +4,20 @@ import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import ParkingRegistered from '../components/ParkingRegistered/ParkingRegistered';
 import SessionSettings from '../components/SessionSettings/SessionSettings';
-import { getAllParkings } from '../services/parkings';
+import { getAllParkingsByAdmin } from '../services/parkings';
 import './AdminPage.scss';
 import './CreateParkingsPage';
 
 function AdminPage() {
-  const idAdmin = '624a245af8208c44da90931f';
   const [parkingsAdmin, setParkingsAdmin] = useState([]);
 
   useEffect(() => {
     const fetchParkings = async () => {
-      const data = await getAllParkings();
-      const dataAdmin = data.filter((item) => item.user === idAdmin);
-      setParkingsAdmin(dataAdmin);
+      const data = await getAllParkingsByAdmin();
+      setParkingsAdmin(data);
     };
     fetchParkings();
-  }, [parkingsAdmin]);
+  }, []);
 
   return (
     <div>
@@ -36,9 +34,11 @@ function AdminPage() {
           <div className="container-admin__list--parkings">
             <ul className="container-admin__list--parkings-scroll">
               {
-                parkingsAdmin.map((item) => (
-                  <li key={item.name}><ParkingRegistered parkingsAdmin={item} /></li>
-                ))
+                parkingsAdmin.length !== 0
+                  ? parkingsAdmin.map((item) => (
+                    <li key={item.addres}><ParkingRegistered parkingsAdmin={item} /></li>
+                  ))
+                  : <h2 style={{ textAlign: 'center' }}>No hay parqueaderos registrados</h2>
               }
             </ul>
           </div>

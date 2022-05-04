@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 import './SessionSettings.scss';
 
 function SessionSettings() {
+  const adminUser = useSelector((state) => state.userData);
+
   return (
     <div className="sessionsettings">
       <div className="sessionsettings__header">
@@ -24,12 +26,12 @@ function SessionSettings() {
       <div className="sessionsettings__data">
         <p className="sessionsettings__data-p">Nombre:</p>
         <div className="sessionsettings__data--name">
-          <p>Jano Cooper</p>
+          <p>{ adminUser.fullName }</p>
           <Link to="https://github.com/makeitrealcamp/top-v20">Cambiar</Link>
         </div>
         <p className="sessionsettings__data-p">Email:</p>
         <div className="sessionsettings__data--email">
-          <p>ckasd@mail.com</p>
+          <p>{adminUser.email}</p>
           <Link to="https://github.com/makeitrealcamp/top-v20">Cambiar</Link>
         </div>
         <p className="sessionsettings__data-p">Password:</p>
