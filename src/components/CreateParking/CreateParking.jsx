@@ -1,7 +1,9 @@
 import { React, useState, useEffect } from 'react';
-import './CreateParking.scss';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { newParkingRegistered } from '../../store/actions';
+import '../../pages/AdminPage';
+import './CreateParking.scss';
 
 function CreateParking() {
   const dispatch = useDispatch();
@@ -87,7 +89,9 @@ function CreateParking() {
           <input className="container-create__input" type="file" name="image" placeholder="Imagen" accept="image/*" />
         </label>
         <button className="container-create__Button" type="submit">REGISTRAR</button>
-        <button className="container-create__Button" type="submit">CANCELAR</button>
+        <button className="container-create__Button" type="submit">
+          <Link id="reg-parking-out" to="/AdminPage">CANCELAR</Link>
+        </button>
       </form>
     </div>
   );

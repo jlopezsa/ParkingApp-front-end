@@ -8,7 +8,6 @@ function SessionSettings() {
   const adminUser = useSelector((state) => state.userData);
   const handlerClick = () => {
     localStorage.removeItem('token');
-    console.log('Logout succesfull');
   };
 
   return (
