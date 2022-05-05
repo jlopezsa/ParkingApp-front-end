@@ -42,7 +42,7 @@ function CreateParking() {
     };
 
     try {
-      const result = await fetch(`${process.env.REACT_APP_LOCAL_URL}/api/upload/image`, payload);
+      const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
       const { url } = await result.json();
       setParkingData({
         ...parkingData,
