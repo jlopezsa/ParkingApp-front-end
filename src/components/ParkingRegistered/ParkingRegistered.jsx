@@ -14,22 +14,25 @@ function ParkingRegistered(props) {
   };
 
   const handlerClick = () => {
-    // eslint-disable-next-line no-underscore-dangle
-    const response = fetchDeleteParking(parkingsAdmin._id);
-    console.log('RESPONSE: ', response);
-    if (response.status === 401) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Algo salió mal',
-        text: 'Usuario o contraseña no válida...',
-      });
-    } else {
-      Swal.fire(
-        'Parqueadero eliminaddo',
-        'Parqueadero fue eliminado corréctamente...!',
-        'success',
-      );
-    }
+    Swal.fire({
+      title: 'Realmente quiere eliminar el parqueadero?',
+      text: 'Luego de eliminado no podrá ser recuperado!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, deseo eliminarlo!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // eslint-disable-next-line no-underscore-dangle
+        fetchDeleteParking(parkingsAdmin._id);
+        Swal.fire(
+          'Eliminado!',
+          'El parqueadero ha sido eliminado.',
+          'success',
+        );
+      }
+    });
   };
   return (
     <div className="contParkReg">
