@@ -1,7 +1,7 @@
 /* eslint-disable */
+import Swal from 'sweetalert2';
 import { useState } from 'react';
 import { createUser } from '../../services/users';
-import Swal from 'sweetalert2';
 import './Signup.scss';
 
 function Signup() {
@@ -26,19 +26,27 @@ function Signup() {
         icon: 'error',
         title: 'Hubo un error',
         text: 'Usuario ya fue registrado...!',
-      })
-    }else{
+      });
+    } else {
       Swal.fire(
         'Registro exitoso ',
         'Se ha enviado un email a su correo para la confirmación de su registro',
-        'success'
-      )
+        'success',
+      );
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchCreateUser();
+    if (dataUser.password !== dataUser.confirmPass) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Hubo un error',
+        text: 'Contraseña no coincide con su confirmación...!',
+      });
+    } else {
+      fetchCreateUser();
+    }
   };
 
   const handlerValidate = () => {
