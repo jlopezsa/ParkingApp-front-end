@@ -39,9 +39,10 @@ function Login() {
         body: JSON.stringify(form),
       });
 
-      const { token, profile } = await response.json();
+      const { token, profile, id } = await response.json();
+      console.log('LOGIN: ', { profile } , id );
       localStorage.setItem('token', token);
-      dispatch(saveAdminData(profile));
+      dispatch(saveAdminData({ profile, id }));
       if(response.status === 401){
         Swal.fire({
           icon: 'error',

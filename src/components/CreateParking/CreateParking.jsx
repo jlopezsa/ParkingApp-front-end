@@ -57,7 +57,7 @@ function CreateParking() {
   useEffect(() => {
     setParkingData({
       ...parkingData,
-      user: adminData._id,
+      user: adminData.id,
     });
   }, []);
 

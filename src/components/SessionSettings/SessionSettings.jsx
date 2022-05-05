@@ -5,7 +5,6 @@ import './SessionSettings.scss';
 
 function SessionSettings() {
   const adminUser = useSelector((state) => state.userData);
-
   return (
     <div className="sessionsettings">
       <div className="sessionsettings__header">
@@ -26,12 +25,12 @@ function SessionSettings() {
       <div className="sessionsettings__data">
         <p className="sessionsettings__data-p">Nombre:</p>
         <div className="sessionsettings__data--name">
-          <p>{ adminUser.fullName }</p>
+          <p>{ adminUser.profile.fullName }</p>
           <Link to="https://github.com/makeitrealcamp/top-v20">Cambiar</Link>
         </div>
         <p className="sessionsettings__data-p">Email:</p>
         <div className="sessionsettings__data--email">
-          <p>{adminUser.email}</p>
+          <p>{adminUser.profile.email}</p>
           <Link to="https://github.com/makeitrealcamp/top-v20">Cambiar</Link>
         </div>
         <p className="sessionsettings__data-p">Password:</p>
