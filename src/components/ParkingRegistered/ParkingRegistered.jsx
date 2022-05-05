@@ -12,13 +12,13 @@ function ParkingRegistered({ parkingsAdmin }) {
   const handlerClick = () => {
     fetchDeleteParking(parkingsAdmin._id);
   }
-
+  console.log('PARKREGISTERED: ', parkingsAdmin.image)
   return (
     <div className="contParkReg">
       <div className="contParkReg__figure">
         <img
           className="contParkReg__figure--img"
-          src="https://d500.epimg.net/cincodias/imagenes/2020/01/22/lifestyle/1579693137_705498_1579693193_noticia_normal.jpg"
+          src={parkingsAdmin.image !== undefined ? parkingsAdmin.image : 'http://res.cloudinary.com/parkingapp/image/upload/v1651723718/eedyt2haqfvu0miqcxd4.png' }
           alt="parkingFigure"
         />
       </div>
