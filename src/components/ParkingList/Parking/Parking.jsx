@@ -84,7 +84,7 @@ Parking.propTypes = {
     hourValue: PropTypes.number.isRequired,
     totalPlaces: PropTypes.number.isRequired,
     cityName: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    image: PropTypes.string,
     position: PropTypes.shape({
       latitude: PropTypes.number.isRequired,
       longitude: PropTypes.number.isRequired,
