@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { React } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
@@ -17,13 +18,28 @@ function PaymentsMethod() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
-      card: elements.getElement(CardElement),
-    });
-    if (!error) {
-      fetchCreateTokenCard(paymentMethod);
-      elements.getElement(CardElement).clear();
+    try {
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
+        type: 'card',
+        card: elements.getElement(CardElement),
+      });
+      if (!error) {
+        fetchCreateTokenCard(paymentMethod);
+        elements.getElement(CardElement).clear();
+        Swal.fire({
+          icon: 'success',
+          title: 'Transacción aprobada',
+          text: 'Su pago ha sido registrado exitósamente...',
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Algo salio mal',
+          text: error.message,
+        });
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
