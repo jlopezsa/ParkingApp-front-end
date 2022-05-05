@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { deleteParking } from '../../services/parkings';
 import './ParkingRegistered.scss';
 
@@ -14,7 +15,21 @@ function ParkingRegistered(props) {
 
   const handlerClick = () => {
     // eslint-disable-next-line no-underscore-dangle
-    fetchDeleteParking(parkingsAdmin._id);
+    const response = fetchDeleteParking(parkingsAdmin._id);
+    console.log('RESPONSE: ', response);
+    if (response.status === 401) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Algo salió mal',
+        text: 'Usuario o contraseña no válida...',
+      });
+    } else {
+      Swal.fire(
+        'Parqueadero eliminaddo',
+        'Parqueadero fue eliminado corréctamente...!',
+        'success',
+      );
+    }
   };
   return (
     <div className="contParkReg">
