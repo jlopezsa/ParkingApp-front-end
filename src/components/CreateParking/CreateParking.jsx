@@ -1,5 +1,3 @@
-/* eslint-disable no-debugger */
-/* eslint-disable no-underscore-dangle */
 import { React, useState, useEffect } from 'react';
 import './CreateParking.scss';
 import { useDispatch, useSelector } from 'react-redux';
