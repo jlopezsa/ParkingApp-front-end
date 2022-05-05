@@ -7,8 +7,6 @@ import '../../../pages/Booking';
 import { useDispatch } from 'react-redux';
 import { bookingParking, targetParkingPosition } from '../../../store/actions';
 
-const figParking = require('../../../figures/parking_reserva.png');
-
 function Parking({ parkings }) {
   const dispatch = useDispatch();
 
@@ -52,7 +50,7 @@ function Parking({ parkings }) {
     // eslint-disable-next-line no-void
     <div className="container-parking" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onBlur={handleOnBlur} onFocus={handleOnFocus}>
       <div className="container-parking__imagen">
-        <img className="parking__imagen" src={figParking} alt="" />
+        <img className="parking__imagen" src={parkings.image !== undefined ? parkings.image : 'http://res.cloudinary.com/parkingapp/image/upload/v1651723718/eedyt2haqfvu0miqcxd4.png'} alt="" />
       </div>
       <div className="container-parking__data">
         <h5>{parkings.name}</h5>
@@ -86,6 +84,7 @@ Parking.propTypes = {
     hourValue: PropTypes.number.isRequired,
     totalPlaces: PropTypes.number.isRequired,
     cityName: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     position: PropTypes.shape({
       latitude: PropTypes.number.isRequired,
       longitude: PropTypes.number.isRequired,
