@@ -18,6 +18,7 @@ function AdminPage() {
       setParkingsAdmin(data);
     };
     fetchParkings();
+    setIsDeleted(false);
   }, [isDeleted]);
 
   return (
