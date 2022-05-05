@@ -78,7 +78,7 @@ function Booking() {
         <div className="booking-body__summary">
           <h1>Resumen de la reserva</h1>
           <div className="booking-body__summary--imagen">
-            <img className="parking__imagen" src="https://d500.epimg.net/cincodias/imagenes/2020/01/22/lifestyle/1579693137_705498_1579693193_noticia_normal.jpg" alt="" />
+            <img className="parking__imagen" src={parking.image !== undefined ? parking.image : 'http://res.cloudinary.com/parkingapp/image/upload/v1651723718/eedyt2haqfvu0miqcxd4.png'} alt="" />
           </div>
           <div className="booking-body__summary--infoParking">
             <h5>{ parking.name }</h5>
