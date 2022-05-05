@@ -70,6 +70,7 @@ export async function deleteParking(parkingId) {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   };
   try {

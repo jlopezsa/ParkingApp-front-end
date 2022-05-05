@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import { React, useState, useEffect } from 'react';
 import './CreateParking.scss';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,6 +11,12 @@ function CreateParking() {
   const [position, setPosition] = useState({});
   const token = localStorage.getItem('token');
 
+  useEffect(() => {
+    setParkingData({
+      ...parkingData,
+      user: adminData.id,
+    });
+  }, []);
   const handleChange = (e) => {
     if (e.target.name === 'latitude' || e.target.name === 'longitude') {
       setPosition({
@@ -32,6 +37,15 @@ function CreateParking() {
     }
   };
 
+  const uploadImage = async (payload) => {
+    const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
+    const { url } = await result.json();
+    setParkingData({
+      ...parkingData,
+      image: url,
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -40,26 +54,13 @@ function CreateParking() {
       method: 'POST',
       body: formData,
     };
-
     try {
-      const result = await fetch(`${process.env.REACT_APP_LOCAL_URL}/api/upload/image`, payload);
-      const { url } = await result.json();
-      setParkingData({
-        ...parkingData,
-        image: url,
-      });
+      await uploadImage(payload);
       dispatch(newParkingRegistered(parkingData, token));
     } catch (error) {
       throw new Error(error.message);
     }
   };
-
-  useEffect(() => {
-    setParkingData({
-      ...parkingData,
-      user: adminData.id,
-    });
-  }, []);
 
   return (
     <div className="container-create">
