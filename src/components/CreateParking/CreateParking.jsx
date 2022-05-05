@@ -12,6 +12,7 @@ function CreateParking() {
   const [parkingImage, setParkingImage] = useState(null);
   const [position, setPosition] = useState({});
   const token = localStorage.getItem('token');
+  const formData = new FormData();
 
   useEffect(() => {
     setParkingData({
@@ -19,7 +20,7 @@ function CreateParking() {
       user: adminData.id,
     });
   }, []);
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     if (e.target.name === 'latitude' || e.target.name === 'longitude') {
       setPosition({
         ...position,
@@ -36,28 +37,27 @@ function CreateParking() {
       });
     } else {
       setParkingImage(e.target.files[0]);
+      formData.append('file', parkingImage);
+      const payload = {
+        method: 'POST',
+        body: formData,
+      };
+      console.log('PAYLOAD: ', payload);
+      // eslint-disable-next-line no-debugger
+      // debugger;
+      const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
+      const { url } = await result.json();
+      console.log('IMAGEN: ', url);
+      setParkingData({
+        ...parkingData,
+        image: url,
+      });
     }
-  };
-
-  const uploadImage = async (payload) => {
-    const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
-    const { url } = await result.json();
-    setParkingData({
-      ...parkingData,
-      image: url,
-    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('file', parkingImage);
-    const payload = {
-      method: 'POST',
-      body: formData,
-    };
     try {
-      await uploadImage(payload);
       dispatch(newParkingRegistered(parkingData, token));
     } catch (error) {
       throw new Error(error.message);
