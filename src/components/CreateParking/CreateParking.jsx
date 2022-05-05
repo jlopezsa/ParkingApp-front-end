@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 import { React, useState, useEffect } from 'react';
 import './CreateParking.scss';
@@ -12,6 +13,12 @@ function CreateParking() {
   const [position, setPosition] = useState({});
   const token = localStorage.getItem('token');
 
+  useEffect(() => {
+    setParkingData({
+      ...parkingData,
+      user: adminData.id,
+    });
+  }, []);
   const handleChange = (e) => {
     if (e.target.name === 'latitude' || e.target.name === 'longitude') {
       setPosition({
@@ -32,6 +39,15 @@ function CreateParking() {
     }
   };
 
+  const uploadImage = async (payload) => {
+    const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
+    const { url } = await result.json();
+    setParkingData({
+      ...parkingData,
+      image: url,
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -40,31 +56,13 @@ function CreateParking() {
       method: 'POST',
       body: formData,
     };
-
     try {
-      console.log('FLAG-01');
-      const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
-      console.log('FLAG-02');
-      const { url } = await result.json();
-      console.log('FLAG-03');
-      setParkingData({
-        ...parkingData,
-        image: url,
-      });
-      console.log('FLAG-04', parkingData);
+      await uploadImage(payload);
       dispatch(newParkingRegistered(parkingData, token));
-      console.log('FLAG-05');
     } catch (error) {
       throw new Error(error.message);
     }
   };
-
-  useEffect(() => {
-    setParkingData({
-      ...parkingData,
-      user: adminData.id,
-    });
-  }, []);
 
   return (
     <div className="container-create">
