@@ -42,13 +42,18 @@ function CreateParking() {
     };
 
     try {
+      console.log('FLAG-01');
       const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
+      console.log('FLAG-02');
       const { url } = await result.json();
+      console.log('FLAG-03');
       setParkingData({
         ...parkingData,
         image: url,
       });
+      console.log('FLAG-04', parkingData);
       dispatch(newParkingRegistered(parkingData, token));
+      console.log('FLAG-05');
     } catch (error) {
       throw new Error(error.message);
     }
