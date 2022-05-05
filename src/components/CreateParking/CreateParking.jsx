@@ -12,8 +12,6 @@ function CreateParking() {
   const [position, setPosition] = useState({});
   const token = localStorage.getItem('token');
 
-  console.log('ID ADMIN: ', adminData);
-
   const handleChange = (e) => {
     if (e.target.name === 'latitude' || e.target.name === 'longitude') {
       setPosition({

@@ -5,7 +5,6 @@ import './SessionSettings.scss';
 
 function SessionSettings() {
   const adminUser = useSelector((state) => state.userData);
-  console.log('SESSIONS: ', adminUser);
   return (
     <div className="sessionsettings">
       <div className="sessionsettings__header">

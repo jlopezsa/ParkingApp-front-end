@@ -30,7 +30,6 @@ export async function filteringParkingByCity(cityName) {
 }
 
 export async function createParking(parking, token) {
-  console.log('PARKING-JS: ', parking);
   const payload = {
     method: 'POST',
     headers: {
@@ -42,7 +41,6 @@ export async function createParking(parking, token) {
   try {
     const response = await fetch(`${API_URL}/api/parkings`, payload);
     const data = await response.json();
-    console.log('PARKINGS: ', data);
     return data;
   } catch (error) {
     throw new Error(error);
