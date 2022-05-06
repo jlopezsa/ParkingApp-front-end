@@ -6,8 +6,10 @@ import '../../pages/HomePage';
 
 function SessionSettings() {
   const adminUser = useSelector((state) => state.userData);
+
   const handlerClick = () => {
     localStorage.removeItem('token');
+    window.location.href = '/';
   };
 
   return (
@@ -21,8 +23,8 @@ function SessionSettings() {
           <Link to="https://github.com/makeitrealcamp/top-v20">Cambiar fotografia</Link>
         </div>
         <div className="sessionsettings__header--button">
-          <button type="submit">
-            <Link id="admin-page-out" to="/" onClick={handlerClick}>Salir</Link>
+          <button type="submit" onClick={handlerClick}>
+            Salir
           </button>
         </div>
       </div>
