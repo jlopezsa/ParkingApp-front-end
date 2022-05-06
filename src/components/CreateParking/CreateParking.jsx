@@ -60,6 +60,10 @@ function CreateParking() {
     }
   };
 
+  const handleClick = () => {
+    navigate('/AdminPage');
+  };
+
   return (
     <div className="container-create">
       <h2>Ingrese datos del parqueadero</h2>
@@ -85,7 +89,7 @@ function CreateParking() {
           <input className="container-create__input" type="file" name="image" placeholder="Imagen" accept="image/*" />
         </label>
         <button className="container-create__Button" type="submit">REGISTRAR</button>
-        <button className="container-create__Button" type="submit" onClick={() => navigate(-1)}>
+        <button className="container-create__Button" type="submit" onClick={handleClick}>
           REGRESAR
         </button>
       </form>
