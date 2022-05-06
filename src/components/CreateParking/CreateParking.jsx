@@ -36,7 +36,6 @@ function CreateParking() {
         [e.target.name]: e.target.value,
       });
     } else {
-      // setParkingImage(e.target.files[0]);
       const parkingImage = e.target.files[0];
       formData.append('file', parkingImage);
       const payload = {
