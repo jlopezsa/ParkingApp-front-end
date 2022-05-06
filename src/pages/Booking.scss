@@ -23,7 +23,7 @@
     min-width: 420px;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 160px;
+    height: 170px;
     h5{
       font-size: $headline5;
       margin-left: 10px;
@@ -78,7 +78,24 @@
     }
   }
 
-  #buttonContinue{
+  .buttonContinue--salir{
+    border-color: $strongBlue-color;
+    border-radius: 5px;
+    background: $lightBlue-color;
+    color: $strongBlue-color;
+    font-size: $body1;
+    right: 0px;
+    width: 100px;
+    height: 30px;
+    margin-top: 0px;
+    margin-left: 10px;
+  }
+  .buttonContinue--salir:hover {
+    border-color: $strongBlue-color;
+    background: $strongBlue-color;
+    color: $lightBlue-color;
+  }
+  .buttonContinue{
     border-color: $strongBlue-color;
     border-radius: 5px;
     background: $lightBlue-color;
@@ -89,7 +106,7 @@
     height: 30px;
     margin-top: 10px;
   }
-  #buttonContinue:hover {
+  .buttonContinue:hover {
     border-color: $strongBlue-color;
     background: $strongBlue-color;
     color: $lightBlue-color;
