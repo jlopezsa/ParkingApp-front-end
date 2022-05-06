@@ -8,8 +8,6 @@ import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import { bookingParking, targetParkingPosition } from '../../../store/actions';
 
-const figParking = require('../../../figures/parking_reserva.png');
-
 const token = localStorage.getItem('token');
 
 function Parking({ parkings }) {
