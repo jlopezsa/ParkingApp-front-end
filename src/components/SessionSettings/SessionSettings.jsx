@@ -2,9 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './SessionSettings.scss';
+import '../../pages/HomePage';
 
 function SessionSettings() {
   const adminUser = useSelector((state) => state.userData);
+
+  const handlerClick = () => {
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  };
+
   return (
     <div className="sessionsettings">
       <div className="sessionsettings__header">
@@ -16,7 +23,9 @@ function SessionSettings() {
           <Link to="https://github.com/makeitrealcamp/top-v20">Cambiar fotografia</Link>
         </div>
         <div className="sessionsettings__header--button">
-          <button type="submit">Salir</button>
+          <button type="submit" onClick={handlerClick}>
+            Salir
+          </button>
         </div>
       </div>
       <div className="sessionsettings__title">

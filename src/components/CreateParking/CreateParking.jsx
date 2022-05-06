@@ -1,15 +1,15 @@
 import { React, useState, useEffect } from 'react';
-import './CreateParking.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { newParkingRegistered } from '../../store/actions';
+import './CreateParking.scss';
 
 function CreateParking() {
   const dispatch = useDispatch();
   const adminData = useSelector((state) => state.userData);
   const [parkingData, setParkingData] = useState({});
-  const [parkingImage, setParkingImage] = useState(null);
   const [position, setPosition] = useState({});
   const token = localStorage.getItem('token');
+  const formData = new FormData();
 
   useEffect(() => {
     setParkingData({
@@ -17,7 +17,7 @@ function CreateParking() {
       user: adminData.id,
     });
   }, []);
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     if (e.target.name === 'latitude' || e.target.name === 'longitude') {
       setPosition({
         ...position,
@@ -33,29 +33,24 @@ function CreateParking() {
         [e.target.name]: e.target.value,
       });
     } else {
-      setParkingImage(e.target.files[0]);
+      const parkingImage = e.target.files[0];
+      formData.append('file', parkingImage);
+      const payload = {
+        method: 'POST',
+        body: formData,
+      };
+      const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
+      const { url } = await result.json();
+      setParkingData({
+        ...parkingData,
+        image: url,
+      });
     }
-  };
-
-  const uploadImage = async (payload) => {
-    const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
-    const { url } = await result.json();
-    setParkingData({
-      ...parkingData,
-      image: url,
-    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('file', parkingImage);
-    const payload = {
-      method: 'POST',
-      body: formData,
-    };
     try {
-      await uploadImage(payload);
       dispatch(newParkingRegistered(parkingData, token));
     } catch (error) {
       throw new Error(error.message);
@@ -87,7 +82,7 @@ function CreateParking() {
           <input className="container-create__input" type="file" name="image" placeholder="Imagen" accept="image/*" />
         </label>
         <button className="container-create__Button" type="submit">REGISTRAR</button>
-        <button className="container-create__Button" type="submit">CANCELAR</button>
+        <button className="container-create__Button" type="submit">REGRESAR</button>
       </form>
     </div>
   );

@@ -20,6 +20,28 @@
       height: 74px;
       border-radius: 50%;
     }
+    &--button{
+      button{
+        margin-top: 50px;
+        font-size: $body1;
+        border-radius: 20px;
+        color: $strongBlue-color;
+        border-color: $strongBlue-color;
+      }
+      button:hover{
+        color: $white-color;
+        background-color: $strongBlue-color;
+      }
+      #admin-page-out{
+        color: $strongBlue-color;
+        text-decoration: none;
+      }
+      #admin-page-out:hover{
+        color: $white-color;
+        background-color: $strongBlue-color;
+        text-decoration: none;
+      }
+    }
   }
   &__title{
     border: 5px solid $blue-color;

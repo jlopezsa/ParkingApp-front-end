@@ -40,6 +40,12 @@
     border-radius: 50px;
     background-color: $white-color;
     text-align: center;
+    #reg-parking-out{
+
+    }
+    #reg-parking-out:hover {
+      text-decoration: none;
+    }
   }
   h2{
     grid-area: titleCell;

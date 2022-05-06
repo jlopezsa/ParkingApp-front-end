@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { deleteParking } from '../../services/parkings';
 import './ParkingRegistered.scss';
 
@@ -13,8 +14,25 @@ function ParkingRegistered(props) {
   };
 
   const handlerClick = () => {
-    // eslint-disable-next-line no-underscore-dangle
-    fetchDeleteParking(parkingsAdmin._id);
+    Swal.fire({
+      title: 'Realmente quiere eliminar el parqueadero?',
+      text: 'Luego de eliminado no podrá ser recuperado!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, deseo eliminarlo!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // eslint-disable-next-line no-underscore-dangle
+        fetchDeleteParking(parkingsAdmin._id);
+        Swal.fire(
+          'Eliminado!',
+          'El parqueadero ha sido eliminado.',
+          'success',
+        );
+      }
+    });
   };
   return (
     <div className="contParkReg">
