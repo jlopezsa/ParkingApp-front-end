@@ -1,12 +1,10 @@
 import { React, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { newParkingRegistered } from '../../store/actions';
 import '../../pages/AdminPage';
 import './CreateParking.scss';
 
 function CreateParking() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const adminData = useSelector((state) => state.userData);
   const [parkingData, setParkingData] = useState({});
@@ -60,10 +58,6 @@ function CreateParking() {
     }
   };
 
-  const handleClick = () => {
-    navigate('/AdminPage');
-  };
-
   return (
     <div className="container-create">
       <h2>Ingrese datos del parqueadero</h2>
@@ -89,9 +83,7 @@ function CreateParking() {
           <input className="container-create__input" type="file" name="image" placeholder="Imagen" accept="image/*" />
         </label>
         <button className="container-create__Button" type="submit">REGISTRAR</button>
-        <button className="container-create__Button" type="submit" onClick={handleClick}>
-          REGRESAR
-        </button>
+        <button className="container-create__Button" type="submit">REGRESAR</button>
       </form>
     </div>
   );
