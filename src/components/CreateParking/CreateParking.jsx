@@ -9,7 +9,7 @@ function CreateParking() {
   const dispatch = useDispatch();
   const adminData = useSelector((state) => state.userData);
   const [parkingData, setParkingData] = useState({});
-  const [parkingImage, setParkingImage] = useState(null);
+  // const [parkingImage, setParkingImage] = useState(null);
   const [position, setPosition] = useState({});
   const token = localStorage.getItem('token');
   const formData = new FormData();
@@ -36,18 +36,15 @@ function CreateParking() {
         [e.target.name]: e.target.value,
       });
     } else {
-      setParkingImage(e.target.files[0]);
+      // setParkingImage(e.target.files[0]);
+      const parkingImage = e.target.files[0];
       formData.append('file', parkingImage);
       const payload = {
         method: 'POST',
         body: formData,
       };
-      console.log('PAYLOAD: ', payload);
-      // eslint-disable-next-line no-debugger
-      // debugger;
       const result = await fetch(`${process.env.REACT_APP_URL}/api/upload/image`, payload);
       const { url } = await result.json();
-      console.log('IMAGEN: ', url);
       setParkingData({
         ...parkingData,
         image: url,
