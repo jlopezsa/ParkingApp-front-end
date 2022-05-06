@@ -4,14 +4,32 @@ import PropTypes from 'prop-types';
 
 import './Parking.scss';
 import '../../../pages/Booking';
+import Swal from 'sweetalert2';
 import { useDispatch } from 'react-redux';
 import { bookingParking, targetParkingPosition } from '../../../store/actions';
+
+const token = localStorage.getItem('token');
 
 function Parking({ parkings }) {
   const dispatch = useDispatch();
 
   const handlerClick = () => {
-    dispatch(bookingParking(parkings));
+    if (token) {
+      dispatch(bookingParking(parkings));
+    } else {
+      Swal.fire({
+        title: 'Autenticación requerida',
+        text: 'Por favor realizar Login para proceder con su reserva ...!',
+        icon: 'warning',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Aceptar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/LogIn';
+        }
+      });
+    }
   };
 
   const handleMouseOver = () => {
