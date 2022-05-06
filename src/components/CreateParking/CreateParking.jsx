@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { newParkingRegistered } from '../../store/actions';
-import '../../pages/AdminPage';
 import './CreateParking.scss';
 
 function CreateParking() {
