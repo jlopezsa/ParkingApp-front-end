@@ -12,6 +12,8 @@
   justify-items: center;
   align-items: center;
   margin: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   &__filter{
     grid-area: filterCell;
@@ -31,7 +33,7 @@
 
 @media (min-width: 1440px) {
   .body-search{
-    grid-template-columns: 450px 820px;
+    grid-template-columns: 490px auto;
     grid-template-rows: auto auto;
     grid-template-areas:
     "filterCell mapCell"
@@ -44,7 +46,7 @@
       margin-left: 0px;
     }
     &__map{
-      width: 798px;
+      width: 1000px ;
       height: 910px;
     }
   }

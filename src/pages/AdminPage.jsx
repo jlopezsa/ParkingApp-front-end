@@ -10,6 +10,7 @@ import './CreateParkingsPage';
 
 function AdminPage() {
   const [parkingsAdmin, setParkingsAdmin] = useState([]);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
     const fetchParkings = async () => {
@@ -17,7 +18,7 @@ function AdminPage() {
       setParkingsAdmin(data);
     };
     fetchParkings();
-  }, []);
+  }, [isDeleted]);
 
   return (
     <div>
@@ -36,7 +37,9 @@ function AdminPage() {
               {
                 parkingsAdmin.length !== 0
                   ? parkingsAdmin.map((item) => (
-                    <li key={item.addres}><ParkingRegistered parkingsAdmin={item} /></li>
+                    <li key={item.addres}>
+                      <ParkingRegistered parkingsAdmin={item} onChangeIsDeleted={setIsDeleted} />
+                    </li>
                   ))
                   : <h2 style={{ textAlign: 'center' }}>No hay parqueaderos registrados</h2>
               }

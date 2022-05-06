@@ -1,24 +1,27 @@
-/* eslint-disable */
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { deleteParking } from '../../services/parkings';
 import './ParkingRegistered.scss';
 
-function ParkingRegistered({ parkingsAdmin }) {
+function ParkingRegistered(props) {
+  // eslint-disable-next-line react/prop-types
+  const { parkingsAdmin, onChangeIsDeleted } = props;
 
   const fetchDeleteParking = async (idParking) => {
-    const isDelete = await deleteParking(idParking);
-  }
+    await deleteParking(idParking);
+    onChangeIsDeleted(true);
+  };
 
   const handlerClick = () => {
+    // eslint-disable-next-line no-underscore-dangle
     fetchDeleteParking(parkingsAdmin._id);
-  }
-
+  };
   return (
     <div className="contParkReg">
       <div className="contParkReg__figure">
         <img
           className="contParkReg__figure--img"
-          src="https://d500.epimg.net/cincodias/imagenes/2020/01/22/lifestyle/1579693137_705498_1579693193_noticia_normal.jpg"
+          src={parkingsAdmin.image !== undefined ? parkingsAdmin.image : 'http://res.cloudinary.com/parkingapp/image/upload/v1651723718/eedyt2haqfvu0miqcxd4.png'}
           alt="parkingFigure"
         />
       </div>
@@ -101,14 +104,29 @@ function ParkingRegistered({ parkingsAdmin }) {
           </button>
         </div>
         <div>
-          <button type="submit" onClick={handlerClick} >
+          <button type="submit" onClick={handlerClick}>
             Eliminar
-            {/*<Link id="booking-page" >Eliminar</Link>*/}
+            {/* <Link id="booking-page" >Eliminar</Link> */}
           </button>
         </div>
       </div>
     </div>
   );
 }
+
+ParkingRegistered.propTypes = {
+  parkingsAdmin: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
+    addres: PropTypes.string.isRequired,
+    hourValue: PropTypes.number.isRequired,
+    totalPlaces: PropTypes.number.isRequired,
+    cityName: PropTypes.string.isRequired,
+    openTime: PropTypes.string.isRequired,
+    closeTime: PropTypes.string.isRequired,
+    busyPlaces: PropTypes.number.isRequired,
+    image: PropTypes.string,
+  }).isRequired,
+};
 
 export default ParkingRegistered;
