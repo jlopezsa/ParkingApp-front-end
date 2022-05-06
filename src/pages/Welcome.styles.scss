@@ -6,7 +6,8 @@
 .welcome{
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  // padding-left: 20px;
   background-color: $strongBlue-color;
   &__img{
     height: 80px;
@@ -44,17 +45,18 @@
     font-family: $Bold;
     &__a{
       height: 53px;
-      padding-left: 15px;
-      padding-right: 15px;
-      background-color: $blue-color;
-      border-radius: 140px;
-      border: none;
-      color: $strongBlue-color;
-      font-family: $Bold;
-      font-size: $headline5;
-      margin-bottom: 10px;
-      margin-top: 10px;
-      text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: $blue-color;
+        border-radius: 140px;
+        border: none;
+        color: $strongBlue-color;
+        font-family: $Bold;
+        font-size: $headline5;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-align: center;
+        cursor: pointer;
       }
     &__b{
       height: 53px;
@@ -76,7 +78,8 @@
   .welcome{
     height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 200px;
     background-color: $strongBlue-color;
     margin-bottom: 30px;
   }
@@ -125,6 +128,7 @@
         margin-bottom: 10px;
         margin-top: 10px;
         text-align: center;
+        cursor: pointer;
         }
       &__b{
         height: 53px;

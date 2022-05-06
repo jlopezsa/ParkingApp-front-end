@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { saveAdminData } from '../../store/actions';
 import './Login.scss';
@@ -15,7 +15,6 @@ function Login() {
     password: "",
   });
   const navigate = useNavigate();
-  //const [showForm, setShowForm] = useState(true);
   const dispatch = useDispatch();
   const handleInputChange = (e) => {
     setForm({
@@ -89,7 +88,9 @@ function Login() {
 
         <p>Olvidó la contraseña?</p>
         <button className="form__submit" type="submit" name="submit" disabled={handlerValidate()} >Login</button>
-        <p>No tiene cuenta? Registrese ahora!</p>
+        <p>No tiene cuenta?
+          <Link to="/LogUp">Registrese ahora!</Link>
+        </p>
       </form>
     </div>
   );

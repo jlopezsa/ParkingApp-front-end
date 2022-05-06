@@ -35,6 +35,11 @@ function Booking() {
     setUserToken(jwtDecode(token));
   }, []);
 
+  const handlerClick = () => {
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  };
+
   return (
     <div className="container-booking">
       <Header />
@@ -51,7 +56,9 @@ function Booking() {
             {' '}
             <strong>{userToken.email}</strong>
           </p>
-          <p id="p_exit">Salir</p>
+          <button className="buttonContinue--salir" type="submit" onClick={handlerClick}>
+            Salir
+          </button>
         </div>
         <div className="booking-body__aditional">
           <h5>Informaciones adicionales</h5>
@@ -59,7 +66,7 @@ function Booking() {
             <input id="contact_phone" type="tel" name="contactPhone" placeholder="Telefono" />
             <input id="placa_carro" type="input" name="placaCarro" placeholder="Placa del vehículo" />
             <textarea id="comments" type="input" name="userComments" placeholder="Observaciones adicionales" />
-            <button id="buttonContinue" type="button">Continuar</button>
+            <button className="buttonContinue" type="button">Continuar</button>
           </div>
         </div>
         <div className="booking-body__pay">
