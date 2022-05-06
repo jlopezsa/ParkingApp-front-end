@@ -21,9 +21,9 @@ import future from '../../figures/views-Future.svg';
 const Views = () => {
   return(
     <div className="container-views">
-      <ViewsFigLeft title={'El problema'} figure={leftFig} text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cupiditate nesciunt hic nam. Magni, illo. Dignissimos at adipisci consequatur? Esse vitae cumque eius vero nihil atque eveniet, nostrum autem voluptatum? Adipisci iste, vel rerum quidem vitae natus voluptas laboriosam atque repudiandae.'}/>
+      <ViewsFigLeft title={'El problema'} figure={leftFig} text={'Propietarios de vehículos suelen reclamar la falta de parqueaderos para ubicar sus carros en zonas congestionadas como el centro de la ciudad.'}/>
 
-      <ViewsFigRight title={'¿Qué hacemos?'} figure={rigthFig} text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cupiditate nesciunt hic nam. Magni, illo. Dignissimos at adipisci consequatur? Esse vitae cumque eius vero nihil atque eveniet, nostrum autem voluptatum? Adipisci iste, vel rerum quidem vitae natus voluptas laboriosam atque repudiandae.'}/>
+      <ViewsFigRight title={'¿Qué hacemos?'} figure={rigthFig} text={'Permitir realizar la conección entre usuarios que requieren estacionar sus vehículos y parqueaderos que tengan disponibilidad.'}/>
 
       <ViewsFigTopLeft title={'¿Cómo lo hacemos?'} figure={parkingWoman} text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime assumenda soluta, quaerat mollitia sequi explicabo eaque dolor voluptatum animi dolorum magni beatae laboriosam? Quia, excepturi. Veniam doloremque aperiam deserunt nisi.'}/>
       <ViewsHorizontal titleLeft={''} figureLeft={parkingManSmartphone} textLeft={'dolor sit amet consectetur adipisicing elit. Maxime assumenda soluta, quaerat mollitia sequi explicabo eaque dolor voluptatum animi dolorum magni beatae laboriosam? Quia, excepturi.'} titleRight={''} figureRight={parkingWomanBike} textRight={'Quia, excepturi. Veniam doloremque aperiam deserunt nisi. g elit. Velit cupiditate nesciunt hic nam. Magni, illo.'} />

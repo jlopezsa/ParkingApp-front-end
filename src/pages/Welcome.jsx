@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import parkingTitle from '../figures/parking_title.svg';
 import './Welcome.styles.scss';
 
 function Welcome() {
+  const handleClick = () => {
+    window.location.href = '/LogIn';
+  };
+
   return (
     <div className="body__welcome">
       <div className="welcome">
@@ -19,8 +22,7 @@ function Welcome() {
           </p>
         </div>
         <div className="target__buttons">
-          <Link className="target__buttons__a" to="/Search">Continuar con mi reserva</Link>
-          <Link className="target__buttons__b" to="/LogIn">Aceptar</Link>
+          <button className="target__buttons__a" type="button" onClick={handleClick}>Aceptar</button>
         </div>
       </div>
     </div>
