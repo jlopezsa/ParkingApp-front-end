@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { newParkingRegistered } from '../../store/actions';
 import './CreateParking.scss';
 
@@ -53,7 +54,21 @@ function CreateParking() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      dispatch(newParkingRegistered(parkingData, token));
+      const { response } = await dispatch(newParkingRegistered(parkingData, token));
+      if (response.status === 500) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Algo salió mal',
+          text: 'Intente nuevamente.',
+        });
+      } else {
+        Swal.fire(
+          'Parqueadero reistrado exitosamente',
+          'Usuario autenticado corréctamente...!',
+          'success',
+        );
+        navigate('/AdminPage');
+      }
     } catch (error) {
       throw new Error(error.message);
     }
