@@ -39,7 +39,6 @@ function Login() {
       });
 
       const { token, profile, id } = await response.json();
-      console.log('LOGIN: ', { profile }, id);
       localStorage.setItem('token', token);
       dispatch(saveAdminData({ profile, id }));
       if (response.status === 401) {

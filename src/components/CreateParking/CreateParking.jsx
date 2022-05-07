@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { newParkingRegistered } from '../../store/actions';
 import './CreateParking.scss';
 
@@ -10,6 +11,7 @@ function CreateParking() {
   const [position, setPosition] = useState({});
   const token = localStorage.getItem('token');
   const formData = new FormData();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setParkingData({
@@ -82,7 +84,7 @@ function CreateParking() {
           <input className="container-create__input" type="file" name="image" placeholder="Imagen" accept="image/*" />
         </label>
         <button className="container-create__Button" type="submit">REGISTRAR</button>
-        <button className="container-create__Button" type="submit">REGRESAR</button>
+        <button className="container-create__Button" type="button" onClick={() => { navigate('/AdminPage'); }}>REGRESAR</button>
       </form>
     </div>
   );
