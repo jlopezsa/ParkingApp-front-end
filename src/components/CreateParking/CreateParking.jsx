@@ -1,5 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { newParkingRegistered } from '../../store/actions';
 import './CreateParking.scss';
 
@@ -10,6 +12,7 @@ function CreateParking() {
   const [position, setPosition] = useState({});
   const token = localStorage.getItem('token');
   const formData = new FormData();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setParkingData({
@@ -51,7 +54,21 @@ function CreateParking() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      dispatch(newParkingRegistered(parkingData, token));
+      const { response } = await dispatch(newParkingRegistered(parkingData, token));
+      if (response.status === 500) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Algo salió mal',
+          text: 'Intente nuevamente.',
+        });
+      } else {
+        Swal.fire(
+          'Parqueadero reistrado exitosamente',
+          'Usuario autenticado corréctamente...!',
+          'success',
+        );
+        navigate('/AdminPage');
+      }
     } catch (error) {
       throw new Error(error.message);
     }
@@ -82,7 +99,7 @@ function CreateParking() {
           <input className="container-create__input" type="file" name="image" placeholder="Imagen" accept="image/*" />
         </label>
         <button className="container-create__Button" type="submit">REGISTRAR</button>
-        <button className="container-create__Button" type="submit">REGRESAR</button>
+        <button className="container-create__Button" type="button" onClick={() => { navigate('/AdminPage'); }}>REGRESAR</button>
       </form>
     </div>
   );

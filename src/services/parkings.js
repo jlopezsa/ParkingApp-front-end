@@ -41,7 +41,7 @@ export async function createParking(parking, token) {
   try {
     const response = await fetch(`${API_URL}/api/parkings`, payload);
     const data = await response.json();
-    return data;
+    return ({ data, response });
   } catch (error) {
     throw new Error(error);
   }
