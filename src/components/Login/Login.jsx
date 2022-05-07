@@ -11,8 +11,8 @@ const API_URL = process.env.REACT_APP_URL;
 function Login() {
   const [form, setForm] = useState(null);
   const [dataUser, setDataUser] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,8 +23,8 @@ function Login() {
     });
     setDataUser({
       ...dataUser,
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -39,45 +39,38 @@ function Login() {
       });
 
       const { token, profile, id } = await response.json();
-      console.log('LOGIN: ', { profile } , id );
+      console.log('LOGIN: ', { profile }, id);
       localStorage.setItem('token', token);
       dispatch(saveAdminData({ profile, id }));
-      if(response.status === 401){
+      if (response.status === 401) {
         Swal.fire({
           icon: 'error',
           title: 'Algo salió mal',
-          text: 'Usuario o contraseña no válida...'
-        })
-      }else{
+          text: 'Usuario o contraseña no válida...',
+        });
+      } else {
         Swal.fire(
           'Login exitoso ',
           'Usuario autenticado corréctamente...!',
-          'success'
-        )
-        navigate('/Search');
+          'success',
+        );
+        profile.role === 'admin' ? navigate('/AdminPage') : navigate('/Search');
       }
-      //setShowForm(false);
+      // setShowForm(false);
     } catch (error) {
       console.log(error);
     }
   };
-  // const handleLogout = () => {
-  //   localStorage.removeItem('token');
-  //   setShowForm(true);
-  // };
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    //if (token) {
-    //  setShowForm(false);
-    //}
   }, []);
 
   const handlerValidate = () => {
     const { email, password } = dataUser;
-    let valido = !email.length || !password.length
+    const valido = !email.length || !password.length;
     return valido;
-  }
+  };
 
   return (
     <div>
@@ -87,8 +80,9 @@ function Login() {
         <input className="form__input" type="password" name="password" placeholder="Enter a password" onChange={handleInputChange} />
 
         <p>Olvidó la contraseña?</p>
-        <button className="form__submit" type="submit" name="submit" disabled={handlerValidate()} >Login</button>
-        <p>No tiene cuenta?
+        <button className="form__submit" type="submit" name="submit" disabled={handlerValidate()}>Login</button>
+        <p>
+          No tiene cuenta?
           <Link to="/LogUp">Registrese ahora!</Link>
         </p>
       </form>
