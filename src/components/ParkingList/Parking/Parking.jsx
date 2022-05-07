@@ -75,8 +75,8 @@ function Parking({ parkings }) {
         <p>{parkings.addres}</p>
         <p>{parkings.cityName}</p>
         <div className="container-parking__data--qualy">
-          <p>starts</p>
-          <p>{parkings.totalPlaces}</p>
+          <p>{`Total cupos: ${parkings.totalPlaces}`}</p>
+          <p>{`Cupos disponibles: ${parkings.totalPlaces - parkings.busyPlaces}`}</p>
         </div>
       </div>
       <div className="container-parking__value">
@@ -101,6 +101,7 @@ Parking.propTypes = {
     addres: PropTypes.string.isRequired,
     hourValue: PropTypes.number.isRequired,
     totalPlaces: PropTypes.number.isRequired,
+    busyPlaces: PropTypes.number.isRequired,
     cityName: PropTypes.string.isRequired,
     image: PropTypes.string,
     position: PropTypes.shape({
