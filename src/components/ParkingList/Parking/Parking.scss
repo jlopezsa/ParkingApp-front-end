@@ -9,12 +9,14 @@
   background-color: $white-color;
   display: grid;
   grid-template-columns: 120px auto 120px;
-  grid-template-rows: 120px;
+  grid-template-rows: 150px;
   grid-template-areas:
     "imagemCell dataCell valueCell";
   &__imagen{
     grid-area: imagemCell;
     margin: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .parking__imagen{
     width: 110px;
@@ -26,8 +28,8 @@
     grid-area: dataCell;
     margin: 0px;
     &--qualy{
-      display: flex;
-      justify-content: space-between;
+      //display: flex;
+      //justify-content: space-between;
     }
     h5{
       font-size: 14px;
