@@ -32,7 +32,7 @@
 
 @media (min-width: 1440px) {
   .container-header{
-    min-width: 1440px;
+    min-width: auto;
     grid-template-columns: 120px 320px auto;
     grid-template-rows: 100px;
     &__img{
