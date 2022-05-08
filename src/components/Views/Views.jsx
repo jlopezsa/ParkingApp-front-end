@@ -29,7 +29,7 @@ const Views = () => {
       <ViewsHorizontal titleLeft={''} figureLeft={parkingManSmartphone} textLeft={'dolor sit amet consectetur adipisicing elit. Maxime assumenda soluta, quaerat mollitia sequi explicabo eaque dolor voluptatum animi dolorum magni beatae laboriosam? Quia, excepturi.'} titleRight={''} figureRight={parkingWomanBike} textRight={'Quia, excepturi. Veniam doloremque aperiam deserunt nisi. g elit. Velit cupiditate nesciunt hic nam. Magni, illo.'} />
 
       <div className="container-title">
-        <p>¿Y los parquaderos?</p>
+        <p>Proximamente...</p>
       </div>
 
       <ViewsHorizontal titleLeft={''} figureLeft={datafonoMan} textLeft={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime assumenda soluta, quaerat mollitia sequi explicabo eaque dolor voluptatum animi dolorum magni beatae laboriosam? Quia, excepturi. Veniam doloremque aperiam deserunt nisi.'} titleRight={''} figureRight={statisticsDoc} textRight={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cupiditate nesciunt hic nam. Magni, illo. Dignissimos at adipisci consequatur? Esse vitae cumque eius vero nihil atque eveniet, nostrum autem voluptatum? Adipisci iste, vel rerum quidem vitae natus voluptas laboriosam atque repudiandae.'} />
@@ -37,7 +37,7 @@ const Views = () => {
       <ViewsFigTopRight title={''} figure={presentationMan} text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cupiditate nesciunt hic nam. Magni, illo. Dignissimos at adipisci consequatur? consectetur adipisicing elit. Velit cupiditate nesciunt hic nam. Magni, illo. Dignissimos at adipisci consequatur? Esse vitae cumque eius vero nihil atque eveniet, nostrum autem voluptatum? Adipisci iste, vel rerum quidem vitae'}/>
 
       <div className="container-title">
-        <p>Proximamente...</p>
+        <p></p>
       </div>
       <ViewsFigTopLeft title={''} figure={future} text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime assumenda soluta, quaerat mollitia sequi explicabo eaque dolor voluptatum animi dolorum magni beatae laboriosam? Quia, excepturi. Veniam doloremque aperiam deserunt nisi.'}/>
 
