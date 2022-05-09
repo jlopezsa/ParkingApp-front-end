@@ -30,8 +30,6 @@ function Maps() {
     });
   }
 
-  // navigator.geolocation.getCurrentPosition(success, () => {}, options);
-
   useEffect(() => {
     if (parkings.length !== 0) {
       setCenterCords({
