@@ -1,10 +1,10 @@
 /* eslint-disable */
 describe('Login as admin user', () => {
   it('should display the home page', () => {
-    cy.visit(`https://parkingappreal.netlify.app/`);
+    cy.visit(`http://localhost:3000`);
     cy.get('*[class^="cities__list"]').should('be.visible');
     cy.get('[data-cy="click_login_link"]').click();
-    cy.wait(2000)
+    cy.wait(1000)
   })
 
   it('Input login and password', () => {
