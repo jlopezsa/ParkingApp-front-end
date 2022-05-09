@@ -63,8 +63,8 @@ function CreateParking() {
         });
       } else {
         Swal.fire(
-          'Parqueadero reistrado exitosamente',
-          'Usuario autenticado corréctamente...!',
+          'Parqueadero registrado exitosamente',
+          'Vea su registro!',
           'success',
         );
         navigate('/AdminPage');
@@ -78,22 +78,22 @@ function CreateParking() {
     <div className="container-create">
       <h2>Ingrese datos del parqueadero</h2>
       <form id="form" onChange={handleChange} onSubmit={handleSubmit}>
-        <input className="container-create__input" type="text" name="name" placeholder="Nombre del parqueadero" />
-        <input className="container-create__input" type="text" name="cityName" placeholder="Ciudad" />
-        <input className="container-create__input" type="text" name="addres" placeholder="Dirección" />
-        <input className="container-create__input" type="number" name="phone" placeholder="Teléfono" />
-        <input className="container-create__input" type="number" name="hourValue" placeholder="Valor hora" />
+        <input data-cy="input_parking_name" className="container-create__input" type="text" name="name" placeholder="Nombre del parqueadero" />
+        <input data-cy="input_parking_cityName" className="container-create__input" type="text" name="cityName" placeholder="Ciudad" />
+        <input data-cy="input_parking_addres" className="container-create__input" type="text" name="addres" placeholder="Dirección" />
+        <input data-cy="input_parking_phone" className="container-create__input" type="number" name="phone" placeholder="Teléfono" />
+        <input data-cy="input_parking_value" className="container-create__input" type="number" name="hourValue" placeholder="Valor hora" />
         <label htmlFor="startTime">
           Hora de apertura
-          <input className="container-create__input" id="startTime" type="time" name="openTime" placeholder="Hora" />
+          <input data-cy="input_parking_start" className="container-create__input" id="startTime" type="time" name="openTime" placeholder="Hora" />
         </label>
         <label htmlFor="endTime">
           Hora de cierre
-          <input className="container-create__input" type="time" name="closeTime" placeholder="Hora de cierre" />
+          <input data-cy="input_parking_close" className="container-create__input" type="time" name="closeTime" placeholder="Hora de cierre" />
         </label>
-        <input className="container-create__input" type="number" name="totalPlaces" placeholder="Número de puestos" />
-        <input className="container-create__input" type="number" step="any" name="latitude" placeholder="Latitud" />
-        <input className="container-create__input" type="number" step="any" name="longitude" placeholder="Longitud" />
+        <input data-cy="input_parking_places" className="container-create__input" type="number" name="totalPlaces" placeholder="Número de puestos" />
+        <input data-cy="input_parking_latitude" className="container-create__input" type="number" step="any" name="latitude" placeholder="Latitud" />
+        <input data-cy="input_parking_longitude" className="container-create__input" type="number" step="any" name="longitude" placeholder="Longitud" />
         <label htmlFor="image">
           Subir imagen de parqueadero
           <input className="container-create__input" type="file" name="image" placeholder="Imagen" accept="image/*" />

@@ -75,8 +75,8 @@ function Login() {
     <div>
       <form className="form" onSubmit={handleSubmit}>
         <h2 className="form__h2">Ingresar</h2>
-        <input className="form__input" type="text" name="email" placeholder="Enter an email" onChange={handleInputChange} />
-        <input className="form__input" type="password" name="password" placeholder="Enter a password" onChange={handleInputChange} />
+        <input data-cy="login_input_name" className="form__input" type="text" name="email" placeholder="Enter an email" onChange={handleInputChange} />
+        <input data-cy="login_input_password" className="form__input" type="password" name="password" placeholder="Enter a password" onChange={handleInputChange} />
 
         <p>Olvidó la contraseña?</p>
         <button className="form__submit" type="submit" name="submit" disabled={handlerValidate()}>Login</button>
