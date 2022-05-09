@@ -31,7 +31,7 @@ function AdminPage() {
         <div className="container-admin__list">
           <div className="container-admin__list--header">
             <p id="container-admin_p1">Parqueaderos registrados:</p>
-            <Link id="container-admin_p2" to="/CreateParkingsPage">Registrar nuevo parqueadero?</Link>
+            <Link data-cy="click_to_create_parking" id="container-admin_p2" to="/CreateParkingsPage">Registrar nuevo parqueadero?</Link>
           </div>
           <div className="container-admin__list--parkings">
             <ul className="container-admin__list--parkings-scroll">

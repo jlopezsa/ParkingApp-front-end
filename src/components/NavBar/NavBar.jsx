@@ -9,7 +9,7 @@ function NavBar() {
         <ul className="container-menu__list">
           <li><NavLink className="menu__list--inactive" to="/">Home</NavLink></li>
           <li><NavLink className="menu__list--inactive" to="/AdminPage">Admin</NavLink></li>
-          <li><NavLink className="menu__list--inactive" to="/LogIn">Ingresar</NavLink></li>
+          <li><NavLink data-cy="click_login_link" className="menu__list--inactive" to="/LogIn">Ingresar</NavLink></li>
           <li><NavLink className="menu__list--inactive" to="/LogUp">Registrar</NavLink></li>
           <li><NavLink className="menu__list--inactive" to="/Search">Busqueda</NavLink></li>
         </ul>
