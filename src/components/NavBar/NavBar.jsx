@@ -6,27 +6,21 @@ import './NavBar.scss';
 
 function NavBar() {
   const profile = useSelector((state) => state.userData);
-  const [roleAccess, setRoleAccess] = useState('1');
-  const token = localStorage.getItem('token');
+  const [roleAccess, setRoleAccess] = useState('user');
+
+  const checkRole = (pf) => {
+    if (Object.keys(pf).length === 0) {
+      const roleUser = 'user';
+      setRoleAccess(roleUser);
+    } else {
+      const roleUser = pf.profile.role;
+      setRoleAccess(roleUser);
+    }
+  };
 
   useEffect(() => {
-    console.log('TOKEN: ', token);
-    if (!token) {
-      const roleUser = 'user';
-      setRoleAccess({
-        ...roleAccess,
-        roleUser,
-      });
-    } else {
-      console.log('ROLEUSER 0: ', profile.profile.role);
-      const roleUser = profile.profile.role;
-      console.log('ROLEUSER: ', roleUser);
-      setRoleAccess({
-        ...roleAccess,
-        roleUser,
-      });
-    }
-  }, []);
+    checkRole(profile);
+  }, [profile]);
 
   return (
     <div>
@@ -48,7 +42,7 @@ function NavBar() {
           </div>
           <ul className="hamburguer-menu__list">
             <li><NavLink className="hamburguer__list--inactive" to="/">Home</NavLink></li>
-            <li><NavLink className="hamburguer__list--inactive" to="/AdminPage">Admin</NavLink></li>
+            {roleAccess === 'admin' ? <li><NavLink className="menu__list--inactive" to="/AdminPage">Admin</NavLink></li> : null}
             <li><NavLink className="hamburguer__list--inactive" to="/LogIn">Ingresar</NavLink></li>
             <li><NavLink className="hamburguer__list--inactive" to="/LogUp">Registrar</NavLink></li>
             <li><NavLink className="hamburguer__list--inactive" to="/Search">Busqueda</NavLink></li>
