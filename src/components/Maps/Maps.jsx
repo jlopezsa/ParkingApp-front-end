@@ -11,17 +11,33 @@ function Maps() {
   const parkings = useSelector((state) => state.parkingsFiltered);
   const targetParking = useSelector((state) => state.targetPosition);
 
-  const [centerCoor, setCenterCords] = useState({ lat: 4.65, long: -74.1 });
+  const [centerCoor, setCenterCords] = useState({});
   const [coordParking, setCoordParking] = useState({});
 
+  const options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+
+  function success(pos) {
+    const crd = pos.coords;
+
+    setCenterCords({
+      ...centerCoor,
+      lat: crd.latitude,
+      long: crd.longitude,
+    });
+  }
+
   useEffect(() => {
-    if (parkings.length === 0) {
-      setCenterCords({ lat: 4.65, long: -74.1 });
-    } else {
+    if (parkings.length !== 0) {
       setCenterCords({
         lat: parkings[0].position.latitude,
         long: parkings[0].position.longitude,
       });
+    } else {
+      navigator.geolocation.getCurrentPosition(success, () => {}, options);
     }
   }, [parkings]);
 
@@ -41,9 +57,6 @@ function Maps() {
       longitude: 0,
     });
   };
-
-  useEffect(() => {
-  }, [coordParking]);
 
   return (
     <LoadScript googleMapsApiKey={process.env.REACT_APP_KEY_MAPS}>
